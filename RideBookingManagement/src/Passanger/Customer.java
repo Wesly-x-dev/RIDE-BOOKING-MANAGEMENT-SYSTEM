@@ -61,8 +61,8 @@ public class Customer {
             fwriter.write("Music: " + music + "\n");
             fwriter.write("Ride Class: " + eco + premium + "\n");
 
-            fwriter.write("PickUp Time: " + oops_principle + "\n");
-            fwriter.write("Pickup Date: " + oops_principle + "\n");
+            fwriter.write("PickUp Time: "  + "\n");
+            fwriter.write("Pickup Date: "  + "\n");
 
             fwriter.write("Pickup at: " + pickupVenue+ ", "+ pickLoc + "\n");
             fwriter.write("Dropoff at: " + dropOffVenue+ ", "+ dropLoc + "\n");
