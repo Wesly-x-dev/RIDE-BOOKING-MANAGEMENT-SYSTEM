@@ -1,0 +1,4 @@
+1. Add logic to the full name phone and emergency contact, pickup venue drop off venue
+to convert them into a required type files (name* = meaning we must write the name to proceed submission)
+
+2. Add a time area to add time of the pickup location
