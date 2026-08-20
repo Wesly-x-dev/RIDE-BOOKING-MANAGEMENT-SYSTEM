@@ -41,7 +41,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     private JRadioButton rideEco, ridePremium,payVBox1, payVBox2, payVBox3;
     private JCheckBox cBox1, cBox2, cBox3, termsAndCondCheckBox;
     private JComboBox choosePickLoc, chooseDropLoc;
-    private JButton confirmBtn, exitProgram;
+    private JButton confirmBtn, exitProgram, anotherRideBtn;
 
     public MainFrame(){
         super.setTitle("Thapao!");
@@ -389,10 +389,9 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         termsAndCondCheckBox.setFont(new Font("MV Boli", Font.BOLD, 12));
         termsAndCondCheckBox.addActionListener(this);
 
-
         //========================== Confirm Button ======================
         confirmBtn = new JButton("Confirm");
-        confirmBtn.setBounds(60, 380, 120, 30);
+        confirmBtn.setBounds(20, 380, 120, 30);
         confirmBtn.setFont(labelFont);
         confirmBtn.setForeground(Color.WHITE);
         confirmBtn.setBackground(new Color(30, 136, 229));
@@ -401,13 +400,22 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         confirmBtn.setEnabled(false);
         //========================== Exit Button ======================
         exitProgram = new JButton("Exit");
-        exitProgram.setBounds(230, 380, 120, 30);
+        exitProgram.setBounds(160, 380, 120, 30);
         exitProgram.setFont(labelFont);
         exitProgram.setForeground(Color.WHITE);
         exitProgram.setBackground(new Color(229, 30, 37));
         exitProgram.setOpaque(true);
         exitProgram.addActionListener(this);
 
+        //========================== Exit Button ======================
+        anotherRideBtn = new JButton("Book more!");
+        anotherRideBtn.setBounds(300, 380, 120, 30);
+        anotherRideBtn.setFont(labelFont);
+        anotherRideBtn.setForeground(Color.BLACK);
+        anotherRideBtn.setBackground(new Color(209, 122, 24));
+        anotherRideBtn.setOpaque(true);
+        anotherRideBtn.addActionListener(this);
+        anotherRideBtn.setEnabled(false);
         //===================== Final Data =============================
         rideReciept = new JTextArea();
         JScrollPane scrollPane = new JScrollPane(rideReciept);
@@ -435,7 +443,6 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         bookRidePanel.add(cBox2);
         bookRidePanel.add(cBox3);
 
-//        bookRidePanel.add(paymentHeadinglabel);
         bookRidePanel.add(payViaLabel);
         bookRidePanel.add(payVBox3);
         bookRidePanel.add(payVBox2);
@@ -444,8 +451,10 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         bookRidePanel.add(accountNumber);
         bookRidePanel.add(accountNumbertextArea);
         bookRidePanel.add(termsAndCondCheckBox);
+
         bookRidePanel.add(confirmBtn);
         bookRidePanel.add(exitProgram);
+        bookRidePanel.add(anotherRideBtn);
         super.add(bookRidePanel);
 
     }
@@ -454,6 +463,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     //================= Action Listener ==================
     @Override
     public void actionPerformed(ActionEvent e) {
+
         //=============================== Vehicle image Selection ================================
         int selected = vehicleType.getSelectedIndex();
         if (selected == 0) {
@@ -484,12 +494,9 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             musicVehicleCheck.setEnabled(true);// check filename, was "truck.png" too
         }
         carLabel.setIcon(carDetails);
-//        carLabel.revalidate();
-//        carLabel.repaint();
 
         // ================================ User Control - Location ==============================
         boolean locationValid = true;
-
         if (e.getSource() == choosePickLoc || e.getSource() == chooseDropLoc || e.getSource() == confirmBtn) {
             String pickUplocString = choosePickLoc.getSelectedItem().toString();
             String dropOffLocString = chooseDropLoc.getSelectedItem().toString();
@@ -499,11 +506,14 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
                 if (pickUplocString.equals("") && dropOffLocString.equals("")) {
                     JOptionPane.showMessageDialog(this, "Location Cannot be empty! Please fill them.");
-                } else if (pickUplocString.equals("")) {
+                }
+                else if (pickUplocString.equals("")) {
                     JOptionPane.showMessageDialog(this, "Please select Pickup Location!");
-                } else if (pickUplocString.equals(dropOffLocString)) {
+                }
+                else if (pickUplocString.equals(dropOffLocString)) {
                     JOptionPane.showMessageDialog(this, "Pickup location cannot be same as drop off location");
-                } else {
+                }
+                else {
                     JOptionPane.showMessageDialog(this, "Please select Drop off Location!");
                 }
 
@@ -512,10 +522,21 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                 confirmBtn.setText("Confirm!");
                 confirmBtn.setForeground(Color.WHITE);
                 confirmBtn.setEnabled(false);
+                anotherRideBtn.setEnabled(false);
                 termsAndCondCheckBox.setSelected(false);
             }
         }
             //=======================================================================================
+
+            //========================= Terms and Condition authentication - backend =======================================
+            if(termsAndCondCheckBox.isSelected()){
+                confirmBtn.setEnabled(true);
+                anotherRideBtn.setEnabled(false);
+            }
+            else {
+                confirmBtn.setEnabled(false);
+                anotherRideBtn.setEnabled(false);
+            }
             //========================= Confirm button - backend ======================================================
         if (e.getSource() == confirmBtn && locationValid) {
             int response = JOptionPane.showConfirmDialog(this, "Booking a ride - Confirm?", "Confirm Ride", JOptionPane.YES_NO_OPTION);
@@ -525,6 +546,8 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                 confirmBtn.setText("Confirmed!");
                 confirmBtn.setForeground(Color.BLACK);
                 confirmBtn.setEnabled(false);
+                anotherRideBtn.setEnabled(true);
+                termsAndCondCheckBox.setEnabled(false);
             } else {
                 confirmBtn.setBackground(new Color(30, 136, 229));
                 confirmBtn.setText("Confirm!");
@@ -542,13 +565,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             }
         }
     //=======================================================================================
-    //========================= Terms and Condition authentication - backend =======================================
-        if(termsAndCondCheckBox.isSelected()){
-            confirmBtn.setEnabled(true);
-        }
-        else {
-            confirmBtn.setEnabled(false);
-        }
+
         //============================================ Action perfomed ends here =================================================================
     }
 
@@ -572,7 +589,6 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     }
 
     public void mousePressed(MouseEvent me){
-
     }
 
     public void mouseReleased(MouseEvent me){
