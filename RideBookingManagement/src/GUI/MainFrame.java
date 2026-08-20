@@ -235,12 +235,16 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         acVehicleCheck = new JCheckBox("A/C");
         acVehicleCheck.setBounds(190, 165, 100,30);//(x,y,width, height)
         acVehicleCheck.setFont(labelFont);
+        acVehicleCheck.addActionListener(this);
 
 
         musicVehicleCheck = new JCheckBox("Music");
         musicVehicleCheck.setBounds(190, 195, 100,30);//(x,y,width, height)
         musicVehicleCheck.setFont(labelFont);
+        musicVehicleCheck.addActionListener(this);
 
+        acVehicleCheck.setEnabled(false);
+        musicVehicleCheck.setEnabled(false);
         //============================================================
         rideDetailsPanel.add(carLabel);
         rideDetailsPanel.add(rideSubHeading);
@@ -450,66 +454,49 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     //================= Action Listener ==================
     @Override
     public void actionPerformed(ActionEvent e) {
-        //========================= Terms and Condition authentication - backend =======================================
-        if(termsAndCondCheckBox.isSelected()){
-            confirmBtn.setEnabled(termsAndCondCheckBox.isSelected());
-        }
-        else {
-            confirmBtn.setEnabled(false);
-        }
-        //=============================================================================================================
-        //========================= Exit button - backend =============================================================
-        if(e.getSource() == exitProgram) {
-            int exitResponse = JOptionPane.showConfirmDialog(this, "Are you sure? \nClick Ok to Exit! ", "Termiante Program", JOptionPane.YES_NO_OPTION);
-            if(exitResponse == JOptionPane.YES_OPTION) {
-                System.exit(0);
-            }
-        }
-        //=======================================================================================
-        //========================= Confirm button - backend ======================================================
-        if(e.getSource() == confirmBtn) {
-            int response = JOptionPane.showConfirmDialog(this,  "Booking a ride - Confirm?", "Confirm Ride", JOptionPane.YES_NO_OPTION);
-            if(response == JOptionPane.YES_OPTION) {
-                confirmBtn.setBackground(Color.GREEN);
-                confirmBtn.setText("Confirmed!");
-                confirmBtn.setForeground(Color.BLACK);
-                confirmBtn.setEnabled(false);
-            }
-            else {
-                confirmBtn.setBackground(new Color(30, 136, 229));
-                confirmBtn.setText("Confirm!");
-                confirmBtn.setForeground(Color.WHITE);
-            }
-        }
-        //=======================================================================================
-
         //=============================== Vehicle image Selection ================================
         int selected = vehicleType.getSelectedIndex();
         if (selected == 0) {
             carDetails = new ImageIcon("images//rideDetails.png");
+            acVehicleCheck.setEnabled(false);
+            musicVehicleCheck.setEnabled(false);
         } else if (selected == 1) {
             carDetails = new ImageIcon("images//bike.png");
             carLabel.setBounds(70, 0, 200, 200);
+            acVehicleCheck.setEnabled(false);
+            musicVehicleCheck.setEnabled(false);
         } else if (selected == 2) {
             carDetails = new ImageIcon("images//cng.png");
             carLabel.setBounds(70, 0, 200, 200);
+            acVehicleCheck.setEnabled(false);
+            musicVehicleCheck.setEnabled(false);
         } else if (selected == 3) {
             carDetails = new ImageIcon("images//SUV.png");
+            acVehicleCheck.setEnabled(true);
+            musicVehicleCheck.setEnabled(true);
         } else if (selected == 4) {
-            carDetails = new ImageIcon("images//microbus.png"); // check filename, was "truck.png"
+            carDetails = new ImageIcon("images//microbus.png");
+            acVehicleCheck.setEnabled(true);
+            musicVehicleCheck.setEnabled(true);// check filename, was "truck.png"
         } else if (selected == 5) {
-            carDetails = new ImageIcon("images//hiace.png");     // check filename, was "truck.png" too
+            carDetails = new ImageIcon("images//hiace.png");
+            acVehicleCheck.setEnabled(true);
+            musicVehicleCheck.setEnabled(true);// check filename, was "truck.png" too
         }
         carLabel.setIcon(carDetails);
 //        carLabel.revalidate();
 //        carLabel.repaint();
-        //=======================================================================================
 
         // ================================ User Control - Location ==============================
+        boolean locationValid = true;
+
         if (e.getSource() == choosePickLoc || e.getSource() == chooseDropLoc || e.getSource() == confirmBtn) {
             String pickUplocString = choosePickLoc.getSelectedItem().toString();
             String dropOffLocString = chooseDropLoc.getSelectedItem().toString();
+
             if (pickUplocString.equals("") || dropOffLocString.equals("") || pickUplocString.equals(dropOffLocString)) {
+                locationValid = false;
+
                 if (pickUplocString.equals("") && dropOffLocString.equals("")) {
                     JOptionPane.showMessageDialog(this, "Location Cannot be empty! Please fill them.");
                 } else if (pickUplocString.equals("")) {
@@ -519,13 +506,57 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                 } else {
                     JOptionPane.showMessageDialog(this, "Please select Drop off Location!");
                 }
+
+                // reset confirm button + checkbox whenever validation fails
+                confirmBtn.setBackground(new Color(30, 136, 229));
+                confirmBtn.setText("Confirm!");
+                confirmBtn.setForeground(Color.WHITE);
+                confirmBtn.setEnabled(false);
+                termsAndCondCheckBox.setSelected(false);
+            }
+        }
+            //=======================================================================================
+            //========================= Confirm button - backend ======================================================
+        if (e.getSource() == confirmBtn && locationValid) {
+            int response = JOptionPane.showConfirmDialog(this, "Booking a ride - Confirm?", "Confirm Ride", JOptionPane.YES_NO_OPTION);
+
+            if (response == JOptionPane.YES_OPTION) {
+                confirmBtn.setBackground(Color.GREEN);
+                confirmBtn.setText("Confirmed!");
+                confirmBtn.setForeground(Color.BLACK);
+                confirmBtn.setEnabled(false);
+            } else {
+                confirmBtn.setBackground(new Color(30, 136, 229));
+                confirmBtn.setText("Confirm!");
+                confirmBtn.setForeground(Color.WHITE);
+                confirmBtn.setEnabled(false);
+                termsAndCondCheckBox.setSelected(false);
             }
         }
         //=======================================================================================
-
-
+        //========================= Exit button - backend =============================================================
+        if(e.getSource() == exitProgram) {
+            int exitResponse = JOptionPane.showConfirmDialog(this, "Are you sure? \nClick Ok to Exit! ", "Termiante Program", JOptionPane.YES_NO_OPTION);
+            if(exitResponse == JOptionPane.YES_OPTION) {
+                System.exit(0);
+            }
+        }
+    //=======================================================================================
+    //========================= Terms and Condition authentication - backend =======================================
+        if(termsAndCondCheckBox.isSelected()){
+            confirmBtn.setEnabled(true);
+        }
+        else {
+            confirmBtn.setEnabled(false);
+        }
+        //============================================ Action perfomed ends here =================================================================
     }
 
+
+
+    //=======================================================================================
+    //                                    Mouse Listener
+    //=======================================================================================
     //================= mouse Listener ==================
     public void mouseClicked(MouseEvent me){
         if(me.getSource() == confirmBtn){

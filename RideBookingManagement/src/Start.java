@@ -1,6 +1,9 @@
 import GUI.Dummy;
 import GUI.MainFrame;
 
+import javax.swing.*;
+import java.awt.*;
+
 public class Start{
     public static void main(String[] args){
 
@@ -30,3 +33,34 @@ public class Start{
 //        }
 //
 ////=======================================================================================S
+
+
+////========================= Terms and Condition authentication - backend =======================================
+//        if(termsAndCondCheckBox.isSelected()){
+//        confirmBtn.setEnabled(termsAndCondCheckBox.isSelected());
+//        }
+//        else {
+//        confirmBtn.setEnabled(false);
+//        }
+//                //=============================================================================================================
+//
+//                //========================= Confirm button - backend ======================================================
+//                if(e.getSource() == confirmBtn) {
+//int response = JOptionPane.showConfirmDialog(this,  "Booking a ride - Confirm?", "Confirm Ride", JOptionPane.YES_NO_OPTION);
+//            if(response == JOptionPane.YES_OPTION) {
+//        confirmBtn.setBackground(Color.GREEN);
+//                confirmBtn.setText("Confirmed!");
+//                confirmBtn.setForeground(Color.BLACK);
+//                confirmBtn.setEnabled(false);
+//                if (response != JOptionPane.YES_OPTION){
+//        confirmBtn.setBackground(new Color(30, 136, 229));
+//        confirmBtn.setText("Confirm!");
+//                    confirmBtn.setForeground(Color.WHITE);
+//                }
+//                        }
+//                        else {
+//                        confirmBtn.setBackground(new Color(30, 136, 229));
+//        confirmBtn.setText("Confirm!");
+//                confirmBtn.setForeground(Color.WHITE);
+//            }
+//                    }
