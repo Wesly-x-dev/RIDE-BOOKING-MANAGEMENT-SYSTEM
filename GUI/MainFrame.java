@@ -1,11 +1,11 @@
 package GUI;
-import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.*;
+import javax.swing.border.Border;
 
 public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
@@ -64,7 +64,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         // =================== heading panel: logo, heading text etc ===================================
         headingPanel = new JPanel();
         headingPanel.setBounds(0,0,798, 110);
-        headingPanel.setBackground(new Color(30, 136, 229));
+        headingPanel.setBackground(new Color(36, 163, 70));
         headingPanel.setOpaque(true);
         headingPanel.setLayout(null);
 
