@@ -1,4 +1,4 @@
-package Passanger;
+package models;
 
 import javax.swing.*;
 import java.io.File;
