@@ -2,3 +2,14 @@
 to convert them into a required type files (name* = meaning we must write the name to proceed submission)
 
 2. Add a time area to add time of the pickup location
+
+theme choose , new logo better logo for app 
+
+
+4. Warm Coral
+
+Header: rgb(255, 107, 107)
+Accent: rgb(255, 209, 102)
+Confirm: rgb(6, 167, 125)
+Background: rgb(255, 248, 240)
+Borders: rgb(241, 216, 200)

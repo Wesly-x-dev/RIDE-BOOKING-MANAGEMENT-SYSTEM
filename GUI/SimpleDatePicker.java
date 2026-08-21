@@ -1,6 +1,6 @@
-import javax.swing.*;
 import java.awt.*;
 import java.util.Calendar;
+import javax.swing.*;
 
 public class SimpleDatePicker extends JFrame {
 

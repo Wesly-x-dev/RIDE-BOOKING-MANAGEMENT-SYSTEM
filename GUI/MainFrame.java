@@ -1,4 +1,3 @@
-package GUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -64,7 +63,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         // =================== heading panel: logo, heading text etc ===================================
         headingPanel = new JPanel();
         headingPanel.setBounds(0,0,798, 110);
-        headingPanel.setBackground(new Color(36, 163, 70));
+        headingPanel.setBackground(new Color(255, 107, 107));
         headingPanel.setOpaque(true);
         headingPanel.setLayout(null);
 
@@ -91,7 +90,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         // =================== Passenger Information Panel ==================================
         passangerDetailsPanel = new JPanel();
         passangerDetailsPanel.setBounds(0,110,350, 340);
-        passangerDetailsPanel.setBackground(new Color(225, 225, 225));
+        passangerDetailsPanel.setBackground(new Color(255, 248, 240));
         passangerDetailsPanel.setLayout(null);
 
         //========================== heading ==================================
@@ -183,7 +182,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         // =================== Ride Details panels==================================
         rideDetailsPanel = new JPanel();
         rideDetailsPanel.setBounds(0,452,350, 307);
-        rideDetailsPanel.setBackground(new Color(225, 225, 225));
+        rideDetailsPanel.setBackground(new Color(255, 248, 240));
         rideDetailsPanel.setLayout(null);
 
         //========================== ==================================
@@ -262,7 +261,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         // ===================  Booking Details panels ==================================
         bookRidePanel = new JPanel();
         bookRidePanel.setBounds(352,110,448, 650);
-        bookRidePanel.setBackground(new Color(225, 225, 225));
+        bookRidePanel.setBackground(new Color(255, 248, 240));
         bookRidePanel.setLayout(null);
 
         //============================================================
@@ -463,6 +462,11 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     //================= Action Listener ==================
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        //=============================== Passenger info logic ================================
+
+    
+
 
         //=============================== Vehicle image Selection ================================
         int selected = vehicleType.getSelectedIndex();
