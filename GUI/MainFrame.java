@@ -473,24 +473,28 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                 JOptionPane.showMessageDialog(this, "User name required!!");
                 confirmBtn.setEnabled(false);
                 termsAndCondCheckBox.setSelected(false);
+                return;
             }
              if(userPhnTextArea.getText().equals(""))
             {
                 JOptionPane.showMessageDialog(this, "Phone number required!!");
                 confirmBtn.setEnabled(false);
                 termsAndCondCheckBox.setSelected(false);
+                return;
             }
             if(userEmergencyPhnTextArea.getText().equals(""))
             {
                 JOptionPane.showMessageDialog(this, "Please enter an emergency contact");
                 confirmBtn.setEnabled(false);
                 termsAndCondCheckBox.setSelected(false);
+                return;
             }
-            if(!userMale.isSelected() || !userFemale.isSelected() || !userOther.isSelected())
+            if(!userMale.isSelected() && !userFemale.isSelected() && !userOther.isSelected())
             {
                 JOptionPane.showMessageDialog(this, "Must select a gender");
                 confirmBtn.setEnabled(false);
                 termsAndCondCheckBox.setSelected(false);
+                return;
             }
         }
     
