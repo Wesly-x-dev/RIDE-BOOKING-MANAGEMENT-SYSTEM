@@ -482,6 +482,17 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                 termsAndCondCheckBox.setSelected(false);
                 return;
             }
+
+            // phone number validator but kaj kortese na ektu check koirooo 
+            // if(!userPhnTextArea.getText().matches("//d+"))
+            // {
+            //     JOptionPane.showMessageDialog(this, "Valid Phone number required!!");
+            //     confirmBtn.setEnabled(false);
+            //     termsAndCondCheckBox.setSelected(false);
+            //     return;
+            // }
+            
+
             if(userEmergencyPhnTextArea.getText().equals(""))
             {
                 JOptionPane.showMessageDialog(this, "Please enter an emergency contact");
@@ -489,6 +500,16 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                 termsAndCondCheckBox.setSelected(false);
                 return;
             }
+            
+            // if(!userEmergencyPhnTextArea.getText().matches("//d+"))
+            // {
+            //     JOptionPane.showMessageDialog(this, "Please enter a valid emergency contact");
+            //     confirmBtn.setEnabled(false);
+            //     termsAndCondCheckBox.setSelected(false);
+            //     return;
+            // }
+
+
             if(!userMale.isSelected() && !userFemale.isSelected() && !userOther.isSelected())
             {
                 JOptionPane.showMessageDialog(this, "Must select a gender");
@@ -497,6 +518,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                 return;
             }
         }
+
     
 
         //=============================== Vehicle image Selection ================================
