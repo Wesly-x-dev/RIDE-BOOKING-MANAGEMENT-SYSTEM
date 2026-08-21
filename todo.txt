@@ -9,7 +9,8 @@ theme choose , new logo better logo for app
 4. Warm Coral
 
 Header: rgb(255, 107, 107)
+Header: rgb(255, 146, 146)
 Accent: rgb(255, 209, 102)
 Confirm: rgb(6, 167, 125)
-Background: rgb(255, 248, 240)
+Background: rgb(219, 189, 154)
 Borders: rgb(241, 216, 200)

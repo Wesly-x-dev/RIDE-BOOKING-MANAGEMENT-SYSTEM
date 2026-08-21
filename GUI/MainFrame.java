@@ -111,6 +111,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         userNameTextArea = new JTextField();
         userNameTextArea.setBounds(60, 110, 180, 30);
         userNameTextArea.setFont(labelFont);
+        userNameTextArea.addActionListener(this);
 
 
         //========================= LABEL: USER PHONE NUMBER ==================================
@@ -122,6 +123,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         userPhnTextArea = new JTextField();
         userPhnTextArea.setBounds(60, 180, 180, 30);
         userPhnTextArea.setFont(labelFont);
+        userPhnTextArea.addActionListener(this);
 
 
         //========================= LABEL: USER Emergency PHONE NUMBER ==================================
@@ -464,9 +466,34 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     public void actionPerformed(ActionEvent e) {
 
         //=============================== Passenger info logic ================================
-
+        if(e.getSource() == confirmBtn)
+        {
+            if(userNameTextArea.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(this, "User name required!!");
+                confirmBtn.setEnabled(false);
+                termsAndCondCheckBox.setSelected(false);
+            }
+             if(userPhnTextArea.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(this, "Phone number required!!");
+                confirmBtn.setEnabled(false);
+                termsAndCondCheckBox.setSelected(false);
+            }
+            if(userEmergencyPhnTextArea.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(this, "Please enter an emergency contact");
+                confirmBtn.setEnabled(false);
+                termsAndCondCheckBox.setSelected(false);
+            }
+            if(!userMale.isSelected() || !userFemale.isSelected() || !userOther.isSelected())
+            {
+                JOptionPane.showMessageDialog(this, "Must select a gender");
+                confirmBtn.setEnabled(false);
+                termsAndCondCheckBox.setSelected(false);
+            }
+        }
     
-
 
         //=============================== Vehicle image Selection ================================
         int selected = vehicleType.getSelectedIndex();
@@ -522,6 +549,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                 }
 
                 // reset confirm button + checkbox whenever validation fails
+
                 confirmBtn.setBackground(new Color(30, 136, 229));
                 confirmBtn.setText("Confirm!");
                 confirmBtn.setForeground(Color.WHITE);
