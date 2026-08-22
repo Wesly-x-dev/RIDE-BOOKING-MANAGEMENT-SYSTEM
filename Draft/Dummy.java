@@ -1,4 +1,4 @@
-package GUI;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,15 +32,16 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
     private ImageIcon bikeRideImg;
 
     //==================== Ride Booking Components ===========================
-    private JLabel bookRideHeadingLabel, pickupVenuelabel, dropVenuelabel,pickUPLoclabel, dropOffLoclabel;
-    private JLabel  rideTypeLabel, reqLabel, payViaLabel, paymentHeadinglabel, accountNumber;
+    private JLabel bookRideHeadingLabel, pickupVenuelabel, dropVenuelabel,pickUPLoclabel, dropOffLoclabel, bookTimeLabel;
+    private JLabel  rideTypeLabel, reqLabel, payViaLabel, paymentHeadinglabel, accountNumber, bookHourLabel, luggageLabel, babySeatLabel, wheelChairLabel;
 
+    private ImageIcon luggageImgIcon, wheelChairImageIcon, babySeatImgIcon;
     private JTextArea rideReciept;
     private JTextField pickupVenuetextArea, dropVenuetextArea, accountNumbertextArea;
-    private ButtonGroup radioRideTypeGroup;
-    private JRadioButton rideEco, ridePremium,payVBox1, payVBox2, payVBox3;
+    private ButtonGroup radioRideTypeGroup, radioRideAmPmGroup;
+    private JRadioButton rideEco, ridePremium,payVBox1, payVBox2, payVBox3, rideAm, ridePm;
     private JCheckBox cBox1, cBox2, cBox3, termsAndCondCheckBox;
-    private JComboBox choosePickLoc, chooseDropLoc;
+    private JComboBox choosePickLoc, chooseDropLoc, chooseHour, chooseMins;
     private JButton confirmBtn, exitProgram, anotherRideBtn, backToFormBtn;
 
     public Dummy(){
@@ -316,32 +317,88 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
         choosePickLoc = new JComboBox(loc);
         choosePickLoc.setBounds(220, 95, 180, 30);
         choosePickLoc.setFont(labelFont);
+        choosePickLoc.addActionListener(this);
 
         chooseDropLoc = new JComboBox(loc);
         chooseDropLoc.setBounds(220, 155, 180, 30);
         chooseDropLoc.setFont(labelFont);
+        chooseDropLoc.addActionListener(this);
+        
         //================================================================
+        //                   pick Date Time for the ride 
+        //================================================================
+        Integer hour[] = new Integer[12];
+        Integer mins[] = new Integer[]{00,15,30,45};
+        for (int i = 0; i < 12; i++) { hour[i] = i; }
+        //====================== Label TIME =================================
+        bookTimeLabel = new JLabel("Pick UP TIME: ");
+        bookTimeLabel.setFont(labelFont);
+        bookTimeLabel.setHorizontalAlignment(JLabel.LEFT);
+        bookTimeLabel.setBounds(5, 220, 240, 30);
+        bookRidePanel.add(bookTimeLabel);
 
+        bookHourLabel = new JLabel("Hour  :  mins");
+        bookHourLabel.setFont(labelFont);
+        bookHourLabel.setHorizontalAlignment(JLabel.LEFT);
+        bookHourLabel.setBounds(140, 190, 240, 30);
+        bookRidePanel.add(bookHourLabel);
+        //=======================================================
+        chooseHour = new JComboBox(hour);
+        chooseHour.setBounds(130, 220, 60, 30);
+        chooseHour.setFont(labelFont);
+        chooseHour.addActionListener(this);
+        //=======================================================
+        chooseMins = new JComboBox(mins);
+        chooseMins.setBounds(200, 220, 60, 30);
+        chooseMins.setFont(labelFont);
+        chooseMins.addActionListener(this);
+        //=======================================================
+        rideAm =  new JRadioButton("AM");
+        rideAm.setBounds(270, 220, 70, 30);
+        rideAm.setFont(labelFont);
+        bookRidePanel.add(rideAm);
+        //=======================================================
+        ridePm =  new JRadioButton("PM");
+        ridePm.setBounds(350, 220, 70, 30);
+        ridePm.setFont(labelFont);
+        bookRidePanel.add(ridePm);
+        //=======================================================
+        radioRideAmPmGroup = new ButtonGroup();
+        radioRideAmPmGroup.add(rideAm);
+        radioRideAmPmGroup.add(ridePm);
         //================================================================
-        reqLabel = new JLabel(" Common Special Requests: ");
-        reqLabel.setFont(labelFont);
+        reqLabel = new JLabel("Add-on: ");
+        reqLabel.setFont(subHeadingFont);
         reqLabel.setHorizontalAlignment(JLabel.CENTER);
-        reqLabel.setBounds(70, 330, 240, 30);
+        reqLabel.setBounds(70, 260, 240, 30);
         //=========================== CheckBox ===================
         cBox1 = new JCheckBox("Luggage Carrier");
-        cBox1.setBounds(120, 360, 150,30);//(x,y,width, height)
+        cBox1.setBounds(10, 410, 140,30);
         cBox1.setFont(labelFont);
 
-
         cBox2 = new JCheckBox("Child Seat");
-        cBox2.setBounds(120, 390, 120,30);//(x,y,width, height)
+        cBox2.setBounds(320, 410, 120,30);
         cBox2.setFont(labelFont);
 
         cBox3 = new JCheckBox("Wheel Chair");
-        cBox3.setBounds(120, 420, 130,30);//(x,y,width, height)
+        cBox3.setBounds(170, 410, 130,30);
         cBox3.setFont(labelFont);
 
+        //=================== Add on images ==============================
+        luggageImgIcon = new ImageIcon("images//addOn//luggage.png");
+        luggageLabel = new JLabel(luggageImgIcon);
+        luggageLabel.setBounds(0, 280, 160, 160);
+        bookRidePanel.add(luggageLabel);
 
+        wheelChairImageIcon = new ImageIcon("images//addOn//wheelChair.png");
+        wheelChairLabel = new JLabel(wheelChairImageIcon);
+        wheelChairLabel.setBounds(150, 280, 160, 160);
+        bookRidePanel.add(wheelChairLabel);
+        
+        babySeatImgIcon = new ImageIcon("images//addOn//babySeat.png");
+        babySeatLabel = new JLabel(babySeatImgIcon);
+        babySeatLabel.setBounds(290, 280, 160, 160);
+        bookRidePanel.add(babySeatLabel);
         //=====================payment Heading ============================
 //        paymentHeadinglabel = new JLabel("Payment");
 //        paymentHeadinglabel.setFont(subHeadingFont);
@@ -430,6 +487,9 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
         bookRidePanel.add(choosePickLoc);
         bookRidePanel.add(dropOffLoclabel);
         bookRidePanel.add(chooseDropLoc);
+
+        bookRidePanel.add(chooseHour);
+        bookRidePanel.add(chooseMins);
 
         bookRidePanel.add(bookRideHeadingLabel);
         bookRidePanel.add(reqLabel);
@@ -648,10 +708,9 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
                 anotherRideBtn.setEnabled(false);
                 termsAndCondCheckBox.setSelected(false);
             }
-            else{
+            else if (!pickUplocString.equals("") || !dropOffLocString.equals("") || !pickUplocString.equals(dropOffLocString)|| selected != 0){
                 termsAndCondCheckBox.setEnabled(true);
             }
-
         }
             //=======================================================================================
 

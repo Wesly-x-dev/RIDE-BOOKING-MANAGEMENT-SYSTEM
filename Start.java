@@ -3,8 +3,8 @@ import GUI.*;
 public class Start{
     public static void main(String[] args){
 
-        // new MainFrame().setVisible(true);
-        new Dummy().setVisible(true);
+        new MainFrame().setVisible(true);
+        // new Dummy().setVisible(true);
 
     }
 }
