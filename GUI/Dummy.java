@@ -44,7 +44,7 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
     private JButton confirmBtn, exitProgram, anotherRideBtn, backToFormBtn;
 
     public Dummy(){
-        super.setTitle("Thapao!");
+        super.setTitle("Shohoz Ride - Booking ride made easy!");
         super.setBounds(350, 10, 800, 800);
         super.setResizable(false);
         super.setLayout(null);
@@ -326,19 +326,19 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
         reqLabel = new JLabel(" Common Special Requests: ");
         reqLabel.setFont(labelFont);
         reqLabel.setHorizontalAlignment(JLabel.CENTER);
-        reqLabel.setBounds(70, 190, 240, 30);
+        reqLabel.setBounds(70, 330, 240, 30);
         //=========================== CheckBox ===================
         cBox1 = new JCheckBox("Luggage Carrier");
-        cBox1.setBounds(20, 220, 150,30);//(x,y,width, height)
+        cBox1.setBounds(120, 360, 150,30);//(x,y,width, height)
         cBox1.setFont(labelFont);
 
 
         cBox2 = new JCheckBox("Child Seat");
-        cBox2.setBounds(170, 220, 120,30);//(x,y,width, height)
+        cBox2.setBounds(120, 390, 120,30);//(x,y,width, height)
         cBox2.setFont(labelFont);
 
         cBox3 = new JCheckBox("Wheel Chair");
-        cBox3.setBounds(290, 220, 130,30);//(x,y,width, height)
+        cBox3.setBounds(120, 420, 130,30);//(x,y,width, height)
         cBox3.setFont(labelFont);
 
 
@@ -352,20 +352,20 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
 
 
         payViaLabel = new JLabel("Pay Via: ");
-        payViaLabel.setBounds(20, 260, 80, 30);
+        payViaLabel.setBounds(20, 465, 80, 30);
         payViaLabel.setFont(labelFont);
         payViaLabel.setForeground(labelColor);
         //========================== Choose gender ==================================
         payVBox1 =  new JRadioButton("Bkash");
-        payVBox1.setBounds(100, 260, 80, 30);
+        payVBox1.setBounds(100, 465, 80, 30);
         payVBox1.setFont(labelFont);
 
         payVBox2 =  new JRadioButton("Nagad");
-        payVBox2.setBounds(180, 260, 80, 30);
+        payVBox2.setBounds(180, 465, 80, 30);
         payVBox2.setFont(labelFont);
 
         payVBox3 =  new JRadioButton("Credit/Debit");
-        payVBox3.setBounds(260, 260, 120, 30);
+        payVBox3.setBounds(260, 465, 120, 30);
         payVBox3.setFont(labelFont);
 
         radioGenderGroup = new ButtonGroup();
@@ -375,26 +375,26 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
 
         //===================== Card Phone number for payment ============
         accountNumber = new JLabel("Account No: ");
-        accountNumber.setBounds(20, 300, 105, 30);
+        accountNumber.setBounds(20, 505, 105, 30);
         accountNumber.setFont(labelFont);
         accountNumber.setForeground(labelColor);
 
         //========================= TextArea: Pickup Location ==================================
         accountNumbertextArea = new JTextField();
-        accountNumbertextArea.setBounds(135, 300, 180, 30);
+        accountNumbertextArea.setBounds(135, 505, 180, 30);
         accountNumbertextArea.setFont(labelFont);
 
 
         //======================== Checkbox: Terms and Condition ====================
         termsAndCondCheckBox = new JCheckBox("I accept the terms and conditions.");
-        termsAndCondCheckBox.setBounds(80, 340, 250,20);//(x,y,width, height)
+        termsAndCondCheckBox.setBounds(80, 555, 250,20);//(x,y,width, height)
         termsAndCondCheckBox.setFont(new Font("MV Boli", Font.BOLD, 12));
         termsAndCondCheckBox.setEnabled(false);
         termsAndCondCheckBox.addActionListener(this);
 
         //========================== Confirm Button ======================
         confirmBtn = new JButton("Confirm");
-        confirmBtn.setBounds(20, 380, 120, 30);
+        confirmBtn.setBounds(80, 595, 120, 30);
         confirmBtn.setFont(labelFont);
         confirmBtn.setForeground(Color.WHITE);
         confirmBtn.setBackground(new Color(30, 136, 229));
@@ -403,7 +403,7 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
         confirmBtn.setEnabled(false);
         //========================== Exit Button ======================
         exitProgram = new JButton("Exit");
-        exitProgram.setBounds(160, 380, 120, 30);
+        exitProgram.setBounds(210, 595, 120, 30);
         exitProgram.setFont(labelFont);
         exitProgram.setForeground(Color.WHITE);
         exitProgram.setBackground(new Color(229, 30, 37));
@@ -499,62 +499,6 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
 
     }
 
-
-    // //================= Receipt builder ==================
-    // private String buildReceipt() {
-    //     String gender = userMale.isSelected() ? "Male"
-    //             : userFemale.isSelected() ? "Female"
-    //             : userOther.isSelected() ? "Others" : "N/A";
-
-    //     String rideType = rideEco.isSelected() ? "Economy"
-    //             : ridePremium.isSelected() ? "Premium" : "N/A";
-
-    //     String payMethod = payVBox1.isSelected() ? "Bkash"
-    //             : payVBox2.isSelected() ? "Nagad"
-    //             : payVBox3.isSelected() ? "Credit/Debit" : "N/A";
-
-    //     StringBuilder sb = new StringBuilder();
-    //     sb.append("========== RIDE BOOKING CONFIRMED ==========\n\n");
-
-    //     sb.append("Passenger Information\n");
-    //     sb.append("----------------------\n");
-    //     sb.append("Name: ").append(userNameTextArea.getText()).append("\n");
-    //     sb.append("Phone: ").append(userPhnTextArea.getText()).append("\n");
-    //     sb.append("Emergency Contact: ").append(userEmergencyPhnTextArea.getText()).append("\n");
-    //     sb.append("Gender: ").append(gender).append("\n\n");
-
-    //     sb.append("Vehicle Information\n");
-    //     sb.append("--------------------\n");
-    //     sb.append("Vehicle: ").append(vehicleType.getSelectedItem().toString()).append("\n");
-    //     sb.append("Ride Type: ").append(rideType).append("\n");
-    //     sb.append("A/C: ").append(acVehicleCheck.isSelected() ? "Yes" : "No").append("\n");
-    //     sb.append("Music: ").append(musicVehicleCheck.isSelected() ? "Yes" : "No").append("\n\n");
-
-    //     sb.append("Ride Details\n");
-    //     sb.append("-------------\n");
-    //     sb.append("Pickup Venue: ").append(pickupVenuetextArea.getText()).append("\n");
-    //     sb.append("Pickup Location: ").append(choosePickLoc.getSelectedItem().toString()).append("\n");
-    //     sb.append("Drop Off Venue: ").append(dropVenuetextArea.getText()).append("\n");
-    //     sb.append("Drop Off Location: ").append(chooseDropLoc.getSelectedItem().toString()).append("\n\n");
-
-    //     sb.append("Special Requests\n");
-    //     sb.append("------------------\n");
-    //     boolean anyRequest = false;
-    //     if (cBox1.isSelected()) { sb.append("- Luggage Carrier\n"); anyRequest = true; }
-    //     if (cBox2.isSelected()) { sb.append("- Child Seat\n"); anyRequest = true; }
-    //     if (cBox3.isSelected()) { sb.append("- Wheel Chair\n"); anyRequest = true; }
-    //     if (!anyRequest) { sb.append("None\n"); }
-    //     sb.append("\n");
-
-    //     sb.append("Payment\n");
-    //     sb.append("--------\n");
-    //     sb.append("Pay Via: ").append(payMethod).append("\n");
-    //     sb.append("Account No: ").append(accountNumbertextArea.getText()).append("\n\n");
-
-    //     sb.append("Thank you for riding with ShohozRide!\n");
-    //     return sb.toString();
-    // }
-
     //================= Action Listener ==================
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -620,49 +564,66 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
         int selected = vehicleType.getSelectedIndex();
         if (selected == 0) {
             carDetails = new ImageIcon("images//rideDetails.png");
+            //====================================
             acVehicleCheck.setEnabled(false);
             musicVehicleCheck.setEnabled(false);
+            //====================================
             acVehicleCheck.setSelected(false);
             musicVehicleCheck.setSelected(false);
+            //====================================
             termsAndCondCheckBox.setEnabled(false);
 
         } else if (selected == 1) {
             carDetails = new ImageIcon("images//bike.png");
             carLabel.setBounds(70, 0, 200, 200);
+
             acVehicleCheck.setEnabled(false);
             musicVehicleCheck.setEnabled(false);
-            termsAndCondCheckBox.setEnabled(true);
+
+            acVehicleCheck.setSelected(false);
+            musicVehicleCheck.setSelected(false);
+            // termsAndCondCheckBox.setEnabled(true);
+
         } else if (selected == 2) {
             carDetails = new ImageIcon("images//cng.png");
             carLabel.setBounds(70, 0, 200, 200);
+
             acVehicleCheck.setEnabled(false);
             musicVehicleCheck.setEnabled(false);
-            termsAndCondCheckBox.setEnabled(true);
+
+            acVehicleCheck.setSelected(false);
+            musicVehicleCheck.setSelected(false);
+            // termsAndCondCheckBox.setEnabled(true);
+
         } else if (selected == 3) {
             carDetails = new ImageIcon("images//SUV.png");
+
             acVehicleCheck.setEnabled(true);
             musicVehicleCheck.setEnabled(true);
-            termsAndCondCheckBox.setEnabled(true);
+            
+            // termsAndCondCheckBox.setEnabled(true);
         } else if (selected == 4) {
             carDetails = new ImageIcon("images//microbus.png");
             acVehicleCheck.setEnabled(true);
             musicVehicleCheck.setEnabled(true);// check filename, was "truck.png"
-            termsAndCondCheckBox.setEnabled(true);
+            
+            // termsAndCondCheckBox.setEnabled(true);
         } else if (selected == 5) {
             carDetails = new ImageIcon("images//hiace.png");
             acVehicleCheck.setEnabled(true);
             musicVehicleCheck.setEnabled(true);// check filename, was "truck.png" too
-            termsAndCondCheckBox.setEnabled(true);
+            
+            // termsAndCondCheckBox.setEnabled(true);
         }
         carLabel.setIcon(carDetails);
 
         // ================================ User Control - Location ==============================
         boolean locationValid = true;
-        if (e.getSource() == choosePickLoc || e.getSource() == chooseDropLoc || e.getSource() == confirmBtn) {
+        if (e.getSource() == choosePickLoc || e.getSource() == chooseDropLoc || e.getSource() == confirmBtn ) {
             String pickUplocString = choosePickLoc.getSelectedItem().toString();
             String dropOffLocString = chooseDropLoc.getSelectedItem().toString();
 
-            if (pickUplocString.equals("") || dropOffLocString.equals("") || pickUplocString.equals(dropOffLocString)) {
+            if (pickUplocString.equals("") || dropOffLocString.equals("") || pickUplocString.equals(dropOffLocString)|| selected == 0) {
                 locationValid = false;
 
                 if (pickUplocString.equals("") && dropOffLocString.equals("")) {
@@ -687,6 +648,10 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
                 anotherRideBtn.setEnabled(false);
                 termsAndCondCheckBox.setSelected(false);
             }
+            else{
+                termsAndCondCheckBox.setEnabled(true);
+            }
+
         }
             //=======================================================================================
 
