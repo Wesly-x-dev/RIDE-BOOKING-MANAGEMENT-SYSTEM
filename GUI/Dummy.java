@@ -622,6 +622,8 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
             carDetails = new ImageIcon("images//rideDetails.png");
             acVehicleCheck.setEnabled(false);
             musicVehicleCheck.setEnabled(false);
+            acVehicleCheck.setSelected(false);
+            musicVehicleCheck.setSelected(false);
             termsAndCondCheckBox.setEnabled(false);
 
         } else if (selected == 1) {
@@ -744,8 +746,6 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
         }
         //=======================================================================================
         //========================= Book Another Ride button - backend ========================
-        // Passenger info is intentionally left untouched so it stays auto-filled
-        // from the previous booking. Only ride/vehicle/booking fields are cleared.
         if(e.getSource() == anotherRideBtn) {
             vehicleType.setSelectedIndex(0);
             acVehicleCheck.setSelected(false);
@@ -767,7 +767,7 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
             cBox2.setSelected(false);
             cBox3.setSelected(false);
 
-            radioGenderGroup.clearSelection(); // this group currently holds the payment radios
+            radioGenderGroup.clearSelection(); 
             accountNumbertextArea.setText("");
 
             termsAndCondCheckBox.setSelected(false);
