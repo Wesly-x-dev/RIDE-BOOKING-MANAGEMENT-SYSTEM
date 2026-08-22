@@ -686,18 +686,24 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             if (pickUplocString.equals("") || dropOffLocString.equals("") || pickUplocString.equals(dropOffLocString)|| selected == 0) {
                 locationValid = false;
 
-                if (pickUplocString.equals("") && dropOffLocString.equals("")) {
+                if(e.getSource() == confirmBtn)
+                {
+
+                     if (pickUplocString.equals("") && dropOffLocString.equals("")) {
                     JOptionPane.showMessageDialog(this, "Location Cannot be empty! Please fill them.");
-                }
+                    }
                 else if (pickUplocString.equals("")) {
                     JOptionPane.showMessageDialog(this, "Please select Pickup Location!");
-                }
+                    }
                 else if (pickUplocString.equals(dropOffLocString)) {
                     JOptionPane.showMessageDialog(this, "Pickup location cannot be same as drop off location");
-                }
+                    }
                 else {
                     JOptionPane.showMessageDialog(this, "Please select Drop off Location!");
+                    }
+
                 }
+               
 
                 // reset confirm button + checkbox whenever validation fails
 
@@ -708,7 +714,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                 anotherRideBtn.setEnabled(false);
                 termsAndCondCheckBox.setSelected(false);
             }
-            else if (!pickUplocString.equals("") || !dropOffLocString.equals("") || !pickUplocString.equals(dropOffLocString)|| selected != 0){
+            else {
                 termsAndCondCheckBox.setEnabled(true);
             }
         }
