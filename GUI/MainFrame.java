@@ -1,4 +1,6 @@
 package GUI;
+
+import RideBookingManagement.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,6 +8,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.*;
 import javax.swing.border.Border;
+import java.io.*;
 
 public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
@@ -33,7 +36,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
     //==================== Ride Booking Components ===========================
     private JLabel bookRideHeadingLabel, pickupVenuelabel, dropVenuelabel,pickUPLoclabel, dropOffLoclabel, bookTimeLabel;
-    private JLabel  rideTypeLabel, reqLabel, payViaLabel, paymentHeadinglabel, accountNumber, bookHourLabel, luggageLabel, babySeatLabel, wheelChairLabel;
+    private JLabel  rideTypeLabel, reqLabel, payViaLabel, accountNumber, bookHourLabel, luggageLabel, babySeatLabel, wheelChairLabel;
 
     private ImageIcon luggageImgIcon, wheelChairImageIcon, babySeatImgIcon;
     private JTextArea rideReciept;
@@ -87,8 +90,8 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         headingPanel.add(tagLineLabel);
         super.add(headingPanel);
 
-        //***************************************************************************
-        //###########################################################################
+        //**********************************************************************************
+        //##################################################################################
         // =================== Passenger Information Panel ==================================
         passangerDetailsPanel = new JPanel();
         passangerDetailsPanel.setBounds(0,110,350, 340);
@@ -115,7 +118,6 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         userNameTextArea.setFont(labelFont);
         userNameTextArea.addActionListener(this);
 
-
         //========================= LABEL: USER PHONE NUMBER ==================================
         userPhnLabel = new JLabel("Phone: ");
         userPhnLabel.setBounds(60, 150, 150, 30);
@@ -126,7 +128,6 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         userPhnTextArea.setBounds(60, 180, 180, 30);
         userPhnTextArea.setFont(labelFont);
         userPhnTextArea.addActionListener(this);
-
 
         //========================= LABEL: USER Emergency PHONE NUMBER ==================================
         userEmergencyPhnLabel = new JLabel("Emergency Contact: ");
@@ -233,13 +234,11 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         radioRideTypeGroup.add(rideEco);
         radioRideTypeGroup.add(ridePremium);
 
-
         //===========================A/c and Music system ===================
         acVehicleCheck = new JCheckBox("A/C");
         acVehicleCheck.setBounds(190, 165, 100,30);//(x,y,width, height)
         acVehicleCheck.setFont(labelFont);
         acVehicleCheck.addActionListener(this);
-
 
         musicVehicleCheck = new JCheckBox("Music");
         musicVehicleCheck.setBounds(190, 195, 100,30);//(x,y,width, height)
@@ -257,8 +256,6 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         rideDetailsPanel.add(musicVehicleCheck);
         rideDetailsPanel.add(rideTypeLabel);
         super.add(rideDetailsPanel);
-
-
 
         //***************************************************************************
         //###########################################################################
@@ -399,14 +396,6 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         babySeatLabel = new JLabel(babySeatImgIcon);
         babySeatLabel.setBounds(290, 280, 160, 160);
         bookRidePanel.add(babySeatLabel);
-        //=====================payment Heading ============================
-//        paymentHeadinglabel = new JLabel("Payment");
-//        paymentHeadinglabel.setFont(subHeadingFont);
-//        paymentHeadinglabel.setHorizontalAlignment(JLabel.CENTER);
-//        paymentHeadinglabel.setForeground(labelColor);
-//        paymentHeadinglabel.setBorder(border);
-//        paymentHeadinglabel.setBounds(90,400, 180, 30);
-
 
         payViaLabel = new JLabel("Pay Via: ");
         payViaLabel.setBounds(20, 465, 80, 30);
@@ -511,7 +500,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         bookRidePanel.add(exitProgram);
         super.add(bookRidePanel);
 
-        //***************************************************************************
+        //***********************************************************************************
         //###########################################################################
         // =================== Confirmation / Receipt Panel ==================================
         confirmationPanel = new JPanel();
@@ -642,7 +631,6 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
             acVehicleCheck.setSelected(false);
             musicVehicleCheck.setSelected(false);
-            // termsAndCondCheckBox.setEnabled(true);
 
         } else if (selected == 2) {
             carDetails = new ImageIcon("images//cng.png");
@@ -653,27 +641,20 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
             acVehicleCheck.setSelected(false);
             musicVehicleCheck.setSelected(false);
-            // termsAndCondCheckBox.setEnabled(true);
-
         } else if (selected == 3) {
             carDetails = new ImageIcon("images//SUV.png");
-
             acVehicleCheck.setEnabled(true);
             musicVehicleCheck.setEnabled(true);
-            
-            // termsAndCondCheckBox.setEnabled(true);
         } else if (selected == 4) {
             carDetails = new ImageIcon("images//microbus.png");
             acVehicleCheck.setEnabled(true);
-            musicVehicleCheck.setEnabled(true);// check filename, was "truck.png"
+            musicVehicleCheck.setEnabled(true);
             
             // termsAndCondCheckBox.setEnabled(true);
         } else if (selected == 5) {
             carDetails = new ImageIcon("images//hiace.png");
             acVehicleCheck.setEnabled(true);
-            musicVehicleCheck.setEnabled(true);// check filename, was "truck.png" too
-            
-            // termsAndCondCheckBox.setEnabled(true);
+            musicVehicleCheck.setEnabled(true);
         }
         carLabel.setIcon(carDetails);
 
@@ -766,6 +747,29 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             }
 
         }
+        
+    //===========================================================================================
+                //User Data insert to text file
+    //=======================================================================================
+        if(e.getSource() == confirmBtn){
+            String  name, phone, emergencyContact;
+            name = userName.getText();
+            phone = userPhnTextArea.getText();
+            emergencyContact = userEmergencyPhnTextArea.getText();
+            if(name.isEmpty() || phone.isEmpty() || emergencyContact.isEmpty())
+			{
+				JOptionPane.showMessageDialog(this,"Please fill up all information!");
+			}
+			else 
+			{
+				Customer obj1 = new Customer(name, phone, emergencyContact);
+				obj1.insertInfo();
+				JOptionPane.showMessageDialog(this,"Information saved!");
+				display();
+			}
+        }
+    
+
     //=======================================================================================
         //========================= Back button (from confirmation panel) - backend ===========
         if(e.getSource() == backToFormBtn) {
@@ -774,7 +778,8 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             rideDetailsPanel.setVisible(true);
             bookRidePanel.setVisible(true);
         }
-        //=======================================================================================
+
+
         //========================= Book Another Ride button - backend ========================
         if(e.getSource() == anotherRideBtn) {
             vehicleType.setSelectedIndex(0);
@@ -852,4 +857,24 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     }
     //==============================================
 
+
+private void display() {
+        try {
+            File file = new File("./Data/usersInfo.txt");
+            if (file.exists()) {
+				FileReader fr = new FileReader(file); //reads one character at a time
+                BufferedReader br = new BufferedReader(fr); //reads one line at a time
+                String line;
+                while ((line = br.readLine()) != null) {
+                    rideReciept.append(line + "\n");
+                }
+                br.close();
+            }
+        }
+		catch(IOException ioe) 
+		{
+			ioe.printStackTrace();
+			JOptionPane.showMessageDialog(null,"Error!");
+		}
+    }
 }
