@@ -9,45 +9,49 @@ import java.awt.event.MouseListener;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.io.*;
+import java.nio.file.attribute.UserDefinedFileAttributeView;
 
 public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
-    //======================= include panels here ========================
+    // ======================= include panels here ========================
     private JPanel headingPanel, passangerDetailsPanel, rideDetailsPanel, bookRidePanel, confirmationPanel;
 
-    //======================== include components used in the full project =======================
+    // ======================== include components used in the full project
+    // =======================
     private ImageIcon logo, carDetails;
-    private  JLabel logoLabel, headingTextlabel, tagLineLabel;
+    private JLabel logoLabel, headingTextlabel, tagLineLabel;
 
-    private  Font headingFont, subHeadingFont, labelFont;
+    private Font headingFont, subHeadingFont, labelFont;
     private Color labelColor;
 
     // ==================== Passangers Panel All components ===============
-    private  JLabel  userName, paassangerSubHeading, userPhnLabel, userEmergencyPhnLabel, userGender;
+    private JLabel userName, paassangerSubHeading, userPhnLabel, userEmergencyPhnLabel, userGender;
     private JTextField userNameTextArea, userPhnTextArea, userEmergencyPhnTextArea;
-    private JRadioButton userMale, userFemale,userOther;
+    private JRadioButton userMale, userFemale, userOther;
     private ButtonGroup radioGenderGroup;
 
     // ==================== Ride/vehicle panel All components ===============
-    private  JLabel rideSubHeading,carLabel, vehicleTypeLabel;
+    private JLabel rideSubHeading, carLabel, vehicleTypeLabel;
     private JComboBox vehicleType;
     private JCheckBox musicVehicleCheck, acVehicleCheck;
     private ImageIcon bikeRideImg;
 
-    //==================== Ride Booking Components ===========================
-    private JLabel bookRideHeadingLabel, pickupVenuelabel, dropVenuelabel,pickUPLoclabel, dropOffLoclabel, bookTimeLabel;
-    private JLabel  rideTypeLabel, reqLabel, payViaLabel, accountNumber, bookHourLabel, luggageLabel, babySeatLabel, wheelChairLabel;
+    // ==================== Ride Booking Components ===========================
+    private JLabel bookRideHeadingLabel, pickupVenuelabel, dropVenuelabel, pickUPLoclabel, dropOffLoclabel,
+            bookTimeLabel;
+    private JLabel rideTypeLabel, reqLabel, payViaLabel, accountNumber, bookHourLabel, luggageLabel, babySeatLabel,
+            wheelChairLabel;
 
     private ImageIcon luggageImgIcon, wheelChairImageIcon, babySeatImgIcon;
     private JTextArea rideReciept;
     private JTextField pickupVenuetextArea, dropVenuetextArea, accountNumbertextArea;
     private ButtonGroup radioRideTypeGroup, radioRideAmPmGroup;
-    private JRadioButton rideEco, ridePremium,payVBox1, payVBox2, payVBox3, rideAm, ridePm;
+    private JRadioButton rideEco, ridePremium, payVBox1, payVBox2, payVBox3, rideAm, ridePm;
     private JCheckBox cBox1, cBox2, cBox3, termsAndCondCheckBox;
     private JComboBox choosePickLoc, chooseDropLoc, chooseHour, chooseMins;
     private JButton confirmBtn, exitProgram, anotherRideBtn, backToFormBtn;
 
-    public MainFrame(){
+    public MainFrame() {
         super.setTitle("Shohoz Ride - Booking ride made easy!");
         super.setBounds(350, 10, 800, 800);
         super.setResizable(false);
@@ -57,7 +61,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         logo = new ImageIcon("images//logo.png");
 
         super.setIconImage(logo.getImage());
-        //=================== Fonts and Colors ==========================
+        // =================== Fonts and Colors ==========================
         headingFont = new Font("MV Boli", Font.BOLD, 30);
         subHeadingFont = new Font("MV Boli", Font.BOLD, 20);
         labelFont = new Font("MV Boli", Font.BOLD, 15);
@@ -65,15 +69,16 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         labelColor = new Color(33, 33, 33);
         Border border = BorderFactory.createDashedBorder(Color.BLACK, 2, 2, 2, true);
 
-        // =================== heading panel: logo, heading text etc ===================================
+        // =================== heading panel: logo, heading text etc
+        // ===================================
         headingPanel = new JPanel();
-        headingPanel.setBounds(0,0,798, 110);
+        headingPanel.setBounds(0, 0, 798, 110);
         headingPanel.setBackground(new Color(255, 107, 107));
         headingPanel.setOpaque(true);
         headingPanel.setLayout(null);
 
         logoLabel = new JLabel(logo);
-        logoLabel.setBounds(5,5,100,100);
+        logoLabel.setBounds(5, 5, 100, 100);
 
         headingTextlabel = new JLabel("ShohozRide - Shohoz Ride, Shohoz Life");
         headingTextlabel.setFont(headingFont);
@@ -90,72 +95,79 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         headingPanel.add(tagLineLabel);
         super.add(headingPanel);
 
-        //**********************************************************************************
-        //##################################################################################
-        // =================== Passenger Information Panel ==================================
+        // **********************************************************************************
+        // ##################################################################################
+        // =================== Passenger Information Panel
+        // ==================================
         passangerDetailsPanel = new JPanel();
-        passangerDetailsPanel.setBounds(0,110,350, 340);
+        passangerDetailsPanel.setBounds(0, 110, 350, 340);
         passangerDetailsPanel.setBackground(new Color(255, 248, 240));
         passangerDetailsPanel.setLayout(null);
 
-        //========================== heading ==================================
+        // ========================== heading ==================================
         paassangerSubHeading = new JLabel("Passenger Information");
         paassangerSubHeading.setBorder(border);
         paassangerSubHeading.setFont(subHeadingFont);
         paassangerSubHeading.setForeground(labelColor);
         paassangerSubHeading.setHorizontalAlignment(JLabel.CENTER);
-        paassangerSubHeading.setBounds(60,30, 250, 30);
+        paassangerSubHeading.setBounds(60, 30, 250, 30);
 
-        //============================================================================
-        //========================= LABEL: YOUR NAME ==================================
+        // ============================================================================
+        // ========================= LABEL: YOUR NAME ==================================
         userName = new JLabel("Full Name: ");
         userName.setBounds(60, 80, 150, 30);
         userName.setFont(labelFont);
         userName.setForeground(labelColor);
-        //========================= TextArea: YOUR NAME ==================================
+        // ========================= TextArea: YOUR NAME
+        // ==================================
         userNameTextArea = new JTextField();
         userNameTextArea.setBounds(60, 110, 180, 30);
         userNameTextArea.setFont(labelFont);
         userNameTextArea.addActionListener(this);
 
-        //========================= LABEL: USER PHONE NUMBER ==================================
+        // ========================= LABEL: USER PHONE NUMBER
+        // ==================================
         userPhnLabel = new JLabel("Phone: ");
         userPhnLabel.setBounds(60, 150, 150, 30);
         userPhnLabel.setFont(labelFont);
         userPhnLabel.setForeground(labelColor);
-        //========================= TextArea: USER PHONE NUMBER =================================
+        // ========================= TextArea: USER PHONE NUMBER
+        // =================================
         userPhnTextArea = new JTextField();
         userPhnTextArea.setBounds(60, 180, 180, 30);
         userPhnTextArea.setFont(labelFont);
         userPhnTextArea.addActionListener(this);
 
-        //========================= LABEL: USER Emergency PHONE NUMBER ==================================
+        // ========================= LABEL: USER Emergency PHONE NUMBER
+        // ==================================
         userEmergencyPhnLabel = new JLabel("Emergency Contact: ");
         userEmergencyPhnLabel.setBounds(60, 220, 170, 30);
         userEmergencyPhnLabel.setFont(labelFont);
         userEmergencyPhnLabel.setForeground(labelColor);
-        //========================= TextArea:  USER Emergency PHONE NUMBER =================================
+        // ========================= TextArea: USER Emergency PHONE NUMBER
+        // =================================
         userEmergencyPhnTextArea = new JTextField();
         userEmergencyPhnTextArea.setBounds(60, 250, 180, 30);
         userEmergencyPhnTextArea.setFont(labelFont);
 
-        //========================= LABEL: Gender Label ==================================
+        // ========================= LABEL: Gender Label
+        // ==================================
         userGender = new JLabel("Gender: ");
         userGender.setBounds(30, 290, 80, 30);
         userGender.setFont(labelFont);
         userGender.setForeground(labelColor);
-        //========================== Choose gender ==================================
-        userMale =  new JRadioButton("Male");
+        // ========================== Choose gender ==================================
+        userMale = new JRadioButton("Male");
         userMale.setBounds(110, 290, 60, 30);
         userMale.setFont(labelFont);
         passangerDetailsPanel.add(userMale);
 
-        userFemale =  new JRadioButton("Female");
+        userFemale = new JRadioButton("Female");
         userFemale.setBounds(170, 290, 80, 30);
         userFemale.setFont(labelFont);
         passangerDetailsPanel.add(userFemale);
 
-        userOther =  new JRadioButton("Others");
+        userOther = new JRadioButton("Others");
         userOther.setBounds(250, 290, 80, 30);
         userOther.setFont(labelFont);
         passangerDetailsPanel.add(userOther);
@@ -164,7 +176,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         radioGenderGroup.add(userOther);
         radioGenderGroup.add(userMale);
         radioGenderGroup.add(userFemale);
-        //========================== ADDING ==================================
+        // ========================== ADDING ==================================
         passangerDetailsPanel.add(paassangerSubHeading);
 
         passangerDetailsPanel.add(userName);
@@ -178,54 +190,57 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
         passangerDetailsPanel.add(userGender);
         super.add(passangerDetailsPanel);
-        //***************************************************************************
-        //###########################################################################
+        // ***************************************************************************
+        // ###########################################################################
 
-
-        //***************************************************************************
-        //###########################################################################
+        // ***************************************************************************
+        // ###########################################################################
         // =================== Ride Details panels==================================
         rideDetailsPanel = new JPanel();
-        rideDetailsPanel.setBounds(0,452,350, 307);
+        rideDetailsPanel.setBounds(0, 452, 350, 307);
         rideDetailsPanel.setBackground(new Color(255, 248, 240));
         rideDetailsPanel.setLayout(null);
 
-        //========================== ==================================
+        // ========================== ==================================
         rideSubHeading = new JLabel("Vehicle Information");
         rideSubHeading.setFont(subHeadingFont);
         rideSubHeading.setHorizontalAlignment(JLabel.CENTER);
         rideSubHeading.setForeground(labelColor);
         rideSubHeading.setBorder(border);
-        rideSubHeading.setBounds(60,15, 250, 30);
+        rideSubHeading.setBounds(60, 15, 250, 30);
 
-        //========================== Image Added ==================================
+        // ========================== Image Added ==================================
         carDetails = new ImageIcon("images//rideDetails.png");
         carLabel = new JLabel(carDetails);
         carLabel.setBounds(70, 5, 200, 200);
 
-        //========================== vehicle type ComboBox LABEL ==================================
+        // ========================== vehicle type ComboBox LABEL
+        // ==================================
         vehicleTypeLabel = new JLabel("Choose Vehicle: ");
         vehicleTypeLabel.setBounds(20, 165, 150, 30);
         vehicleTypeLabel.setForeground(labelColor);
         vehicleTypeLabel.setFont(labelFont);
-        //========================== vehicle type ComboBox ==================================
-        String vehicle[] = new String[] {"", "Motorbike", "CNG", "SUV", "MicroBus", "Hi-ace"};
+        // ========================== vehicle type ComboBox
+        // ==================================
+        String vehicle[] = new String[] { "", "Motorbike", "CNG", "SUV", "MicroBus", "Hi-ace" };
         vehicleType = new JComboBox(vehicle);
         vehicleType.setBounds(20, 195, 150, 30);
         vehicleType.setFont(labelFont);
         vehicleType.addActionListener(this);
-        //========================= LABEL: Ride Type Label ==================================
+        // ========================= LABEL: Ride Type Label
+        // ==================================
         rideTypeLabel = new JLabel("Ride Type: ");
         rideTypeLabel.setBounds(20, 240, 100, 30);
         rideTypeLabel.setFont(labelFont);
         rideTypeLabel.setForeground(labelColor);
-        //========================== Choose Quality Class ==================================
-        rideEco =  new JRadioButton("Economy");
+        // ========================== Choose Quality Class
+        // ==================================
+        rideEco = new JRadioButton("Economy");
         rideEco.setBounds(120, 240, 100, 30);
         rideEco.setFont(labelFont);
         rideDetailsPanel.add(rideEco);
 
-        ridePremium =  new JRadioButton("Premium");
+        ridePremium = new JRadioButton("Premium");
         ridePremium.setBounds(240, 240, 100, 30);
         ridePremium.setFont(labelFont);
         rideDetailsPanel.add(ridePremium);
@@ -234,20 +249,20 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         radioRideTypeGroup.add(rideEco);
         radioRideTypeGroup.add(ridePremium);
 
-        //===========================A/c and Music system ===================
+        // ===========================A/c and Music system ===================
         acVehicleCheck = new JCheckBox("A/C");
-        acVehicleCheck.setBounds(190, 165, 100,30);//(x,y,width, height)
+        acVehicleCheck.setBounds(190, 165, 100, 30);// (x,y,width, height)
         acVehicleCheck.setFont(labelFont);
         acVehicleCheck.addActionListener(this);
 
         musicVehicleCheck = new JCheckBox("Music");
-        musicVehicleCheck.setBounds(190, 195, 100,30);//(x,y,width, height)
+        musicVehicleCheck.setBounds(190, 195, 100, 30);// (x,y,width, height)
         musicVehicleCheck.setFont(labelFont);
         musicVehicleCheck.addActionListener(this);
 
         acVehicleCheck.setEnabled(false);
         musicVehicleCheck.setEnabled(false);
-        //============================================================
+        // ============================================================
         rideDetailsPanel.add(carLabel);
         rideDetailsPanel.add(rideSubHeading);
         rideDetailsPanel.add(vehicleType);
@@ -257,59 +272,64 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         rideDetailsPanel.add(rideTypeLabel);
         super.add(rideDetailsPanel);
 
-        //***************************************************************************
-        //###########################################################################
-        // ===================  Booking Details panels ==================================
+        // ***************************************************************************
+        // ###########################################################################
+        // =================== Booking Details panels ==================================
         bookRidePanel = new JPanel();
-        bookRidePanel.setBounds(352,110,448, 650);
+        bookRidePanel.setBounds(352, 110, 448, 650);
         bookRidePanel.setBackground(new Color(255, 248, 240));
         bookRidePanel.setLayout(null);
 
-        //============================================================
+        // ============================================================
         bookRideHeadingLabel = new JLabel("Book a Ride!");
         bookRideHeadingLabel.setFont(subHeadingFont);
         bookRideHeadingLabel.setHorizontalAlignment(JLabel.CENTER);
         bookRideHeadingLabel.setForeground(labelColor);
         bookRideHeadingLabel.setBorder(border);
-        bookRideHeadingLabel.setBounds(90,30, 180, 30);
-        //============================================================
-        //========================= LABEL: PICKUP LOCATION ==================================
+        bookRideHeadingLabel.setBounds(90, 30, 180, 30);
+        // ============================================================
+        // ========================= LABEL: PICKUP LOCATION
+        // ==================================
         pickupVenuelabel = new JLabel("Pickup Venue: ");
         pickupVenuelabel.setBounds(20, 65, 150, 30);
         pickupVenuelabel.setFont(labelFont);
         pickupVenuelabel.setForeground(labelColor);
-        //========================= TextArea: Pickup Location ==================================
+        // ========================= TextArea: Pickup Location
+        // ==================================
         pickupVenuetextArea = new JTextField();
         pickupVenuetextArea.setBounds(20, 95, 180, 30);
         pickupVenuetextArea.setFont(labelFont);
 
-        //========================= LABEL: Drop Off LOCATION ==================================
+        // ========================= LABEL: Drop Off LOCATION
+        // ==================================
         dropVenuelabel = new JLabel("Drop Off venue: ");
         dropVenuelabel.setBounds(20, 125, 180, 30);
         dropVenuelabel.setFont(labelFont);
         dropVenuelabel.setForeground(labelColor);
-        //========================= TextArea: Pickup Location ==================================
+        // ========================= TextArea: Pickup Location
+        // ==================================
         dropVenuetextArea = new JTextField();
         dropVenuetextArea.setBounds(20, 155, 180, 30);
         dropVenuetextArea.setFont(labelFont);
 
-
-        //==========================Drop Down Menu: pickup Location======================================
+        // ==========================Drop Down Menu: pickup
+        // Location======================================
         pickUPLoclabel = new JLabel("Pick Up Location: ");
         pickUPLoclabel.setBounds(220, 65, 150, 30);
         pickUPLoclabel.setFont(labelFont);
         pickUPLoclabel.setForeground(labelColor);
 
-        //==========================Drop Down Menu: drop off Location======================================
+        // ==========================Drop Down Menu: drop off
+        // Location======================================
         dropOffLoclabel = new JLabel("Drop Off Location: ");
         dropOffLoclabel.setBounds(220, 125, 180, 30);
         dropOffLoclabel.setFont(labelFont);
         dropOffLoclabel.setForeground(labelColor);
-        //================================================================
+        // ================================================================
 
-        //========================== Location select ComboBox ==================================
-        String loc[] = new String[]
-                {"", "Savar", "Kuril", "Mirpur", "Gulshan", "Badda", "Dhanmondi", "Mohammadpur"};
+        // ========================== Location select ComboBox
+        // ==================================
+        String loc[] = new String[] { "", "Savar", "Kuril", "Mirpur", "Gulshan", "Badda", "Dhanmondi", "Mohammadpur" };
 
         choosePickLoc = new JComboBox(loc);
         choosePickLoc.setBounds(220, 95, 180, 30);
@@ -320,14 +340,16 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         chooseDropLoc.setBounds(220, 155, 180, 30);
         chooseDropLoc.setFont(labelFont);
         chooseDropLoc.addActionListener(this);
-        
-        //================================================================
-        //                   pick Date Time for the ride 
-        //================================================================
+
+        // ================================================================
+        // pick Date Time for the ride
+        // ================================================================
         Integer hour[] = new Integer[12];
-        Integer mins[] = new Integer[]{00,15,30,45};
-        for (int i = 0; i < 12; i++) { hour[i] = i; }
-        //====================== Label TIME =================================
+        Integer mins[] = new Integer[] { 00, 15, 30, 45 };
+        for (int i = 0; i < 12; i++) {
+            hour[i] = i;
+        }
+        // ====================== Label TIME =================================
         bookTimeLabel = new JLabel("Pick UP TIME: ");
         bookTimeLabel.setFont(labelFont);
         bookTimeLabel.setHorizontalAlignment(JLabel.LEFT);
@@ -339,49 +361,49 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         bookHourLabel.setHorizontalAlignment(JLabel.LEFT);
         bookHourLabel.setBounds(140, 190, 240, 30);
         bookRidePanel.add(bookHourLabel);
-        //=======================================================
+        // =======================================================
         chooseHour = new JComboBox(hour);
         chooseHour.setBounds(130, 220, 60, 30);
         chooseHour.setFont(labelFont);
         chooseHour.addActionListener(this);
-        //=======================================================
+        // =======================================================
         chooseMins = new JComboBox(mins);
         chooseMins.setBounds(200, 220, 60, 30);
         chooseMins.setFont(labelFont);
         chooseMins.addActionListener(this);
-        //=======================================================
-        rideAm =  new JRadioButton("AM");
+        // =======================================================
+        rideAm = new JRadioButton("AM");
         rideAm.setBounds(270, 220, 70, 30);
         rideAm.setFont(labelFont);
         bookRidePanel.add(rideAm);
-        //=======================================================
-        ridePm =  new JRadioButton("PM");
+        // =======================================================
+        ridePm = new JRadioButton("PM");
         ridePm.setBounds(350, 220, 70, 30);
         ridePm.setFont(labelFont);
         bookRidePanel.add(ridePm);
-        //=======================================================
+        // =======================================================
         radioRideAmPmGroup = new ButtonGroup();
         radioRideAmPmGroup.add(rideAm);
         radioRideAmPmGroup.add(ridePm);
-        //================================================================
+        // ================================================================
         reqLabel = new JLabel("Add-on: ");
         reqLabel.setFont(subHeadingFont);
         reqLabel.setHorizontalAlignment(JLabel.CENTER);
         reqLabel.setBounds(70, 260, 240, 30);
-        //=========================== CheckBox ===================
+        // =========================== CheckBox ===================
         cBox1 = new JCheckBox("Luggage Carrier");
-        cBox1.setBounds(10, 410, 140,30);
+        cBox1.setBounds(10, 410, 140, 30);
         cBox1.setFont(labelFont);
 
         cBox2 = new JCheckBox("Child Seat");
-        cBox2.setBounds(320, 410, 120,30);
+        cBox2.setBounds(320, 410, 120, 30);
         cBox2.setFont(labelFont);
 
         cBox3 = new JCheckBox("Wheel Chair");
-        cBox3.setBounds(170, 410, 130,30);
+        cBox3.setBounds(170, 410, 130, 30);
         cBox3.setFont(labelFont);
 
-        //=================== Add on images ==============================
+        // =================== Add on images ==============================
         luggageImgIcon = new ImageIcon("images//addOn//luggage.png");
         luggageLabel = new JLabel(luggageImgIcon);
         luggageLabel.setBounds(0, 280, 160, 160);
@@ -391,7 +413,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         wheelChairLabel = new JLabel(wheelChairImageIcon);
         wheelChairLabel.setBounds(150, 280, 160, 160);
         bookRidePanel.add(wheelChairLabel);
-        
+
         babySeatImgIcon = new ImageIcon("images//addOn//babySeat.png");
         babySeatLabel = new JLabel(babySeatImgIcon);
         babySeatLabel.setBounds(290, 280, 160, 160);
@@ -401,16 +423,16 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         payViaLabel.setBounds(20, 465, 80, 30);
         payViaLabel.setFont(labelFont);
         payViaLabel.setForeground(labelColor);
-        //========================== Choose gender ==================================
-        payVBox1 =  new JRadioButton("Bkash");
+        // ========================== Choose gender ==================================
+        payVBox1 = new JRadioButton("Bkash");
         payVBox1.setBounds(100, 465, 80, 30);
         payVBox1.setFont(labelFont);
 
-        payVBox2 =  new JRadioButton("Nagad");
+        payVBox2 = new JRadioButton("Nagad");
         payVBox2.setBounds(180, 465, 80, 30);
         payVBox2.setFont(labelFont);
 
-        payVBox3 =  new JRadioButton("Credit/Debit");
+        payVBox3 = new JRadioButton("Credit/Debit");
         payVBox3.setBounds(260, 465, 120, 30);
         payVBox3.setFont(labelFont);
 
@@ -419,26 +441,26 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         radioGenderGroup.add(payVBox2);
         radioGenderGroup.add(payVBox3);
 
-        //===================== Card Phone number for payment ============
+        // ===================== Card Phone number for payment ============
         accountNumber = new JLabel("Account No: ");
         accountNumber.setBounds(20, 505, 105, 30);
         accountNumber.setFont(labelFont);
         accountNumber.setForeground(labelColor);
 
-        //========================= TextArea: Pickup Location ==================================
+        // ========================= TextArea: Pickup Location
+        // ==================================
         accountNumbertextArea = new JTextField();
         accountNumbertextArea.setBounds(135, 505, 180, 30);
         accountNumbertextArea.setFont(labelFont);
 
-
-        //======================== Checkbox: Terms and Condition ====================
+        // ======================== Checkbox: Terms and Condition ====================
         termsAndCondCheckBox = new JCheckBox("I accept the terms and conditions.");
-        termsAndCondCheckBox.setBounds(80, 555, 250,20);//(x,y,width, height)
+        termsAndCondCheckBox.setBounds(80, 555, 250, 20);// (x,y,width, height)
         termsAndCondCheckBox.setFont(new Font("MV Boli", Font.BOLD, 12));
         termsAndCondCheckBox.setEnabled(false);
         termsAndCondCheckBox.addActionListener(this);
 
-        //========================== Confirm Button ======================
+        // ========================== Confirm Button ======================
         confirmBtn = new JButton("Confirm");
         confirmBtn.setBounds(80, 595, 120, 30);
         confirmBtn.setFont(labelFont);
@@ -447,7 +469,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         confirmBtn.setOpaque(true);
         confirmBtn.addActionListener(this);
         confirmBtn.setEnabled(false);
-        //========================== Exit Button ======================
+        // ========================== Exit Button ======================
         exitProgram = new JButton("Exit");
         exitProgram.setBounds(210, 595, 120, 30);
         exitProgram.setFont(labelFont);
@@ -456,7 +478,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         exitProgram.setOpaque(true);
         exitProgram.addActionListener(this);
 
-        //========================== Exit Button ======================
+        // ========================== Exit Button ======================
         anotherRideBtn = new JButton("Book more!");
         anotherRideBtn.setBounds(300, 380, 120, 30);
         anotherRideBtn.setFont(labelFont);
@@ -465,7 +487,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         anotherRideBtn.setOpaque(true);
         anotherRideBtn.addActionListener(this);
         anotherRideBtn.setEnabled(false);
-        //=====================Adding =====================================
+        // =====================Adding =====================================
         bookRidePanel.add(pickupVenuelabel);
         bookRidePanel.add(pickupVenuetextArea);
 
@@ -500,9 +522,10 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         bookRidePanel.add(exitProgram);
         super.add(bookRidePanel);
 
-        //***********************************************************************************
-        //###########################################################################
-        // =================== Confirmation / Receipt Panel ==================================
+        // ***********************************************************************************
+        // ###########################################################################
+        // =================== Confirmation / Receipt Panel
+        // ==================================
         confirmationPanel = new JPanel();
         confirmationPanel.setBounds(0, 110, 798, 650);
         confirmationPanel.setBackground(new Color(255, 248, 240));
@@ -515,7 +538,8 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         confirmationHeadingLabel.setBorder(border);
         confirmationHeadingLabel.setBounds(280, 20, 280, 30);
 
-        //========================== Full-size receipt text area ==================================
+        // ========================== Full-size receipt text area
+        // ==================================
         rideReciept = new JTextArea();
         rideReciept.setEditable(false);
         rideReciept.setLineWrap(true);
@@ -525,7 +549,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         JScrollPane scrollPane = new JScrollPane(rideReciept);
         scrollPane.setBounds(20, 65, 758, 500);
 
-        //========================== Back Button ======================
+        // ========================== Back Button ======================
         backToFormBtn = new JButton("Back");
         backToFormBtn.setBounds(230, 585, 150, 40);
         backToFormBtn.setFont(labelFont);
@@ -534,7 +558,8 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         backToFormBtn.setOpaque(true);
         backToFormBtn.addActionListener(this);
 
-        //========================== Reposition/relabel Book Another Ride Button ======================
+        // ========================== Reposition/relabel Book Another Ride Button
+        // ======================
         anotherRideBtn.setText("Book Another Ride!");
         anotherRideBtn.setBounds(420, 585, 210, 40);
 
@@ -548,22 +573,20 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
     }
 
-    //================= Action Listener ==================
+    // ================= Action Listener ==================
     @Override
     public void actionPerformed(ActionEvent e) {
-        
-        //=============================== Passenger info logic ================================
-        if(e.getSource() == confirmBtn)
-        {
-            if(userNameTextArea.getText().equals(""))
-            {
+
+        // =============================== Passenger info logic
+        // ================================
+        if (e.getSource() == confirmBtn) {
+            if (userNameTextArea.getText().equals("")) {
                 termsAndCondCheckBox.setSelected(false);
                 JOptionPane.showMessageDialog(this, "User name required!!");
                 confirmBtn.setEnabled(false);
                 return;
             }
-             if(userPhnTextArea.getText().equals(""))
-            {
+            if (userPhnTextArea.getText().equals("")) {
                 termsAndCondCheckBox.setSelected(false);
                 JOptionPane.showMessageDialog(this, "Phone number required!!");
                 confirmBtn.setEnabled(false);
@@ -571,35 +594,32 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                 return;
             }
 
-            // phone number validator but kaj kortese na ektu check koirooo 
+            // phone number validator but kaj kortese na ektu check koirooo
             // if(!userPhnTextArea.getText().matches("//d+"))
             // {
-            //     JOptionPane.showMessageDialog(this, "Valid Phone number required!!");
-            //     confirmBtn.setEnabled(false);
-            //     termsAndCondCheckBox.setSelected(false);
-            //     return;
+            // JOptionPane.showMessageDialog(this, "Valid Phone number required!!");
+            // confirmBtn.setEnabled(false);
+            // termsAndCondCheckBox.setSelected(false);
+            // return;
             // }
-            
 
-            if(userEmergencyPhnTextArea.getText().equals(""))
-            {
+            if (userEmergencyPhnTextArea.getText().equals("")) {
                 JOptionPane.showMessageDialog(this, "Please enter an emergency contact");
                 confirmBtn.setEnabled(false);
                 termsAndCondCheckBox.setSelected(false);
                 return;
             }
-            
+
             // if(!userEmergencyPhnTextArea.getText().matches("//d+"))
             // {
-            //     JOptionPane.showMessageDialog(this, "Please enter a valid emergency contact");
-            //     confirmBtn.setEnabled(false);
-            //     termsAndCondCheckBox.setSelected(false);
-            //     return;
+            // JOptionPane.showMessageDialog(this, "Please enter a valid emergency
+            // contact");
+            // confirmBtn.setEnabled(false);
+            // termsAndCondCheckBox.setSelected(false);
+            // return;
             // }
 
-
-            if(!userMale.isSelected() && !userFemale.isSelected() && !userOther.isSelected())
-            {
+            if (!userMale.isSelected() && !userFemale.isSelected() && !userOther.isSelected()) {
                 JOptionPane.showMessageDialog(this, "Must select a gender");
                 confirmBtn.setEnabled(false);
                 termsAndCondCheckBox.setSelected(false);
@@ -607,19 +627,18 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             }
         }
 
-    
-
-        //=============================== Vehicle image Selection ================================
+        // =============================== Vehicle image Selection
+        // ================================
         int selected = vehicleType.getSelectedIndex();
         if (selected == 0) {
             carDetails = new ImageIcon("images//rideDetails.png");
-            //====================================
+            // ====================================
             acVehicleCheck.setEnabled(false);
             musicVehicleCheck.setEnabled(false);
-            //====================================
+            // ====================================
             acVehicleCheck.setSelected(false);
             musicVehicleCheck.setSelected(false);
-            //====================================
+            // ====================================
             termsAndCondCheckBox.setEnabled(false);
 
         } else if (selected == 1) {
@@ -649,7 +668,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             carDetails = new ImageIcon("images//microbus.png");
             acVehicleCheck.setEnabled(true);
             musicVehicleCheck.setEnabled(true);
-            
+
             // termsAndCondCheckBox.setEnabled(true);
         } else if (selected == 5) {
             carDetails = new ImageIcon("images//hiace.png");
@@ -658,33 +677,30 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         }
         carLabel.setIcon(carDetails);
 
-        // ================================ User Control - Location ==============================
+        // ================================ User Control - Location
+        // ==============================
         boolean locationValid = true;
-        if (e.getSource() == choosePickLoc || e.getSource() == chooseDropLoc || e.getSource() == confirmBtn ) {
+        if (e.getSource() == choosePickLoc || e.getSource() == chooseDropLoc || e.getSource() == confirmBtn) {
             String pickUplocString = choosePickLoc.getSelectedItem().toString();
             String dropOffLocString = chooseDropLoc.getSelectedItem().toString();
 
-            if (pickUplocString.equals("") || dropOffLocString.equals("") || pickUplocString.equals(dropOffLocString)|| selected == 0) {
+            if (pickUplocString.equals("") || dropOffLocString.equals("") || pickUplocString.equals(dropOffLocString)
+                    || selected == 0) {
                 locationValid = false;
 
-                if(e.getSource() == confirmBtn)
-                {
+                if (e.getSource() == confirmBtn) {
 
-                     if (pickUplocString.equals("") && dropOffLocString.equals("")) {
-                    JOptionPane.showMessageDialog(this, "Location Cannot be empty! Please fill them.");
-                    }
-                else if (pickUplocString.equals("")) {
-                    JOptionPane.showMessageDialog(this, "Please select Pickup Location!");
-                    }
-                else if (pickUplocString.equals(dropOffLocString)) {
-                    JOptionPane.showMessageDialog(this, "Pickup location cannot be same as drop off location");
-                    }
-                else {
-                    JOptionPane.showMessageDialog(this, "Please select Drop off Location!");
+                    if (pickUplocString.equals("") && dropOffLocString.equals("")) {
+                        JOptionPane.showMessageDialog(this, "Location Cannot be empty! Please fill them.");
+                    } else if (pickUplocString.equals("")) {
+                        JOptionPane.showMessageDialog(this, "Please select Pickup Location!");
+                    } else if (pickUplocString.equals(dropOffLocString)) {
+                        JOptionPane.showMessageDialog(this, "Pickup location cannot be same as drop off location");
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Please select Drop off Location!");
                     }
 
                 }
-               
 
                 // reset confirm button + checkbox whenever validation fails
 
@@ -694,25 +710,26 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                 confirmBtn.setEnabled(false);
                 anotherRideBtn.setEnabled(false);
                 termsAndCondCheckBox.setSelected(false);
-            }
-            else {
+            } else {
                 termsAndCondCheckBox.setEnabled(true);
             }
         }
-            //=======================================================================================
+        // =======================================================================================
 
-            //========================= Terms and Condition authentication - backend =======================================
-            if(termsAndCondCheckBox.isSelected()){
-                confirmBtn.setEnabled(true);
-                anotherRideBtn.setEnabled(false);
-            }
-            else {
-                confirmBtn.setEnabled(false);
-                anotherRideBtn.setEnabled(false);
-            }
-            //========================= Confirm button - backend ======================================================
+        // ========================= Terms and Condition authentication - backend
+        // =======================================
+        if (termsAndCondCheckBox.isSelected()) {
+            confirmBtn.setEnabled(true);
+            anotherRideBtn.setEnabled(false);
+        } else {
+            confirmBtn.setEnabled(false);
+            anotherRideBtn.setEnabled(false);
+        }
+        // ========================= Confirm button - backend
+        // ======================================================
         if (e.getSource() == confirmBtn && locationValid) {
-            int response = JOptionPane.showConfirmDialog(this, "Booking a ride - Confirm?", "Confirm Ride", JOptionPane.YES_NO_OPTION);
+            int response = JOptionPane.showConfirmDialog(this, "Booking a ride - Confirm?", "Confirm Ride",
+                    JOptionPane.YES_NO_OPTION);
 
             if (response == JOptionPane.YES_OPTION) {
                 confirmBtn.setBackground(Color.GREEN);
@@ -722,7 +739,8 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                 anotherRideBtn.setEnabled(true);
                 termsAndCondCheckBox.setEnabled(false);
 
-                //===================== Show receipt & switch to confirmation panel =====================
+                // ===================== Show receipt & switch to confirmation panel
+                // =====================
                 // rideReciept.setText(buildReceipt());
                 rideReciept.setCaretPosition(0);
 
@@ -738,50 +756,118 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                 termsAndCondCheckBox.setSelected(false);
             }
         }
-        //=======================================================================================
-        //========================= Exit button - backend =============================================================
-        if(e.getSource() == exitProgram) {
-            int exitResponse = JOptionPane.showConfirmDialog(this, "Are you sure? \nClick Ok to Exit! ", "Termiante Program", JOptionPane.YES_NO_OPTION);
-            if(exitResponse == JOptionPane.YES_OPTION) {
+        // =======================================================================================
+        // ========================= Exit button - backend
+        // =============================================================
+        if (e.getSource() == exitProgram) {
+            int exitResponse = JOptionPane.showConfirmDialog(this, "Are you sure? \nClick Ok to Exit! ",
+                    "Termiante Program", JOptionPane.YES_NO_OPTION);
+            if (exitResponse == JOptionPane.YES_OPTION) {
                 System.exit(0);
             }
 
         }
-        
-    //===========================================================================================
-                //User Data insert to text file
-    //=======================================================================================
-        if(e.getSource() == confirmBtn){
-            String  name, phone, emergencyContact;
-            name = userName.getText();
-            phone = userPhnTextArea.getText();
-            emergencyContact = userEmergencyPhnTextArea.getText();
-            if(name.isEmpty() || phone.isEmpty() || emergencyContact.isEmpty())
-			{
-				JOptionPane.showMessageDialog(this,"Please fill up all information!");
-			}
-			else 
-			{
-				Customer obj1 = new Customer(name, phone, emergencyContact);
-				obj1.insertInfo();
-				JOptionPane.showMessageDialog(this,"Information saved!");
-				display();
-			}
-        }
-    
 
-    //=======================================================================================
-        //========================= Back button (from confirmation panel) - backend ===========
-        if(e.getSource() == backToFormBtn) {
+        // ===========================================================================================
+        // User Data insert to text file
+        // =======================================================================================
+
+            String Username, phone, emergPhone, pickupVenue, dropOffVenue, accNo; // done
+            String vehicleChoice, pickLoc, dropLoc; // done
+            String gender, payVia; // radio button type done alsooo
+            String ac, music, luggage, childSeat, wheelChair; // check box uhhh faah brother
+        if (e.getSource() == confirmBtn) {
+           
+
+            Username = userNameTextArea.getText();
+            phone = userPhnTextArea.getText();
+            emergPhone = userEmergencyPhnTextArea.getText();
+            pickupVenue = pickupVenuetextArea.getText();
+            dropOffVenue = dropVenuetextArea.getText();
+            accNo = accountNumbertextArea.getText();
+            
+            vehicleChoice = vehicleType.getSelectedItem().toString();
+            pickLoc = choosePickLoc.getSelectedItem().toString();
+            dropLoc = chooseDropLoc.getSelectedItem().toString();
+
+            if(Username.isEmpty() || phone.isEmpty() || emergPhone.isEmpty() || pickupVenue.isEmpty() || dropOffVenue.isEmpty() || accNo.isEmpty())
+            {
+                JOptionPane.showMessageDialog(null,"Please fill up informaton");
+            }
+            else {
+                                // =================================
+                if (userMale.isSelected()) {
+                    gender = userMale.getText();
+                } else {
+                    gender = userFemale.getText();
+                }
+                // =================================
+                if (payVBox1.isSelected()) {
+                    payVia = payVBox1.getText();
+                } else if (payVBox2.isSelected()) {
+                    payVia = payVBox2.getText();
+                } else {
+                    payVia = payVBox3.getText();
+                }
+                // =================================
+                if (acVehicleCheck.isSelected() && musicVehicleCheck.isSelected()) {
+                    ac = acVehicleCheck.getText();
+                    music = musicVehicleCheck.getText();
+                } else if (acVehicleCheck.isSelected()) {
+                    ac = acVehicleCheck.getText();
+                } else if (musicVehicleCheck.isSelected()) {
+                    music = musicVehicleCheck.getText();
+                } else {
+                    ac = "";
+                    music = "";
+                }
+                // =================================
+                if (cBox1.isSelected() && cBox2.isSelected() && cBox3.isSelected()) {
+                    luggage = cBox1.getText();
+                    childSeat = cBox2.getText();
+                    wheelChair = cBox3.getText();
+                } else if (cBox1.isSelected() && cBox2.isSelected()) {
+                    luggage = cBox1.getText();
+                    childSeat = cBox2.getText();
+                } else if (cBox2.isSelected() && cBox3.isSelected()) {
+                    childSeat = cBox2.getText();
+                    wheelChair = cBox3.getText();
+                } else if (cBox1.isSelected() && cBox3.isSelected()) {
+                    luggage = cBox1.getText();
+                    wheelChair = cBox3.getText();
+                } else if (cBox1.isSelected()) {
+                    luggage = cBox1.getText();
+                } else if (cBox2.isSelected()) {
+                    childSeat = cBox2.getText();
+                } else if (cBox3.isSelected()) {
+                    wheelChair = cBox3.getText();
+                } else {
+                    luggage = "";
+                    childSeat = "";
+                    wheelChair = "";
+                    }
+            Customer obj1 = new Customer(Username, phone, emergPhone, pickupVenue, dropOffVenue, accNo, vehicleChoice,
+                    pickLoc, dropLoc, gender, payVia);
+            obj1.insertInfo();
+            display();
+        }
+
+        }
+        //==========================================
+        //String Username, String  phone,String  emergPhone,String  pickupVenue,String  dropOffVenue,String  accNo,String  vehicleChoice,String  pickLoc,String  dropLoc,String  gender,String  payVie
+        // =======================================================================================
+        // ========================= Back button (from confirmation panel) - backend
+        // ===========
+        if (e.getSource() == backToFormBtn) {
             confirmationPanel.setVisible(false);
             passangerDetailsPanel.setVisible(true);
             rideDetailsPanel.setVisible(true);
             bookRidePanel.setVisible(true);
         }
 
-
-        //========================= Book Another Ride button - backend ========================
-        if(e.getSource() == anotherRideBtn) {
+        // ========================= Book Another Ride button - backend
+        // ========================
+        if (e.getSource() == anotherRideBtn) {
             vehicleType.setSelectedIndex(0);
             acVehicleCheck.setSelected(false);
             acVehicleCheck.setEnabled(false);
@@ -802,7 +888,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             cBox2.setSelected(false);
             cBox3.setSelected(false);
 
-            radioGenderGroup.clearSelection(); 
+            radioGenderGroup.clearSelection();
             accountNumbertextArea.setText("");
 
             termsAndCondCheckBox.setSelected(false);
@@ -820,19 +906,18 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             rideDetailsPanel.setVisible(true);
             bookRidePanel.setVisible(true);
         }
-        //=======================================================================================
+        // =======================================================================================
 
-        //============================================ Action perfomed ends here =================================================================
+        // ============================================ Action perfomed ends here
+        // =================================================================
     }
 
-
-
-    //=======================================================================================
-    //                                    Mouse Listener
-    //=======================================================================================
-    //================= mouse Listener ==================
-    public void mouseClicked(MouseEvent me){
-        if(me.getSource() == confirmBtn){
+    // =======================================================================================
+    // Mouse Listener
+    // =======================================================================================
+    // ================= mouse Listener ==================
+    public void mouseClicked(MouseEvent me) {
+        if (me.getSource() == confirmBtn) {
             confirmBtn.setBackground(Color.GREEN);
             confirmBtn.setText("Confirmed!");
             confirmBtn.setForeground(Color.BLACK);
@@ -844,37 +929,36 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         }
     }
 
-    public void mousePressed(MouseEvent me){
+    public void mousePressed(MouseEvent me) {
     }
 
-    public void mouseReleased(MouseEvent me){
+    public void mouseReleased(MouseEvent me) {
 
     }
-    public void mouseEntered(MouseEvent me){
+
+    public void mouseEntered(MouseEvent me) {
 
     }
+
     public void mouseExited(MouseEvent me) {
     }
-    //==============================================
+    // ==============================================
 
-
-private void display() {
+    private void display() {
         try {
             File file = new File("./Data/usersInfo.txt");
             if (file.exists()) {
-				FileReader fr = new FileReader(file); //reads one character at a time
-                BufferedReader br = new BufferedReader(fr); //reads one line at a time
+                FileReader fr = new FileReader(file); // reads one character at a time
+                BufferedReader br = new BufferedReader(fr); // reads one line at a time
                 String line;
                 while ((line = br.readLine()) != null) {
                     rideReciept.append(line + "\n");
                 }
                 br.close();
             }
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error!");
         }
-		catch(IOException ioe) 
-		{
-			ioe.printStackTrace();
-			JOptionPane.showMessageDialog(null,"Error!");
-		}
     }
 }
