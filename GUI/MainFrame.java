@@ -9,7 +9,6 @@ import java.awt.event.MouseListener;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.io.*;
-import java.nio.file.attribute.UserDefinedFileAttributeView;
 
 public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
