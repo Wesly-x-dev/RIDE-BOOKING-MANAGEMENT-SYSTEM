@@ -12,7 +12,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.io.*;
 
-public class MainFrame extends JFrame implements ActionListener, MouseListener {
+public class DraftMainFrame extends JFrame implements ActionListener, MouseListener {
 
     // ======================= include panels here ========================
     private JPanel headingPanel, passangerDetailsPanel, rideDetailsPanel, bookRidePanel, confirmationPanel;
@@ -52,7 +52,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     private JComboBox choosePickLoc, chooseDropLoc, chooseHour, chooseMins;
     private JButton confirmBtn, exitProgram, anotherRideBtn, backToFormBtn;
 
-    public MainFrame() {
+    public DraftMainFrame() {
         super.setTitle("Shohoz Ride - Booking ride made easy!");
         super.setBounds(350, 10, 800, 800);
         super.setResizable(false);
@@ -860,7 +860,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     }
 
     // ----------------------------------------------------------------------
-    // Step 5: Confirm button <-> Terms checkbox sync
+    // Confirm button <-> Terms checkbox sync
     // ----------------------------------------------------------------------
     private void syncConfirmButtonWithTerms() {
         confirmBtn.setEnabled(termsAndCondCheckBox.isSelected());
@@ -868,7 +868,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     }
 
     // ----------------------------------------------------------------------
-    // Step 6: "Booking a ride - Confirm?" Yes/No dialog
+    // "Booking a ride - Confirm?" Yes/No dialog
     // ----------------------------------------------------------------------
     private void runConfirmBookingDialog() {
         int response = JOptionPane.showConfirmDialog(this, "Booking a ride - Confirm?", "Confirm Ride",
@@ -901,7 +901,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     }
 
     // ----------------------------------------------------------------------
-    // Step 7: Persist the customer record
+    // customer record
     // ----------------------------------------------------------------------
     private void saveCustomerRecord() {
         String username = userNameTextArea.getText();

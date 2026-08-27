@@ -1,25 +1,52 @@
-========================================================
-Name: Wesly 
-Phone: 19283
-Emergency Contact: 102387
+
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+Name: qweqweqw
+Phone: 123123
+Emergency Contact: 123121
+Gender: Male
+Vehicle selected: MicroBus
+Ride Type: Economy
+A/C: A/C
+Music: Music
+Pick UP: weqweewqeqwe ,Savar
+Drop At: qweqweeqqw ,Kuril
+Pick UP Time: 0:0 
+Add-ons:   
+Payment: (Credit/Debit)
+***************************************************************
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+Name: wesly
+Phone: 123123123123
+Emergency Contact: 123123123123
 Gender: Male
 Vehicle selected: CNG
 Ride Type: Economy
 A/C: 
 Music: 
-Pick UP: qwpoeoqwei ,Kuril
-Drop At: oqwiueqiweu ,Savar
-Pick UP Time: 2:30 AM
+Pick UP: qweqweqweqwe ,Savar
+Drop At: qweqweqweqwe ,Kuril
+Pick UP Time: 3:0 AM
 Add-ons: Luggage Carrier  
-Payment: (Bkash)qwoieuqwioe
---------------------------------------------------------
-========================================================
-Name: Wesly
-Phone: 10291938
-Emergency Contact: 10294812948
+Payment: (Bkash)qweqweqweqew
+***************************************************************
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+Name: qweqwe
+Phone: 13123
+Emergency Contact: 12312
 Gender: Male
 Vehicle selected: MicroBus
-Pick UP: qweqwe ,Kuril
-Drop At: qweqwe ,Gulshan
-Payment: (Bkash)qewqeqeq
---------------------------------------------------------
+Ride Type: Economy
+A/C: A/C
+Music: Music
+Pick UP: weqeqweqw ,Kuril
+Drop At: eqweqeweqew ,Savar
+Pick UP Time: 3:15 AM
+Add-ons: Luggage Carrier  Wheel Chair
+Payment: (Bkash)qweqwe
+***************************************************************
