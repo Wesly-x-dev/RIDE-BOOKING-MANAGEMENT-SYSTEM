@@ -1,30 +1,25 @@
 ========================================================
-Name: Full Name: 
-Phone: 1234567
-Emergency Contact: 23456789
+Name: Wesly 
+Phone: 19283
+Emergency Contact: 102387
+Gender: Male
+Vehicle selected: CNG
+Ride Type: Economy
+A/C: 
+Music: 
+Pick UP: qwpoeoqwei ,Kuril
+Drop At: oqwiueqiweu ,Savar
+Pick UP Time: 2:30 AM
+Add-ons: Luggage Carrier  
+Payment: (Bkash)qwoieuqwioe
 --------------------------------------------------------
 ========================================================
-Name: wertyu
-Phone: 123456
-Emergency Contact: 123456
---------------------------------------------------------
-========================================================
-Name: wesly
-Phone: 234567
-Emergency Contact: 852753
+Name: Wesly
+Phone: 10291938
+Emergency Contact: 10294812948
 Gender: Male
 Vehicle selected: MicroBus
-Pick UP: Mota bhai ,Badda
-Drop At: Chkon bhai ,Dhanmondi
-Payment: (Bkash)852753951
---------------------------------------------------------
-========================================================
-Name: wertyu
-Phone: 234
-Emergency Contact: 12345
-Gender: Female
-Vehicle selected: MicroBus
-Pick UP: qw3456 ,Kuril
-Drop At: werty ,Mirpur
-Payment: (Nagad)12345678
+Pick UP: qweqwe ,Kuril
+Drop At: qweqwe ,Gulshan
+Payment: (Bkash)qewqeqeq
 --------------------------------------------------------
