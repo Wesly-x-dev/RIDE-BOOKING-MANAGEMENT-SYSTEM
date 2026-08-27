@@ -61,24 +61,25 @@ public class Customer {
             fwriter.write(" ======================================================== " + "\n");
             fwriter.write(" ============ ShohozRide - Booking Successful! ========== " + "\n");
             fwriter.write(" ======================================================== " + "\n");
-            fwriter.write("Name: " + Username + "\n");
-            fwriter.write("Phone: " + phone + "\n");
-            fwriter.write("Emergency Contact: " + emergPhone + "\n");
-            fwriter.write("Gender: " + gender + "\n");
-
-            fwriter.write("Vehicle selected: " + vehicleChoice + "\n");
-            fwriter.write("Ride Type: " + rideType + "\n");
-            fwriter.write("A/C: " + ac + "\n");
-            fwriter.write("Music: " + music + "\n");
-            
-            fwriter.write("Pick UP: " + pickupVenue + " ," +pickLoc + "\n");
-            fwriter.write("Drop At: " + dropOffVenue + " ," +dropLoc + "\n");
-            fwriter.write("Pick UP Time: " + rideTime + "\n");
-
-            fwriter.write("Add-ons: " + luggage + " " + childSeat + " " + wheelChair + "\n");
-
-            fwriter.write("Payment: ("+ payVie +")"+ accNo + "\n");
-            fwriter.write("***************************************************************" + "\n");
+            fwriter.write("\n");
+            fwriter.write(" Name: " + Username + "\n");
+            fwriter.write(" Phone: " + phone + "\n");
+            fwriter.write(" Emergency Contact: " + emergPhone + "\n");
+            fwriter.write(" Gender: " + gender + "\n");
+            fwriter.write("\n");
+            fwriter.write(" Vehicle selected: " + vehicleChoice + "\n");
+            fwriter.write(" Ride Type: " + rideType + "\n");
+            fwriter.write(" A/C: " + ac + "\n");
+            fwriter.write(" Music: " + music + "\n");
+            fwriter.write("\n");
+            fwriter.write(" Pick UP: " + pickupVenue + " ," +pickLoc + "\n");
+            fwriter.write(" Drop At: " + dropOffVenue + " ," +dropLoc + "\n");
+            fwriter.write(" Pick UP Time: " + rideTime + "\n");
+            fwriter.write("\n");
+            fwriter.write(" Add-ons: " + luggage + ", " + childSeat + ", " + wheelChair + "\n");
+            fwriter.write(" Payment: ("+ payVie +")"+ accNo + "\n");
+            fwriter.write("\n");
+            fwriter.write(" ======================================================== " + "\n");
             fwriter.flush();
             fwriter.close();
 

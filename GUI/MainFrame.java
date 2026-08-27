@@ -608,17 +608,25 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             musicVehicleCheck.setSelected(false);
             // ====================================
             termsAndCondCheckBox.setEnabled(false);
+            // ====================================
+            cBox1.setEnabled(false);
+            cBox2.setEnabled(false);
+            cBox3.setEnabled(false);
             return false;
         }
         else if (selected == 1) {
             carDetails = new ImageIcon("images//bike.png");
             carLabel.setBounds(70, 0, 200, 200);
-
+            // ====================================
             acVehicleCheck.setEnabled(false);
             musicVehicleCheck.setEnabled(false);
-
+            // ====================================
             acVehicleCheck.setSelected(false);
             musicVehicleCheck.setSelected(false);
+            // ====================================
+            cBox1.setEnabled(false);
+            cBox2.setEnabled(false);
+            cBox3.setEnabled(false);
         }
         else if (selected == 2) {
             carDetails = new ImageIcon("images//cng.png");
@@ -629,11 +637,21 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
             acVehicleCheck.setSelected(false);
             musicVehicleCheck.setSelected(false);
+
+            // ====================================
+            cBox1.setEnabled(true);
+            cBox2.setEnabled(true);
+            cBox3.setEnabled(true);
         }
         else if (selected == 3) {
             carDetails = new ImageIcon("images//SUV.png");
             acVehicleCheck.setEnabled(true);
             musicVehicleCheck.setEnabled(true);
+
+            // ====================================
+            cBox1.setEnabled(true);
+            cBox2.setEnabled(true);
+            cBox3.setEnabled(true);
 
         }
         else if (selected == 4) {
@@ -641,12 +659,21 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             acVehicleCheck.setEnabled(true);
             musicVehicleCheck.setEnabled(true);
 
+            // ====================================
+            cBox1.setEnabled(true);
+            cBox2.setEnabled(true);
+            cBox3.setEnabled(true);
+
         }
         else if (selected == 5) {
             carDetails = new ImageIcon("images//hiace.png");
             acVehicleCheck.setEnabled(true);
             musicVehicleCheck.setEnabled(true);
 
+            // ====================================
+            cBox1.setEnabled(true);
+            cBox2.setEnabled(true);
+            cBox3.setEnabled(true);
         }
         else{return false;}
 
