@@ -977,6 +977,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                         locationValid = false;
                     }
                     //=============================================================
+
                     if (userMale.isSelected()) {
                         gender = userMale.getText();
                     } 
@@ -1054,7 +1055,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
                     Customer obj1 = new Customer(Username, phone, emergPhone, pickupVenue, dropOffVenue, 
                         accNo, vehicleChoice, pickLoc, dropLoc, gender, payVia, vehicleClass, 
-                        getSelectedRideTime(), ac, music, luggage, childSeat, wheelChair);
+                        getSelectedRideTime(), ac, music, luggage, childSeat, wheelChair, cost);
 
                     obj1.insertInfo();
                     display();

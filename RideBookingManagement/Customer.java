@@ -1,22 +1,22 @@
 package RideBookingManagement;
 
-import javax.swing.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import javax.swing.*;
 // import java.time.LocalDateTime;
 // import java.time.format.DateTimeFormatter;
 
 public class Customer {
     //===== Text Filed att========
     // private String Username, phone, emergPhone;
-    private String Username, phone, emergPhone, pickupVenue, dropOffVenue, accNo, vehicleChoice, pickLoc, dropLoc, gender, payVie;
+    private String Username, phone, emergPhone, pickupVenue, dropOffVenue, accNo, vehicleChoice, pickLoc, dropLoc, gender, payVie, cost;
     private String rideType, rideTime, ac, music, luggage, childSeat, wheelChair;
     private File file;
     private FileWriter fwriter;
 
     public Customer(){}
-    public Customer(String Username, String  phone,String  emergPhone,String  pickupVenue,String  dropOffVenue,String  accNo,String  vehicleChoice,String  pickLoc,String  dropLoc,String  gender,String  payVie,String  rideType,String  rideTime,String  ac,String  music,String  luggage,String  childSeat,String  wheelChair){
+    public Customer(String Username, String  phone,String  emergPhone,String  pickupVenue,String  dropOffVenue,String  accNo,String  vehicleChoice,String  pickLoc,String  dropLoc,String  gender,String  payVie,String  rideType,String  rideTime,String  ac,String  music,String  luggage,String  childSeat,String  wheelChair, String cost){
         this.Username = Username;
         this.phone = phone;
         this.emergPhone = emergPhone;
@@ -39,6 +39,7 @@ public class Customer {
         
         this.accNo = accNo;
         this.payVie = payVie;
+        this.cost = cost;
     }
 
 
@@ -73,6 +74,7 @@ public class Customer {
             fwriter.write("\n");
             fwriter.write(" Add-ons: " + luggage + ", " + childSeat + ", " + wheelChair + "\n");
             fwriter.write(" Payment: ("+ payVie +")"+ accNo + "\n");
+            fwriter.write(" Total cost: " + cost + " tk \n");
             fwriter.write("\n");
             fwriter.write(" ======================================================== " + "\n");
             fwriter.flush();

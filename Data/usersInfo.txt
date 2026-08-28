@@ -1,0 +1,44 @@
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: Atif
+ Phone: 01812579074
+ Emergency Contact: riyad0645_35139
+ Gender: Male
+
+ Vehicle selected: SUV
+ Ride Type: Premium
+ A/C: Yes
+ Music: Yes
+
+ Pick UP: Suii ,Mirpur
+ Drop At: Qu mere wo wo ,Badda
+ Pick UP Time: 3:30 AM
+
+ Add-ons: Luggage Carrier, , 
+ Payment: (Credit/Debit)6769
+
+ ======================================================== 
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: Atif cost chekc
+ Phone: 1234232
+ Emergency Contact: 2344342
+ Gender: Male
+
+ Vehicle selected: CNG
+ Ride Type: Premium
+ A/C: No
+ Music: No
+
+ Pick UP: wew ,Kuril
+ Drop At: wfe ,Gulshan
+ Pick UP Time: 2:30 AM
+
+ Add-ons: Luggage Carrier, Child Seat, Wheel Chair
+ Payment: (Bkash)345345
+ Total cost: 1170.0
+ ======================================================== 
