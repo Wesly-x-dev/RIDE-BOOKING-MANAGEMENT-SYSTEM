@@ -381,14 +381,18 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         cBox1 = new JCheckBox("Luggage Carrier");
         cBox1.setBounds(10, 410, 140, 30);
         cBox1.setFont(labelFont);
+        cBox1.addActionListener(this);
 
         cBox2 = new JCheckBox("Child Seat");
         cBox2.setBounds(320, 410, 120, 30);
         cBox2.setFont(labelFont);
+        cBox2.addActionListener(this);
 
         cBox3 = new JCheckBox("Wheel Chair");
         cBox3.setBounds(170, 410, 130, 30);
         cBox3.setFont(labelFont);
+        cBox3.addActionListener(this);
+
 
         cBox1.setEnabled(false);
         cBox2.setEnabled(false);
@@ -797,7 +801,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         }
         else
         {
-            distanceTravelled = 0;
+            distanceTravelled = 1;
         }
     }
     
@@ -827,6 +831,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         addonRate = 0;
         vehicleClassificationRate = 0;
 
+        getTravelCost();
         //========== vehicle class ==========
         if(rideEco.isSelected()){
             vehicleClassificationRate = 0;
@@ -839,7 +844,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         if(cBox2.isSelected()){addonRate += 250;}
         if(cBox3.isSelected()){addonRate += 200;}
 
-        getTravelCost();
+        
         String cost = Double.toString(getTotalCost());
         totalPrice.setText(cost + "tk");
         //========================= Location error catching =====================
