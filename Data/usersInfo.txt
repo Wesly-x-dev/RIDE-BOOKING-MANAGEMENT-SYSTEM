@@ -108,3 +108,25 @@
  Payment: (Bkash)23423423
 
  ======================================================== 
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: Wesly
+ Phone: 01632958026
+ Emergency Contact: 01632958026
+ Gender: Male
+
+ Vehicle selected: SUV
+ Ride Type: Premium
+ A/C: 
+ Music: Yes
+
+ Pick UP: adqweq ,Kuril
+ Drop At: qweqwe ,Savar
+ Pick UP Time: 2:0 PM
+
+ Add-ons: Luggage Carrier, , 
+ Payment: (Bkash)01632958026
+
+ ======================================================== 
