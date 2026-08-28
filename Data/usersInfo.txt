@@ -20,3 +20,91 @@
  Payment: (Bkash)qweqweq
 
  ======================================================== 
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: wesly
+ Phone: 123123
+ Emergency Contact: 1231231
+ Gender: Male
+
+ Vehicle selected: Hi-ace
+ Ride Type: Economy
+ A/C: Yes
+ Music: Yes
+
+ Pick UP: polo market ,Savar
+ Drop At: AIUB ,Kuril
+ Pick UP Time: 6:0 AM
+
+ Add-ons: Luggage Carrier, Child Seat, 
+ Payment: (Bkash)q2131231321
+
+ ======================================================== 
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: qqweqe
+ Phone: qweqwe
+ Emergency Contact: qweqeq
+ Gender: Male
+
+ Vehicle selected: CNG
+ Ride Type: Economy
+ A/C: No
+ Music: No
+
+ Pick UP: qweqwe ,Kuril
+ Drop At: qweqe ,Gulshan
+ Pick UP Time: 4:15 PM
+
+ Add-ons: Luggage Carrier, , 
+ Payment: (Bkash)qweqweqw
+
+ ======================================================== 
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: wesly 
+ Phone: 123123
+ Emergency Contact: 123123
+ Gender: Male
+
+ Vehicle selected: SUV
+ Ride Type: Economy
+ A/C: Yes
+ Music: Yes
+
+ Pick UP: qweqwe ,Kuril
+ Drop At: qweqewq ,Savar
+ Pick UP Time: 2:45 AM
+
+ Add-ons: Luggage Carrier, Child Seat, Wheel Chair
+ Payment: (Bkash)qweqweqweq
+
+ ======================================================== 
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: qeqeqwe
+ Phone: 123131
+ Emergency Contact: 123123
+ Gender: Male
+
+ Vehicle selected: CNG
+ Ride Type: Economy
+ A/C: No
+ Music: No
+
+ Pick UP: aweqwewq ,Savar
+ Drop At: qweqwe ,Gulshan
+ Pick UP Time: 3:15 
+
+ Add-ons: Luggage Carrier, Child Seat, Wheel Chair
+ Payment: (Bkash)23423423
+
+ ======================================================== 
