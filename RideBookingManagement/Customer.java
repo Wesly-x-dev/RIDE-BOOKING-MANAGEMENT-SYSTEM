@@ -50,11 +50,6 @@ public class Customer {
                 file.createNewFile();
             }
 
-            // ========================= Time =================================================
-            // LocalDateTime myDateObj = LocalDateTime.now();
-            // DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("HH:mm a, dd/MM/yyyy");
-            // String timeAndDate = myDateObj.format(myFormatObj);
-            // ========================= Time =================================================
 
             fwriter = new FileWriter(file, true); //ensure to not overwrite the existing text in the file
             // fwriter.write("Date and Time: " + timeAndDate + "\n");
@@ -88,6 +83,4 @@ public class Customer {
             JOptionPane.showMessageDialog(null, "Error writing to file!");
         }
     }
-
-
 }

@@ -525,7 +525,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         exitProgram.setBackground(buttonColor);
         exitProgram.setOpaque(true);
         exitProgram.addActionListener(this);
-
+        exitProgram.addMouseListener(this);
         // ========================== Exit Button Another ride choose button ======================
         anotherRideBtn = new JButton("Book more!");
         anotherRideBtn.setBounds(300, 380, 120, 30);
@@ -603,7 +603,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         // ========================== Reposition/relabel Book Another Ride Button
         // ======================
         anotherRideBtn.setText("Book Another Ride!");
-        anotherRideBtn.setBounds(300, 585, 210, 40);
+        anotherRideBtn.setBounds(190, 585, 210, 40);
 
         
         confirmationPanel.add(confirmationHeadingLabel);
@@ -611,16 +611,22 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         confirmationPanel.add(anotherRideBtn);
 
         // ========================== Reposition of exit button
-        anotherExitButton = new JButton();
-        anotherExitButton.setText("Exit");
-        anotherExitButton.setBounds(450, 585, 120, 30);
+        // anotherExitButton.setBounds(450, 585, 120, 30);
+        anotherExitButton = new JButton("Exit");
+        anotherExitButton.setBounds(420, 585, 120, 40);
+        anotherExitButton.setFont(labelFont);
+        anotherExitButton.setForeground(labelColor);
+        anotherExitButton.setBackground(buttonColor);
+        anotherExitButton.setOpaque(true);
+        anotherExitButton.addActionListener(this);
+        anotherExitButton.addMouseListener(this);
+        
         confirmationPanel.add(anotherExitButton);
+
+
 
         confirmationPanel.setVisible(false);
         super.add(confirmationPanel);
-
-
-
     }
 
     //=================== Methods loading with conditional statements for error handling
@@ -860,14 +866,13 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if (e.getSource() == exitProgram) {
+        if (e.getSource() == exitProgram || e.getSource() == anotherExitButton) {
             int exitResponse = JOptionPane.showConfirmDialog(this, "Are you sure? \nClick Ok to Exit! ",
                     "Termiante Program", JOptionPane.YES_NO_OPTION);
             if (exitResponse == JOptionPane.YES_OPTION) {
                 System.exit(0);
             }
         }
-
         //======================= Data Insertion ========================
         String Username, phone, emergPhone, pickupVenue, dropOffVenue, accNo; // done
         String vehicleChoice, pickLoc, dropLoc; // done
@@ -1063,7 +1068,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
                 else
                 {
-                    confirmBtn.setBackground(new Color(30, 136, 229));
+                    confirmBtn.setBackground(new Color(216, 152, 0));
                     confirmBtn.setText("Confirm!");
                     confirmBtn.setForeground(Color.WHITE);
                     confirmBtn.setEnabled(false);
@@ -1099,7 +1104,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             termsAndCondCheckBox.setSelected(false);
             termsAndCondCheckBox.setEnabled(true);
 
-            confirmBtn.setBackground(new Color(30, 136, 229));
+            confirmBtn.setBackground(new Color(216, 152, 0));
             confirmBtn.setText("Confirm!");
             confirmBtn.setForeground(Color.WHITE);
             confirmBtn.setEnabled(false);
@@ -1123,7 +1128,6 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     // =======================================================================================
     // Mouse Listener
     // =======================================================================================
-    // ================= mouse Listener ==================
     public void mouseClicked(MouseEvent me) {
 
         if (me.getSource() == confirmBtn) {
@@ -1132,7 +1136,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             confirmBtn.setForeground(Color.BLACK);
             JOptionPane.showConfirmDialog(this, "Confirm?");
 
-            confirmBtn.setBackground(new Color(30, 136, 229));
+            confirmBtn.setBackground(new Color(216, 152, 0));
             confirmBtn.setText("Confirm!");
             confirmBtn.setForeground(Color.WHITE);
         }
@@ -1146,10 +1150,21 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     }
 
     public void mouseEntered(MouseEvent me) {
-
+        if(me.getSource() == exitProgram || me.getSource() == anotherExitButton){
+            exitProgram.setBackground(Color.RED);
+            exitProgram.setForeground(Color.WHITE);
+            anotherExitButton.setBackground(Color.RED);
+            anotherExitButton.setForeground(Color.WHITE);
+        }
     }
 
     public void mouseExited(MouseEvent me) {
+        if(me.getSource() == exitProgram || me.getSource() == anotherExitButton){
+            exitProgram.setBackground(buttonColor);
+            exitProgram.setForeground(Color.BLACK);
+            anotherExitButton.setBackground(buttonColor);
+            anotherExitButton.setForeground(Color.BLACK);
+        }
     }
     // ==============================================
 
