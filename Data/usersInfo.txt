@@ -259,3 +259,47 @@
  Payment: (Bkash)qweqwe
 
  ======================================================== 
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: Atif
+ Phone: 696969667
+ Emergency Contact: 696969667
+ Gender: Male
+
+ Vehicle selected: Motorbike
+ Ride Type: Economy
+ A/C: No
+ Music: No
+
+ Pick UP: Aiub ,Kuril
+ Drop At: 2 no ,Gulshan
+ Pick UP Time: 2:30 AM
+
+ Add-ons: , , 
+ Payment: (Credit/Debit)696969696
+
+ ======================================================== 
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: Atif
+ Phone: 0181814143
+ Emergency Contact: 0143124234
+ Gender: Male
+
+ Vehicle selected: CNG
+ Ride Type: Economy
+ A/C: No
+ Music: No
+
+ Pick UP: Atif ,Kuril
+ Drop At: sfa ,Gulshan
+ Pick UP Time: 6:30 AM
+
+ Add-ons: Luggage Carrier, , 
+ Payment: (Bkash)1232414
+
+ ======================================================== 

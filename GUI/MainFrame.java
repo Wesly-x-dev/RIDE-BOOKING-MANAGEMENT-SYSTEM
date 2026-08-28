@@ -49,8 +49,22 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
     //================== Theme Color ==================================
     // private Color themeColor =  new Color(15, 61, 46); 
-    private Color themeColor = new Color(0, 102, 114);
+    // private Color themeColor = new Color(0, 102, 114);
+     private Color themeColor = new Color(232, 93, 44);
     // private Color themeColor = new Color(255, 107, 107);
+
+    //================== All panel Color ==================================
+
+    private Color panelColor = new Color(255, 248, 240);
+
+    //================== All button color ==================================
+
+    private Color buttonColor = new Color(255, 179, 0);
+
+
+
+
+    
     //=================== CONSTRUCTOR ================================= 
     public MainFrame() {
         super.setTitle("Shohoz Ride - Booking ride made easy!");
@@ -60,7 +74,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         // super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         super.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
-        logo = new ImageIcon("images//logo_2.png");
+        logo = new ImageIcon("images//logo.png");
 
         super.setIconImage(logo.getImage());
         // =================== Fonts and Colors ==========================
@@ -68,7 +82,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         subHeadingFont = new Font("MV Boli", Font.BOLD, 20);
         labelFont = new Font("MV Boli", Font.BOLD, 15);
 
-        labelColor = new Color(33, 33, 33);
+        labelColor = new Color(27, 58, 30);
         Border border = BorderFactory.createDashedBorder(Color.BLACK, 2, 2, 2, true);
 
         // =================== heading panel: logo, heading text etc===================================
@@ -84,12 +98,12 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         headingTextlabel = new JLabel("ShohozRide - Shohoz Ride, Shohoz Life");
         headingTextlabel.setFont(headingFont);
         headingTextlabel.setBounds(140, 30, 750, 40);
-        headingTextlabel.setForeground(new Color(255, 255, 255));
+        headingTextlabel.setForeground(labelColor);
 
         tagLineLabel = new JLabel("Ride Booking & Fleet Management System");
         tagLineLabel.setFont(labelFont);
         tagLineLabel.setBounds(250, 70, 700, 40);
-        tagLineLabel.setForeground(new Color(255, 255, 255));
+        tagLineLabel.setForeground(labelColor);
 
         headingPanel.add(logoLabel);
         headingPanel.add(headingTextlabel);
@@ -101,7 +115,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         // =================== Passenger Information Panel ==================================
         passangerDetailsPanel = new JPanel();
         passangerDetailsPanel.setBounds(0, 110, 350, 340);
-        passangerDetailsPanel.setBackground(new Color(255, 248, 240));
+        passangerDetailsPanel.setBackground(panelColor);
         passangerDetailsPanel.setLayout(null);
 
         //=========================== sub logo ====================================
@@ -197,7 +211,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         // =================== Ride Details panels==================================
         rideDetailsPanel = new JPanel();
         rideDetailsPanel.setBounds(0, 452, 350, 307);
-        rideDetailsPanel.setBackground(new Color(255, 248, 240));
+        rideDetailsPanel.setBackground(panelColor);
         rideDetailsPanel.setLayout(null);
         
         //=========================== sub logo ====================================
@@ -280,7 +294,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         // =================== Booking Details panels ==================================
         bookRidePanel = new JPanel();
         bookRidePanel.setBounds(352, 110, 448, 650);
-        bookRidePanel.setBackground(new Color(255, 248, 240));
+        bookRidePanel.setBackground(panelColor);
         bookRidePanel.setLayout(null);
 
         //======================= Book Ride logo =====================
@@ -498,8 +512,8 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         confirmBtn = new JButton("Confirm");
         confirmBtn.setBounds(80, 615, 120, 30);
         confirmBtn.setFont(labelFont);
-        confirmBtn.setForeground(Color.WHITE);
-        confirmBtn.setBackground(themeColor);
+        confirmBtn.setForeground(labelColor);
+        confirmBtn.setBackground(buttonColor);
         confirmBtn.setOpaque(true);
         confirmBtn.addActionListener(this);
         confirmBtn.setEnabled(false);
@@ -507,17 +521,17 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         exitProgram = new JButton("Exit");
         exitProgram.setBounds(210, 615, 120, 30);
         exitProgram.setFont(labelFont);
-        exitProgram.setForeground(Color.WHITE);
-        exitProgram.setBackground(new Color(229, 30, 37));
+        exitProgram.setForeground(labelColor);
+        exitProgram.setBackground(buttonColor);
         exitProgram.setOpaque(true);
         exitProgram.addActionListener(this);
 
-        // ========================== Exit Button ======================
+        // ========================== Exit Button Another ride choose button ======================
         anotherRideBtn = new JButton("Book more!");
         anotherRideBtn.setBounds(300, 380, 120, 30);
         anotherRideBtn.setFont(labelFont);
-        anotherRideBtn.setForeground(Color.BLACK);
-        anotherRideBtn.setBackground(new Color(209, 122, 24));
+        anotherRideBtn.setForeground(labelColor);
+        anotherRideBtn.setBackground(buttonColor);
         anotherRideBtn.setOpaque(true);
         anotherRideBtn.addActionListener(this);
         anotherRideBtn.setEnabled(false);
@@ -837,6 +851,48 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        if (e.getSource() == anotherRideBtn) {
+            vehicleType.setSelectedIndex(0);
+            acVehicleCheck.setSelected(false);
+            acVehicleCheck.setEnabled(false);
+            musicVehicleCheck.setSelected(false);
+            musicVehicleCheck.setEnabled(false);
+            radioRideTypeGroup.clearSelection();
+
+            carDetails = new ImageIcon("images//rideDetails.png");
+            carLabel.setIcon(carDetails);
+            carLabel.setBounds(70, 5, 200, 200);
+
+            pickupVenuetextArea.setText("");
+            dropVenuetextArea.setText("");
+            choosePickLoc.setSelectedIndex(0);
+            chooseDropLoc.setSelectedIndex(0);
+
+            cBox1.setSelected(false);
+            cBox2.setSelected(false);
+            cBox3.setSelected(false);
+
+            radioGenderGroup.clearSelection();
+            accountNumbertextArea.setText("");
+
+            termsAndCondCheckBox.setSelected(false);
+            termsAndCondCheckBox.setEnabled(true);
+
+            confirmBtn.setBackground(new Color(30, 136, 229));
+            confirmBtn.setText("Confirm!");
+            confirmBtn.setForeground(Color.WHITE);
+            confirmBtn.setEnabled(false);
+
+            anotherRideBtn.setEnabled(false);
+
+            confirmationPanel.setVisible(false);
+            passangerDetailsPanel.setVisible(true);
+            rideDetailsPanel.setVisible(true);
+            bookRidePanel.setVisible(true);
+        }
+
+
         if (e.getSource() == exitProgram) {
             int exitResponse = JOptionPane.showConfirmDialog(this, "Are you sure? \nClick Ok to Exit! ",
                     "Termiante Program", JOptionPane.YES_NO_OPTION);
@@ -1049,45 +1105,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
 
         // ========================= Book Another Ride button - backend
-        if (e.getSource() == anotherRideBtn) {
-            vehicleType.setSelectedIndex(0);
-            acVehicleCheck.setSelected(false);
-            acVehicleCheck.setEnabled(false);
-            musicVehicleCheck.setSelected(false);
-            musicVehicleCheck.setEnabled(false);
-            radioRideTypeGroup.clearSelection();
 
-            carDetails = new ImageIcon("images//rideDetails.png");
-            carLabel.setIcon(carDetails);
-            carLabel.setBounds(70, 5, 200, 200);
-
-            pickupVenuetextArea.setText("");
-            dropVenuetextArea.setText("");
-            choosePickLoc.setSelectedIndex(0);
-            chooseDropLoc.setSelectedIndex(0);
-
-            cBox1.setSelected(false);
-            cBox2.setSelected(false);
-            cBox3.setSelected(false);
-
-            radioGenderGroup.clearSelection();
-            accountNumbertextArea.setText("");
-
-            termsAndCondCheckBox.setSelected(false);
-            termsAndCondCheckBox.setEnabled(true);
-
-            confirmBtn.setBackground(new Color(30, 136, 229));
-            confirmBtn.setText("Confirm!");
-            confirmBtn.setForeground(Color.WHITE);
-            confirmBtn.setEnabled(false);
-
-            anotherRideBtn.setEnabled(false);
-
-            confirmationPanel.setVisible(false);
-            passangerDetailsPanel.setVisible(true);
-            rideDetailsPanel.setVisible(true);
-            bookRidePanel.setVisible(true);
-        }
         // =======================================================================================
         // ============================================ Action perfomed ends here
         // =================================================================
