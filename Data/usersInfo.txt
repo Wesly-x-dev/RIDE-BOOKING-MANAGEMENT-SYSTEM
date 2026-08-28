@@ -303,3 +303,47 @@
  Payment: (Bkash)1232414
 
  ======================================================== 
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: agdss
+ Phone: 23452
+ Emergency Contact: 23535
+ Gender: Male
+
+ Vehicle selected: SUV
+ Ride Type: Economy
+ A/C: No
+ Music: Yes
+
+ Pick UP: dwg ,Kuril
+ Drop At: wgs ,Mirpur
+ Pick UP Time: 3:45 PM
+
+ Add-ons: Luggage Carrier, , 
+ Payment: (Bkash)23423523
+
+ ======================================================== 
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: Atif
+ Phone: 1432525
+ Emergency Contact: 2353255
+ Gender: Male
+
+ Vehicle selected: SUV
+ Ride Type: Economy
+ A/C: No
+ Music: No
+
+ Pick UP: erewr ,Kuril
+ Drop At: werwr ,Mirpur
+ Pick UP Time: 3:45 AM
+
+ Add-ons: Luggage Carrier, Child Seat, Wheel Chair
+ Payment: (Credit/Debit)34534543
+
+ ======================================================== 

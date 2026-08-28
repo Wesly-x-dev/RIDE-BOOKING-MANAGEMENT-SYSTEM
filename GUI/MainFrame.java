@@ -43,7 +43,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     private JRadioButton rideEco, ridePremium, payVBox1, payVBox2, payVBox3, rideAm, ridePm;
     private JCheckBox cBox1, cBox2, cBox3, termsAndCondCheckBox;
     private JComboBox choosePickLoc, chooseDropLoc, chooseHour, chooseMins;
-    private JButton confirmBtn, exitProgram, anotherRideBtn;
+    private JButton confirmBtn, exitProgram, anotherRideBtn, anotherExitButton;
 
     private double vehicleRate, vehicleClassificationRate=0, addonRate=0, distanceTravelled=1;
 
@@ -610,8 +610,16 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         confirmationPanel.add(scrollPane);
         confirmationPanel.add(anotherRideBtn);
 
+        // ========================== Reposition of exit button
+        anotherExitButton = new JButton();
+        anotherExitButton.setText("Exit");
+        anotherExitButton.setBounds(450, 585, 120, 30);
+        confirmationPanel.add(anotherExitButton);
+
         confirmationPanel.setVisible(false);
         super.add(confirmationPanel);
+
+
 
     }
 
@@ -852,47 +860,6 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if (e.getSource() == anotherRideBtn) {
-            vehicleType.setSelectedIndex(0);
-            acVehicleCheck.setSelected(false);
-            acVehicleCheck.setEnabled(false);
-            musicVehicleCheck.setSelected(false);
-            musicVehicleCheck.setEnabled(false);
-            radioRideTypeGroup.clearSelection();
-
-            carDetails = new ImageIcon("images//rideDetails.png");
-            carLabel.setIcon(carDetails);
-            carLabel.setBounds(70, 5, 200, 200);
-
-            pickupVenuetextArea.setText("");
-            dropVenuetextArea.setText("");
-            choosePickLoc.setSelectedIndex(0);
-            chooseDropLoc.setSelectedIndex(0);
-
-            cBox1.setSelected(false);
-            cBox2.setSelected(false);
-            cBox3.setSelected(false);
-
-            radioGenderGroup.clearSelection();
-            accountNumbertextArea.setText("");
-
-            termsAndCondCheckBox.setSelected(false);
-            termsAndCondCheckBox.setEnabled(true);
-
-            confirmBtn.setBackground(new Color(30, 136, 229));
-            confirmBtn.setText("Confirm!");
-            confirmBtn.setForeground(Color.WHITE);
-            confirmBtn.setEnabled(false);
-
-            anotherRideBtn.setEnabled(false);
-
-            confirmationPanel.setVisible(false);
-            passangerDetailsPanel.setVisible(true);
-            rideDetailsPanel.setVisible(true);
-            bookRidePanel.setVisible(true);
-        }
-
-
         if (e.getSource() == exitProgram) {
             int exitResponse = JOptionPane.showConfirmDialog(this, "Are you sure? \nClick Ok to Exit! ",
                     "Termiante Program", JOptionPane.YES_NO_OPTION);
@@ -933,15 +900,17 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         
         String cost = Double.toString(getTotalCost());
         totalPrice.setText(cost + "tk");
+
         //========================= Location error catching =====================
         if (e.getSource() == choosePickLoc || e.getSource() == chooseDropLoc) {
-            if (pickUplocString.equals(dropOffLocString)) {
-                JOptionPane.showMessageDialog(this, "Pickup location cannot be same as drop off location");
+
+            if (pickUplocString.equals("") || dropOffLocString.equals("")) {
+                //JOptionPane.showMessageDialog(this, "Pickup location cannot be same as drop off location");
                 locationValid = false;
             } 
             //=============================================================
-            else if (pickUplocString.equals("") || dropOffLocString.equals("")) {
-                // JOptionPane.showMessageDialog(this, "Location cannot be empty! Please fill them.");
+            else if (pickUplocString.equals(dropOffLocString)) {
+                JOptionPane.showMessageDialog(this, "Pickup location cannot be same as drop off location");
                 // pickUPLoclabel.setForeground(Color.RED);
                 locationValid = false;
             }
@@ -1103,6 +1072,46 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             }
         }
 
+                if (e.getSource() == anotherRideBtn) {
+            vehicleType.setSelectedIndex(0);
+            acVehicleCheck.setSelected(false);
+            acVehicleCheck.setEnabled(false);
+            musicVehicleCheck.setSelected(false);
+            musicVehicleCheck.setEnabled(false);
+            radioRideTypeGroup.clearSelection();
+
+            carDetails = new ImageIcon("images//rideDetails.png");
+            carLabel.setIcon(carDetails);
+            carLabel.setBounds(70, 5, 200, 200);
+
+            pickupVenuetextArea.setText("");
+            dropVenuetextArea.setText("");
+            choosePickLoc.setSelectedIndex(0);
+            chooseDropLoc.setSelectedIndex(0);
+
+            cBox1.setSelected(false);
+            cBox2.setSelected(false);
+            cBox3.setSelected(false);
+
+            radioGenderGroup.clearSelection();
+            accountNumbertextArea.setText("");
+
+            termsAndCondCheckBox.setSelected(false);
+            termsAndCondCheckBox.setEnabled(true);
+
+            confirmBtn.setBackground(new Color(30, 136, 229));
+            confirmBtn.setText("Confirm!");
+            confirmBtn.setForeground(Color.WHITE);
+            confirmBtn.setEnabled(false);
+
+            anotherRideBtn.setEnabled(false);
+
+            confirmationPanel.setVisible(false);
+            passangerDetailsPanel.setVisible(true);
+            rideDetailsPanel.setVisible(true);
+            bookRidePanel.setVisible(true);
+        }
+
 
         // ========================= Book Another Ride button - backend
 
@@ -1116,6 +1125,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     // =======================================================================================
     // ================= mouse Listener ==================
     public void mouseClicked(MouseEvent me) {
+
         if (me.getSource() == confirmBtn) {
             confirmBtn.setBackground(Color.GREEN);
             confirmBtn.setText("Confirmed!");
