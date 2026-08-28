@@ -108,3 +108,69 @@
  Payment: (Bkash)23423423
 
  ======================================================== 
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: Atif
+ Phone: 01812579074
+ Emergency Contact: 01812579074
+ Gender: Male
+
+ Vehicle selected: SUV
+ Ride Type: Economy
+ A/C: Yes
+ Music: 
+
+ Pick UP: Aiub ,Kuril
+ Drop At: South ,Badda
+ Pick UP Time: 4:30 AM
+
+ Add-ons: Luggage Carrier, , 
+ Payment: (Bkash)01812579074
+
+ ======================================================== 
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: Atif
+ Phone: 10428
+ Emergency Contact: 019423
+ Gender: Male
+
+ Vehicle selected: SUV
+ Ride Type: Economy
+ A/C: Yes
+ Music: No
+
+ Pick UP: f ,Mirpur
+ Drop At: sf ,Badda
+ Pick UP Time: 3:30 AM
+
+ Add-ons: Luggage Carrier, Child Seat, Wheel Chair
+ Payment: (Nagad)2352243
+
+ ======================================================== 
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: fsda
+ Phone: 3243242
+ Emergency Contact: 3423
+ Gender: Male
+
+ Vehicle selected: MicroBus
+ Ride Type: Economy
+ A/C: No
+ Music: Yes
+
+ Pick UP: fdff ,Gulshan
+ Drop At: dwr ,Dhanmondi
+ Pick UP Time: 0:0 
+
+ Add-ons: Luggage Carrier, , Wheel Chair
+ Payment: (Bkash)3242424
+
+ ======================================================== 
