@@ -6,34 +6,34 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.*;
 import javax.swing.*;
 import javax.swing.border.Border;
-import java.io.*;
 
 public class MainFrame extends JFrame implements ActionListener, MouseListener {
     // ======================= include panels here ========================
     private JPanel headingPanel, passangerDetailsPanel, rideDetailsPanel, bookRidePanel, confirmationPanel;
     // ======================== include components used in the full project
     // =======================
-    private ImageIcon logo, carDetails;
+    private ImageIcon logo, carDetails, userInfoLogo, vehicleLogo, bookingLogo;
     private JLabel logoLabel, headingTextlabel, tagLineLabel;
 
     private Font headingFont, subHeadingFont, labelFont;
     private Color labelColor;
 
     // ==================== Passangers Panel All components ===============
-    private JLabel userName, paassangerSubHeading, userPhnLabel, userEmergencyPhnLabel, userGender;
+    private JLabel userName, paassangerSubHeading, userPhnLabel, userEmergencyPhnLabel, userGender, userInfoLogoLabel;
     private JTextField userNameTextArea, userPhnTextArea, userEmergencyPhnTextArea;
     private JRadioButton userMale, userFemale, userOther;
     private ButtonGroup radioGenderGroup;
     // ==================== Ride/vehicle panel All components ===============
-    private JLabel rideSubHeading, carLabel, vehicleTypeLabel;
+    private JLabel rideSubHeading, carLabel, vehicleTypeLabel, vehicleLogoLabel;
     private JComboBox vehicleType;
     private JCheckBox musicVehicleCheck, acVehicleCheck;
     private ImageIcon bikeRideImg;
     // ==================== Ride Booking Components ===========================
     private JLabel bookRideHeadingLabel, pickupVenuelabel, dropVenuelabel, pickUPLoclabel, dropOffLoclabel,
-            bookTimeLabel, totalPriceLabel;
+            bookTimeLabel, totalPriceLabel, bookingLogoLabel;
     private JLabel rideTypeLabel, reqLabel, payViaLabel, accountNumber, bookHourLabel, luggageLabel, babySeatLabel,
             wheelChairLabel;
     private ImageIcon luggageImgIcon, wheelChairImageIcon, babySeatImgIcon;
@@ -47,13 +47,18 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
 
     private double vehicleRate, vehicleClassificationRate=0, addonRate=0, distanceTravelled=1;
 
+    //================== Theme Color ==================================
+    // private Color themeColor =  new Color(15, 61, 46); 
+    private Color themeColor = new Color(0, 102, 114);
+    // private Color themeColor = new Color(255, 107, 107);
     //=================== CONSTRUCTOR ================================= 
     public MainFrame() {
         super.setTitle("Shohoz Ride - Booking ride made easy!");
         super.setBounds(350, 10, 800, 800);
         super.setResizable(false);
         super.setLayout(null);
-        super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        super.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         logo = new ImageIcon("images//logo_2.png");
 
@@ -69,7 +74,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         // =================== heading panel: logo, heading text etc===================================
         headingPanel = new JPanel();
         headingPanel.setBounds(0, 0, 798, 110);
-        headingPanel.setBackground(new Color(255, 107, 107));
+        headingPanel.setBackground(themeColor);
         headingPanel.setOpaque(true);
         headingPanel.setLayout(null);
 
@@ -99,9 +104,14 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         passangerDetailsPanel.setBackground(new Color(255, 248, 240));
         passangerDetailsPanel.setLayout(null);
 
+        //=========================== sub logo ====================================
+        userInfoLogo = new ImageIcon("images\\headinLogo\\userInfo.png");
+        userInfoLogoLabel = new JLabel(userInfoLogo);
+        userInfoLogoLabel.setBounds(40, 30, 30, 30);
+        passangerDetailsPanel.add(userInfoLogoLabel);
         // ========================== heading ==================================
         paassangerSubHeading = new JLabel("Passenger Information");
-        paassangerSubHeading.setBorder(border);
+        // paassangerSubHeading.setBorder(border);
         paassangerSubHeading.setFont(subHeadingFont);
         paassangerSubHeading.setForeground(labelColor);
         paassangerSubHeading.setHorizontalAlignment(JLabel.CENTER);
@@ -189,13 +199,19 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         rideDetailsPanel.setBounds(0, 452, 350, 307);
         rideDetailsPanel.setBackground(new Color(255, 248, 240));
         rideDetailsPanel.setLayout(null);
+        
+        //=========================== sub logo ====================================
+        vehicleLogo = new ImageIcon("images\\headinLogo\\vehicle.png");
+        vehicleLogoLabel = new JLabel(vehicleLogo);
+        vehicleLogoLabel.setBounds(50, 15, 30, 30);
+        rideDetailsPanel.add(vehicleLogoLabel);
 
         // ========================== ==================================
         rideSubHeading = new JLabel("Vehicle Information");
         rideSubHeading.setFont(subHeadingFont);
         rideSubHeading.setHorizontalAlignment(JLabel.CENTER);
         rideSubHeading.setForeground(labelColor);
-        rideSubHeading.setBorder(border);
+        // rideSubHeading.setBorder(border);
         rideSubHeading.setBounds(60, 15, 250, 30);
 
         // ========================== Image Added ==================================
@@ -267,13 +283,19 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         bookRidePanel.setBackground(new Color(255, 248, 240));
         bookRidePanel.setLayout(null);
 
+        //======================= Book Ride logo =====================
+        bookingLogo = new ImageIcon("images\\headinLogo\\booking.png");
+        bookingLogoLabel = new JLabel(bookingLogo);
+        bookingLogoLabel.setBounds(20, 30, 30, 30);
+        bookRidePanel.add(bookingLogoLabel);
+        
         // ============================================================
         bookRideHeadingLabel = new JLabel("Book a Ride!");
         bookRideHeadingLabel.setFont(subHeadingFont);
         bookRideHeadingLabel.setHorizontalAlignment(JLabel.CENTER);
         bookRideHeadingLabel.setForeground(labelColor);
-        bookRideHeadingLabel.setBorder(border);
-        bookRideHeadingLabel.setBounds(90, 30, 180, 30);
+        // bookRideHeadingLabel.setBorder(border);
+        bookRideHeadingLabel.setBounds(30, 30, 180, 30);
         // ============================================================
         // ========================= LABEL: PICKUP LOCATION
         // ============================================================
@@ -477,7 +499,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         confirmBtn.setBounds(80, 615, 120, 30);
         confirmBtn.setFont(labelFont);
         confirmBtn.setForeground(Color.WHITE);
-        confirmBtn.setBackground(new Color(30, 136, 229));
+        confirmBtn.setBackground(themeColor);
         confirmBtn.setOpaque(true);
         confirmBtn.addActionListener(this);
         confirmBtn.setEnabled(false);
@@ -540,7 +562,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         // ***********************************************************************************
         // ###########################################################################
         // =================== Confirmation / Receipt Panel
-        // ==================================
+        // ===========================================================================
         confirmationPanel = new JPanel();
         confirmationPanel.setBounds(0, 110, 798, 650);
         confirmationPanel.setBackground(new Color(255, 248, 240));
@@ -569,6 +591,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         anotherRideBtn.setText("Book Another Ride!");
         anotherRideBtn.setBounds(300, 585, 210, 40);
 
+        
         confirmationPanel.add(confirmationHeadingLabel);
         confirmationPanel.add(scrollPane);
         confirmationPanel.add(anotherRideBtn);
@@ -811,10 +834,17 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     // ================= Action Listener ==================
 
     private boolean locationValid=false;
-    private boolean payment = false;
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == exitProgram) {
+            int exitResponse = JOptionPane.showConfirmDialog(this, "Are you sure? \nClick Ok to Exit! ",
+                    "Termiante Program", JOptionPane.YES_NO_OPTION);
+            if (exitResponse == JOptionPane.YES_OPTION) {
+                System.exit(0);
+            }
+        }
+
         //======================= Data Insertion ========================
         String Username, phone, emergPhone, pickupVenue, dropOffVenue, accNo; // done
         String vehicleChoice, pickLoc, dropLoc; // done
@@ -856,13 +886,13 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             //=============================================================
             else if (pickUplocString.equals("") || dropOffLocString.equals("")) {
                 // JOptionPane.showMessageDialog(this, "Location cannot be empty! Please fill them.");
-                pickUPLoclabel.setForeground(Color.RED);
+                // pickUPLoclabel.setForeground(Color.RED);
                 locationValid = false;
             }
 
             else if (pickUplocString.equals("") && dropOffLocString.equals("")) {
                 // JOptionPane.showMessageDialog(this, "Location cannot be empty! Please fill them.");
-                dropOffLoclabel.setForeground(Color.RED);
+                // dropOffLoclabel.setForeground(Color.RED);
                 locationValid = false;
             }
 
@@ -949,9 +979,11 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                     } 
                     else if (acVehicleCheck.isSelected()) {
                         ac = "Yes";
+                        music = "No";
                     }
                     else if (musicVehicleCheck.isSelected()) {
                         music = "Yes";
+                        ac = "No";
                     } 
                     else {
                         ac = "No";
@@ -1015,13 +1047,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             }
         }
 
-        if (e.getSource() == exitProgram) {
-            int exitResponse = JOptionPane.showConfirmDialog(this, "Are you sure? \nClick Ok to Exit! ",
-                    "Termiante Program", JOptionPane.YES_NO_OPTION);
-            if (exitResponse == JOptionPane.YES_OPTION) {
-                System.exit(0);
-            }
-        }
+
         // ========================= Book Another Ride button - backend
         if (e.getSource() == anotherRideBtn) {
             vehicleType.setSelectedIndex(0);

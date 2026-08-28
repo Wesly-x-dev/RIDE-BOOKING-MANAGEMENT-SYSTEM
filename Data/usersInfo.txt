@@ -112,6 +112,7 @@
  ============ ShohozRide - Booking Successful! ========== 
  ======================================================== 
 
+<<<<<<< HEAD
  Name: Wesly
  Phone: 01632958026
  Emergency Contact: 01632958026
@@ -128,5 +129,133 @@
 
  Add-ons: Luggage Carrier, , 
  Payment: (Bkash)01632958026
+=======
+ Name: Atif
+ Phone: 01812579074
+ Emergency Contact: 01812579074
+ Gender: Male
+
+ Vehicle selected: SUV
+ Ride Type: Economy
+ A/C: Yes
+ Music: 
+
+ Pick UP: Aiub ,Kuril
+ Drop At: South ,Badda
+ Pick UP Time: 4:30 AM
+
+ Add-ons: Luggage Carrier, , 
+ Payment: (Bkash)01812579074
+
+ ======================================================== 
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: Atif
+ Phone: 10428
+ Emergency Contact: 019423
+ Gender: Male
+
+ Vehicle selected: SUV
+ Ride Type: Economy
+ A/C: Yes
+ Music: No
+
+ Pick UP: f ,Mirpur
+ Drop At: sf ,Badda
+ Pick UP Time: 3:30 AM
+
+ Add-ons: Luggage Carrier, Child Seat, Wheel Chair
+ Payment: (Nagad)2352243
+
+ ======================================================== 
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: fsda
+ Phone: 3243242
+ Emergency Contact: 3423
+ Gender: Male
+
+ Vehicle selected: MicroBus
+ Ride Type: Economy
+ A/C: No
+ Music: Yes
+
+ Pick UP: fdff ,Gulshan
+ Drop At: dwr ,Dhanmondi
+ Pick UP Time: 0:0 
+
+ Add-ons: Luggage Carrier, , Wheel Chair
+ Payment: (Bkash)3242424
+>>>>>>> 21347cf631258341260fc722f55ee5f4a890b8f7
+
+ ======================================================== 
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: wesly
+ Phone: 1231312
+ Emergency Contact: 1231231223
+ Gender: Male
+
+ Vehicle selected: SUV
+ Ride Type: Economy
+ A/C: Yes
+ Music: Yes
+
+ Pick UP: qweqe ,Savar
+ Drop At: qweqwe ,Kuril
+ Pick UP Time: 3:30 PM
+
+ Add-ons: Luggage Carrier, , 
+ Payment: (Bkash)1231321
+
+ ======================================================== 
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: qweqwew
+ Phone: qweqwe
+ Emergency Contact: qweqe
+ Gender: Male
+
+ Vehicle selected: Motorbike
+ Ride Type: Economy
+ A/C: No
+ Music: No
+
+ Pick UP: qwewqe ,Savar
+ Drop At: qweqwe ,Mirpur
+ Pick UP Time: 2:15 PM
+
+ Add-ons: , , 
+ Payment: (Bkash)wqeqweqw
+
+ ======================================================== 
+ ======================================================== 
+ ============ ShohozRide - Booking Successful! ========== 
+ ======================================================== 
+
+ Name: weqewr
+ Phone: werwer
+ Emergency Contact: werwer
+ Gender: Male
+
+ Vehicle selected: SUV
+ Ride Type: Premium
+ A/C: Yes
+ Music: Yes
+
+ Pick UP: qweqw ,Mirpur
+ Drop At: qweqwe ,Gulshan
+ Pick UP Time: 3:15 PM
+
+ Add-ons: Luggage Carrier, Child Seat, Wheel Chair
+ Payment: (Bkash)qweqwe
 
  ======================================================== 
