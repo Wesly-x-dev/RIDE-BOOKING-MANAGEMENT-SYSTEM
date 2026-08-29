@@ -60,9 +60,8 @@ public class Customer {
                 file.createNewFile();
             }
             fwriter = new FileWriter(file, true);
-            fwriter.write(" ==================== BOOKING RECIEPT =================== " + "\n");
-            fwriter.write(" ======================================================== " + "\n");
-            fwriter.write(" ============ ShohozRide - Booking Successful! ========== " + "\n");
+            fwriter.write(" ==================== RIDE BOOKING RECIEPT ============== " + "\n");
+            fwriter.write("                 ShohozRide - Booking Successful!            " + "\n");
             fwriter.write(" ======================================================== " + "\n");
 
             fwriter.write(" Passanger Information: "+ "\n");

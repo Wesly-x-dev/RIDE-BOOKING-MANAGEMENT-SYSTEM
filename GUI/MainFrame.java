@@ -48,23 +48,13 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     private double vehicleRate, vehicleClassificationRate=0, addonRate=0, distanceTravelled=1;
 
     //================== Theme Color ==================================
-    // private Color themeColor =  new Color(15, 61, 46); 
-    // private Color themeColor = new Color(0, 102, 114);
      private Color themeColor = new Color(232, 93, 44);
-    // private Color themeColor = new Color(255, 107, 107);
-
     //================== All panel Color ==================================
-
     private Color panelColor = new Color(255, 248, 240);
-
     //================== All button color ==================================
-
     private Color buttonColor = new Color(255, 179, 0);
 
 
-
-
-    
     //=================== CONSTRUCTOR ================================= 
     public MainFrame() {
         super.setTitle("Shohoz Ride - Booking ride made easy!");
@@ -121,7 +111,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         //=========================== sub logo ====================================
         userInfoLogo = new ImageIcon("images\\headinLogo\\userInfo.png");
         userInfoLogoLabel = new JLabel(userInfoLogo);
-        userInfoLogoLabel.setBounds(40, 30, 30, 30);
+        userInfoLogoLabel.setBounds(35, 30, 30, 30);
         passangerDetailsPanel.add(userInfoLogoLabel);
         // ========================== heading ==================================
         paassangerSubHeading = new JLabel("Passenger Information");
@@ -129,7 +119,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         paassangerSubHeading.setFont(subHeadingFont);
         paassangerSubHeading.setForeground(labelColor);
         paassangerSubHeading.setHorizontalAlignment(JLabel.CENTER);
-        paassangerSubHeading.setBounds(60, 30, 250, 30);
+        paassangerSubHeading.setBounds(60, 33, 250, 30);
 
         // ============================================================================
         // ========================= LABEL: YOUR NAME ==================================
@@ -205,21 +195,16 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         super.add(passangerDetailsPanel);
         // ***************************************************************************
         // ###########################################################################
-
-        // ***************************************************************************
-        // ###########################################################################
         // =================== Ride Details panels==================================
         rideDetailsPanel = new JPanel();
         rideDetailsPanel.setBounds(0, 452, 350, 307);
         rideDetailsPanel.setBackground(panelColor);
         rideDetailsPanel.setLayout(null);
-        
         //=========================== sub logo ====================================
         vehicleLogo = new ImageIcon("images\\headinLogo\\vehicle.png");
         vehicleLogoLabel = new JLabel(vehicleLogo);
         vehicleLogoLabel.setBounds(50, 15, 30, 30);
         rideDetailsPanel.add(vehicleLogoLabel);
-
         // ========================== ==================================
         rideSubHeading = new JLabel("Vehicle Information");
         rideSubHeading.setFont(subHeadingFont);
@@ -227,12 +212,10 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         rideSubHeading.setForeground(labelColor);
         // rideSubHeading.setBorder(border);
         rideSubHeading.setBounds(60, 15, 250, 30);
-
         // ========================== Image Added ==================================
         carDetails = new ImageIcon("images//rideDetails.png");
         carLabel = new JLabel(carDetails);
         carLabel.setBounds(70, 5, 200, 200);
-
         // ========================== vehicle type ComboBox LABEL ==================================
         vehicleTypeLabel = new JLabel("Choose Vehicle: ");
         vehicleTypeLabel.setBounds(20, 165, 150, 30);
@@ -309,7 +292,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         bookRideHeadingLabel.setHorizontalAlignment(JLabel.CENTER);
         bookRideHeadingLabel.setForeground(labelColor);
         // bookRideHeadingLabel.setBorder(border);
-        bookRideHeadingLabel.setBounds(30, 30, 180, 30);
+        bookRideHeadingLabel.setBounds(34, 30, 180, 30);
         // ============================================================
         // ========================= LABEL: PICKUP LOCATION
         // ============================================================
@@ -352,8 +335,8 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         dropOffLoclabel.setForeground(labelColor);
         // ================================================================================================
         // ========================== Location select ComboBox ==================================
-        String loc[] = new String[] { "", "Savar", "Kuril", "Mirpur", "Gulshan", "Badda", "Dhanmondi", "Mohammadpur" };
-
+        String loc[] = new String[] 
+        { "", "Savar", "Kuril", "Mirpur", "Gulshan", "Badda", "Dhanmondi", "Mohammadpur" };
         choosePickLoc = new JComboBox(loc);
         choosePickLoc.setBounds(220, 95, 180, 30);
         choosePickLoc.setFont(labelFont);
