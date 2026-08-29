@@ -1,0 +1,39 @@
+ ==================== BOOKING RECIEPT =================== 
+                  ShohozRide - Booking Successful!               
+ ======================================================== 
+ Passanger Information: 
+ --------------------- 
+ Name: wesly
+ Phone: 852753
+ Emergency Contact: 951357
+ Gender: Male
+
+ Vehicle Details: 
+ ---------------- 
+ Vehicle selected: MicroBus
+ Ride Type: Economy
+
+ Ride Details: 
+ -------------
+ Pick UP: efvbnjiol ,Kuril
+ Drop At: mjygvcsw ,Dhanmondi
+ Pick UP Time: 3:0 AM
+
+ Passangers' Preference: 
+ ----------------------
+ Add-ons: , , 
+ A/C: No
+ Music: Yes
+
+ Payment Details: 
+ -----------------
+ Payment: (Bkash)-------- 852397412358
+
+ Vehicle Rent: (Per Km) -------- 300.0 tk 
+ Vehicle Rent: (This Ride) ----- 7500.0 tk 
+ Add On Bill: (Total) ---------- 0.0 tk 
+ ===================================================
+ Total Bill: ------------------- 7500.0 tk 
+ ===================================================
+
+

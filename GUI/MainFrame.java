@@ -941,19 +941,11 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             }
         }
         
-
-        ////===================== Logic to prevent submission of form without credit/bkash/nagad number ===================
-        if (e.getSource() == payVBox1 || e.getSource() == payVBox2 || e.getSource() == payVBox3 || e.getSource() == accountNumbertextArea || e.getSource() == confirmBtn) {
-                if (accNo.equals("")) {
-                    JOptionPane.showMessageDialog(this, "Please Provide payment details to ride a book!.");
-                    payment = false;
-                } else {
-                    payment = true;
-                }
-            }
+        // boolean paymentValid = !accountNumbertextArea.getText().trim().isEmpty()
+        // && (payVBox1.isSelected() || payVBox2.isSelected() || payVBox3.isSelected());
 
         //=============== logic to enable terms and condition boxes and confirm button to confirm ======================
-        if (passsagerInfoCheck == true && vehicleInfoCheck ==true && locationValid == true && payment==true){
+        if (passsagerInfoCheck == true && vehicleInfoCheck ==true && locationValid == true){
             
             termsAndCondCheckBox.setEnabled(true);
             if (termsAndCondCheckBox.isSelected()) {
@@ -967,7 +959,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             if (e.getSource() == confirmBtn) {
                 int response = JOptionPane.showConfirmDialog(this, "Booking a ride - Confirm?", "Confirm Ride",
                     JOptionPane.YES_NO_OPTION);
-
+                
                 if (response == JOptionPane.YES_OPTION) 
                 {
                     confirmBtn.setBackground(Color.GREEN);
@@ -1087,49 +1079,45 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             }
         }
 
-                if (e.getSource() == anotherRideBtn) {
-            vehicleType.setSelectedIndex(0);
-            acVehicleCheck.setSelected(false);
-            acVehicleCheck.setEnabled(false);
-            musicVehicleCheck.setSelected(false);
-            musicVehicleCheck.setEnabled(false);
-            radioRideTypeGroup.clearSelection();
+            if (e.getSource() == anotherRideBtn) {
+                vehicleType.setSelectedIndex(0);
+                acVehicleCheck.setSelected(false);
+                acVehicleCheck.setEnabled(false);
+                musicVehicleCheck.setSelected(false);
+                musicVehicleCheck.setEnabled(false);
+                radioRideTypeGroup.clearSelection();
 
-            carDetails = new ImageIcon("images//rideDetails.png");
-            carLabel.setIcon(carDetails);
-            carLabel.setBounds(70, 5, 200, 200);
+                carDetails = new ImageIcon("images//rideDetails.png");
+                carLabel.setIcon(carDetails);
+                carLabel.setBounds(70, 5, 200, 200);
 
-            pickupVenuetextArea.setText("");
-            dropVenuetextArea.setText("");
-            choosePickLoc.setSelectedIndex(0);
-            chooseDropLoc.setSelectedIndex(0);
+                pickupVenuetextArea.setText("");
+                dropVenuetextArea.setText("");
+                choosePickLoc.setSelectedIndex(0);
+                chooseDropLoc.setSelectedIndex(0);
 
-            cBox1.setSelected(false);
-            cBox2.setSelected(false);
-            cBox3.setSelected(false);
+                cBox1.setSelected(false);
+                cBox2.setSelected(false);
+                cBox3.setSelected(false);
 
-            radioGenderGroup.clearSelection();
-            accountNumbertextArea.setText("");
+                radioGenderGroup.clearSelection();
+                accountNumbertextArea.setText("");
 
-            termsAndCondCheckBox.setSelected(false);
-            termsAndCondCheckBox.setEnabled(true);
+                termsAndCondCheckBox.setSelected(false);
+                termsAndCondCheckBox.setEnabled(true);
 
-            confirmBtn.setBackground(new Color(216, 152, 0));
-            confirmBtn.setText("Confirm!");
-            confirmBtn.setForeground(Color.WHITE);
-            confirmBtn.setEnabled(false);
+                confirmBtn.setBackground(new Color(216, 152, 0));
+                confirmBtn.setText("Confirm!");
+                confirmBtn.setForeground(Color.WHITE);
+                confirmBtn.setEnabled(false);
 
-            anotherRideBtn.setEnabled(false);
+                anotherRideBtn.setEnabled(false);
 
-            confirmationPanel.setVisible(false);
-            passangerDetailsPanel.setVisible(true);
-            rideDetailsPanel.setVisible(true);
-            bookRidePanel.setVisible(true);
-        }
-
-
-        // ========================= Book Another Ride button - backend
-
+                confirmationPanel.setVisible(false);
+                passangerDetailsPanel.setVisible(true);
+                rideDetailsPanel.setVisible(true);
+                bookRidePanel.setVisible(true);
+            }
         // =======================================================================================
         // ============================================ Action perfomed ends here
         // =================================================================
