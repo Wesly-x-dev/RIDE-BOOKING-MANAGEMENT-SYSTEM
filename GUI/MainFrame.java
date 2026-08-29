@@ -68,7 +68,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     //=================== CONSTRUCTOR ================================= 
     public MainFrame() {
         super.setTitle("Shohoz Ride - Booking ride made easy!");
-        super.setBounds(350, 10, 800, 800);
+        super.setBounds(330, 10, 800, 800);
         super.setResizable(false);
         super.setLayout(null);
         // super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -877,7 +877,11 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         String Username, phone, emergPhone, pickupVenue, dropOffVenue, accNo; // done
         String vehicleChoice, pickLoc, dropLoc; // done
         String gender, payVia, vehicleClass=""; // radio button type done alsooo
-        String ac="", music="", luggage="", childSeat="", wheelChair=""; // check box uhhh faah brother
+        String ac="",   music="", luggage="", childSeat="", wheelChair=""; // check box uhhh faah brother
+
+        String vehiclePerKm = Double.toString(vehicleRate);
+        String vehicleBillForRide = Double.toString(vehicleRate * distanceTravelled);
+        String addOnTotalprice = Double.toString(addonRate);
 
         termsAndCondCheckBox.setEnabled(false);
         boolean passsagerInfoCheck = passangerErrorInfoLogic();
@@ -1053,11 +1057,13 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                         wheelChair = "";
                         }
 
-                    Customer obj1 = new Customer(Username, phone, emergPhone, pickupVenue, dropOffVenue, 
+                    Customer passanger = new Customer(
+                        Username, phone, emergPhone, pickupVenue, dropOffVenue, 
                         accNo, vehicleChoice, pickLoc, dropLoc, gender, payVia, vehicleClass, 
-                        getSelectedRideTime(), ac, music, luggage, childSeat, wheelChair, cost);
+                        getSelectedRideTime(), ac, music, luggage, childSeat, wheelChair, 
+                        cost, vehiclePerKm, vehicleBillForRide,addOnTotalprice);
 
-                    obj1.insertInfo();
+                    passanger.insertInfo();
                     display();
                     //=================================================================
                     rideReciept.setCaretPosition(0);
