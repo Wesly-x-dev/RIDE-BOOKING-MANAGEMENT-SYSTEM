@@ -862,6 +862,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     // ================= Action Listener ==================
 
     private boolean locationValid=false;
+    private boolean payment = true;
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -889,58 +890,72 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         String pickUplocString = choosePickLoc.getSelectedItem().toString();
         String dropOffLocString = chooseDropLoc.getSelectedItem().toString();
 
+
+        Username = userNameTextArea.getText();
+        phone = userPhnTextArea.getText();
+        emergPhone = userEmergencyPhnTextArea.getText();
+        pickupVenue = pickupVenuetextArea.getText();
+        dropOffVenue = dropVenuetextArea.getText();
+        accNo = accountNumbertextArea.getText();
+        
+        vehicleChoice = vehicleType.getSelectedItem().toString();
+        pickLoc = choosePickLoc.getSelectedItem().toString();
+        dropLoc = chooseDropLoc.getSelectedItem().toString();
+
         //========================= Travel cost logic ============================
         addonRate = 0;
         vehicleClassificationRate = 0;
 
         getTravelCost();
-        //========== vehicle class ==========
+        //========== vehicle class price logic ==========
         if(rideEco.isSelected()){
             vehicleClassificationRate = 0;
         }
         else if(ridePremium.isSelected()){
             vehicleClassificationRate = 500;
         }
-
         if(cBox1.isSelected()){addonRate += 100;}
         if(cBox2.isSelected()){addonRate += 250;}
         if(cBox3.isSelected()){addonRate += 200;}
 
-        
         String cost = Double.toString(getTotalCost());
         totalPrice.setText(cost + "tk");
 
-        //========================= Location error catching =====================
+        //===================== Logic to prevent submission of form without credit/bkash/nagad number
         if (e.getSource() == choosePickLoc || e.getSource() == chooseDropLoc) {
-
             if (pickUplocString.equals("") || dropOffLocString.equals("")) {
-                //JOptionPane.showMessageDialog(this, "Pickup location cannot be same as drop off location");
                 locationValid = false;
             } 
             //=============================================================
             else if (pickUplocString.equals(dropOffLocString)) {
                 JOptionPane.showMessageDialog(this, "Pickup location cannot be same as drop off location");
-                // pickUPLoclabel.setForeground(Color.RED);
                 locationValid = false;
             }
-
             else if (pickUplocString.equals("") && dropOffLocString.equals("")) {
-                // JOptionPane.showMessageDialog(this, "Location cannot be empty! Please fill them.");
-                // dropOffLoclabel.setForeground(Color.RED);
                 locationValid = false;
             }
-
             else {
                 pickUPLoclabel.setForeground(Color.BLACK);
                 dropOffLoclabel.setForeground(Color.BLACK);
                 locationValid = true; 
             }
         }
+        
+
+        ////===================== Logic to prevent submission of form without credit/bkash/nagad number ===================
+        if (e.getSource() == payVBox1 || e.getSource() == payVBox2 || e.getSource() == payVBox3 || e.getSource() == accountNumbertextArea || e.getSource() == confirmBtn) {
+                if (accNo.equals("")) {
+                    JOptionPane.showMessageDialog(this, "Please Provide payment details to ride a book!.");
+                    payment = false;
+                } else {
+                    payment = true;
+                }
+            }
 
         //=============== logic to enable terms and condition boxes and confirm button to confirm ======================
-        if (passsagerInfoCheck == true && vehicleInfoCheck ==true && locationValid == true){
+        if (passsagerInfoCheck == true && vehicleInfoCheck ==true && locationValid == true && payment==true){
+            
             termsAndCondCheckBox.setEnabled(true);
-
             if (termsAndCondCheckBox.isSelected()) {
                 confirmBtn.setEnabled(true);
                 anotherRideBtn.setEnabled(false);
@@ -962,19 +977,6 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                     anotherRideBtn.setEnabled(true);
                     termsAndCondCheckBox.setEnabled(false);
                     
-
-                    Username = userNameTextArea.getText();
-                    phone = userPhnTextArea.getText();
-                    emergPhone = userEmergencyPhnTextArea.getText();
-                    pickupVenue = pickupVenuetextArea.getText();
-                    dropOffVenue = dropVenuetextArea.getText();
-                    accNo = accountNumbertextArea.getText();
-                    
-                    vehicleChoice = vehicleType.getSelectedItem().toString();
-                    pickLoc = choosePickLoc.getSelectedItem().toString();
-                    dropLoc = chooseDropLoc.getSelectedItem().toString();
-
-
                     //=============================================================
                     if (pickUplocString.equals("") || dropOffLocString.equals("")) {
                         JOptionPane.showMessageDialog(this, "Location cannot be empty! Please fill them.");
@@ -997,6 +999,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                         vehicleClass = ridePremium.getText();
                     }
                     // //===================================
+
                     if (payVBox1.isSelected()) {
                         payVia = payVBox1.getText();
                     } 
