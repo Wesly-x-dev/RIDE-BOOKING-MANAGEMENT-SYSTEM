@@ -660,7 +660,8 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         else {return true;}        
     }
 
-    private Boolean vehicleErrorInfoLogic(){
+    private Boolean vehicleErrorInfoLogic()
+    {
         // =============================== Vehicle image Selection
         // ================================
         int selected = vehicleType.getSelectedIndex();
@@ -762,7 +763,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         return hour + ":" + mins + " " + amPm;
     }
 
-   private void getTravelCost(){
+    private void getTravelCost(){
     String pick = choosePickLoc.getSelectedItem().toString();
     String drop = chooseDropLoc.getSelectedItem().toString();
     //=================================================================================== SAVAR ===========================================================================================
@@ -859,6 +860,16 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     private double getTotalCost(){
         return vehicleClassificationRate + addonRate + (vehicleRate * distanceTravelled);
     }
+    
+    private Boolean isAccNoValid(){
+        if (accountNumbertextArea.getText().equals("")) {
+                termsAndCondCheckBox.setSelected(false);
+                JOptionPane.showMessageDialog(this, "Account number Required!!");
+                confirmBtn.setEnabled(false);
+                return false;
+            }
+        else{return true;}
+    }
     // ================= Action Listener ==================
 
     private boolean locationValid=false;
@@ -887,6 +898,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         termsAndCondCheckBox.setEnabled(false);
         boolean passsagerInfoCheck = passangerErrorInfoLogic();
         boolean vehicleInfoCheck = vehicleErrorInfoLogic();
+        boolean isAccountNumberValid = isAccNoValid();
         String pickUplocString = choosePickLoc.getSelectedItem().toString();
         String dropOffLocString = chooseDropLoc.getSelectedItem().toString();
 
@@ -945,7 +957,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         // && (payVBox1.isSelected() || payVBox2.isSelected() || payVBox3.isSelected());
 
         //=============== logic to enable terms and condition boxes and confirm button to confirm ======================
-        if (passsagerInfoCheck == true && vehicleInfoCheck ==true && locationValid == true){
+        if (passsagerInfoCheck == true && vehicleInfoCheck ==true && locationValid == true && isAccountNumberValid==true){
             
             termsAndCondCheckBox.setEnabled(true);
             if (termsAndCondCheckBox.isSelected()) {

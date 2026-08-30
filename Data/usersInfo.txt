@@ -37,3 +37,159 @@
  ===================================================
 
 
+ ==================== BOOKING RECIEPT =================== 
+                  ShohozRide - Booking Successful!               
+ ======================================================== 
+ Passanger Information: 
+ --------------------- 
+ Name: Asif
+ Phone: 6767676767
+ Emergency Contact: 69696969696
+ Gender: Female
+
+ Vehicle Details: 
+ ---------------- 
+ Vehicle selected: MicroBus
+ Ride Type: Premium
+
+ Ride Details: 
+ -------------
+ Pick UP: AIUB ,Kuril
+ Drop At: Bus Stand ,Mohammadpur
+ Pick UP Time: 5:0 PM
+
+ Passangers' Preference: 
+ ----------------------
+ Add-ons: , , Wheel Chair
+ A/C: Yes
+ Music: Yes
+
+ Payment Details: 
+ -----------------
+ Payment: (Bkash)-------- 6969696969
+
+ Vehicle Rent: (Per Km) -------- 300.0 tk 
+ Vehicle Rent: (This Ride) ----- 6300.0 tk 
+ Add On Bill: (Total) ---------- 200.0 tk 
+ ===================================================
+ Total Bill: ------------------- 7000.0 tk 
+ ===================================================
+
+
+ ==================== BOOKING RECIEPT =================== 
+                  ShohozRide - Booking Successful!               
+ ======================================================== 
+ Passanger Information: 
+ --------------------- 
+ Name: neloy saha borson
+ Phone: 0198888888
+ Emergency Contact: 0188888888
+ Gender: Male
+
+ Vehicle Details: 
+ ---------------- 
+ Vehicle selected: MicroBus
+ Ride Type: Premium
+
+ Ride Details: 
+ -------------
+ Pick UP: uttara ,Gulshan
+ Drop At: aiub ,Kuril
+ Pick UP Time: 2:30 PM
+
+ Passangers' Preference: 
+ ----------------------
+ Add-ons: , Child Seat, 
+ A/C: No
+ Music: No
+
+ Payment Details: 
+ -----------------
+ Payment: (Nagad)-------- 01888888888
+
+ Vehicle Rent: (Per Km) -------- 300.0 tk 
+ Vehicle Rent: (This Ride) ----- 4500.0 tk 
+ Add On Bill: (Total) ---------- 250.0 tk 
+ ===================================================
+ Total Bill: ------------------- 5250.0 tk 
+ ===================================================
+
+
+ ==================== BOOKING RECIEPT =================== 
+                  ShohozRide - Booking Successful!               
+ ======================================================== 
+ Passanger Information: 
+ --------------------- 
+ Name: dtrd
+ Phone: asdf
+ Emergency Contact: asdfgh
+ Gender: Male
+
+ Vehicle Details: 
+ ---------------- 
+ Vehicle selected: Hi-ace
+ Ride Type: Economy
+
+ Ride Details: 
+ -------------
+ Pick UP: fyft ,Savar
+ Drop At: fty ,Mirpur
+ Pick UP Time: 1:0 
+
+ Passangers' Preference: 
+ ----------------------
+ Add-ons: Luggage Carrier, , 
+ A/C: No
+ Music: No
+
+ Payment Details: 
+ -----------------
+ Payment: (Bkash)-------- qwertg
+
+ Vehicle Rent: (Per Km) -------- 350.0 tk 
+ Vehicle Rent: (This Ride) ----- 7000.0 tk 
+ Add On Bill: (Total) ---------- 100.0 tk 
+ ===================================================
+ Total Bill: ------------------- 7100.0 tk 
+ ===================================================
+
+
+ ==================== BOOKING RECIEPT =================== 
+                  ShohozRide - Booking Successful!               
+ ======================================================== 
+ Passanger Information: 
+ --------------------- 
+ Name: Attount
+ Phone: 1314323
+ Emergency Contact: 234234
+ Gender: Male
+
+ Vehicle Details: 
+ ---------------- 
+ Vehicle selected: Hi-ace
+ Ride Type: Economy
+
+ Ride Details: 
+ -------------
+ Pick UP: wfa ,Gulshan
+ Drop At: afafs ,Dhanmondi
+ Pick UP Time: 2:0 
+
+ Passangers' Preference: 
+ ----------------------
+ Add-ons: , , Wheel Chair
+ A/C: No
+ Music: No
+
+ Payment Details: 
+ -----------------
+ Payment: (Bkash)-------- 23424
+
+ Vehicle Rent: (Per Km) -------- 350.0 tk 
+ Vehicle Rent: (This Ride) ----- 8050.0 tk 
+ Add On Bill: (Total) ---------- 200.0 tk 
+ ===================================================
+ Total Bill: ------------------- 8250.0 tk 
+ ===================================================
+
+
