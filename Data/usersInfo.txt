@@ -37,3 +37,81 @@
  ===================================================
 
 
+ ==================== BOOKING RECIEPT =================== 
+                  ShohozRide - Booking Successful!               
+ ======================================================== 
+ Passanger Information: 
+ --------------------- 
+ Name: Atif 
+ Phone: 01721241244
+ Emergency Contact: 01742141414
+ Gender: Male
+
+ Vehicle Details: 
+ ---------------- 
+ Vehicle selected: SUV
+ Ride Type: Economy
+
+ Ride Details: 
+ -------------
+ Pick UP: sass ,Mirpur
+ Drop At: asaafs ,Badda
+ Pick UP Time: 4:30 AM
+
+ Passangers' Preference: 
+ ----------------------
+ Add-ons: , , 
+ A/C: No
+ Music: No
+
+ Payment Details: 
+ -----------------
+ Payment: (Nagad)-------- 3522322235
+
+ Vehicle Rent: (Per Km) -------- 100.0 tk 
+ Vehicle Rent: (This Ride) ----- 3000.0 tk 
+ Add On Bill: (Total) ---------- 0.0 tk 
+ ===================================================
+ Total Bill: ------------------- 3000.0 tk 
+ ===================================================
+
+
+ ==================== BOOKING RECIEPT =================== 
+                  ShohozRide - Booking Successful!               
+ ======================================================== 
+ Passanger Information: 
+ --------------------- 
+ Name: Atiff
+ Phone: 01814124124
+ Emergency Contact: 01814214144
+ Gender: Male
+
+ Vehicle Details: 
+ ---------------- 
+ Vehicle selected: SUV
+ Ride Type: Premium
+
+ Ride Details: 
+ -------------
+ Pick UP: agsdff ,Gulshan
+ Drop At: adsfa ,Dhanmondi
+ Pick UP Time: 2:15 AM
+
+ Passangers' Preference: 
+ ----------------------
+ Add-ons: Luggage Carrier, , 
+ A/C: Yes
+ Music: No
+
+ Payment Details: 
+ -----------------
+ Payment: (Bkash)-------- 123422344223
+
+ Vehicle Rent: (Per Km) -------- 100.0 tk 
+ Vehicle Rent: (This Ride) ----- 2300.0 tk 
+ Add On Bill: (Total) ---------- 100.0 tk 
+ ===================================================
+ Total Bill: ------------------- 2900.0 tk 
+ ===================================================
+
+

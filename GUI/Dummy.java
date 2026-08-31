@@ -856,7 +856,7 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
             {
                if(userPhone.charAt(0) == '0' && userPhone.charAt(1) == '1')
                 {
-                    if(userPhone.charAt(2) == '3' || userPhone.charAt(2) == '5' || userPhone.charAt(2) == '6' || userPhone.charAt(2) == '7' || userPhone.charAt(2) == '9' )
+                    if(userPhone.charAt(2) == '3' || userPhone.charAt(2) == '5' || userPhone.charAt(2) == '6' || userPhone.charAt(2) == '7' || userPhone.charAt(2) == '8' || userPhone.charAt(2) == '9' )
                     {
                         return true;
                     }
