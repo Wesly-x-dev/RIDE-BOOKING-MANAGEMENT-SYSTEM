@@ -854,28 +854,28 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
         }
         else if(userPhone.length() == 11)
             {
+
+                int i = 0;
+                while (i < userPhone.length()) {
+                    String currentChar = "" + userPhone.charAt(i);
+
+                    if (currentChar.equals("0") || currentChar.equals("1") || currentChar.equals("2")
+                            || currentChar.equals("3") || currentChar.equals("4") || currentChar.equals("5")
+                            || currentChar.equals("6") || currentChar.equals("7") || currentChar.equals("8")
+                            || currentChar.equals("9")) {
+                        // valid digit, continue
+                    } else {
+                        return false;
+                    }
+                    i++;
+                }
+
                if(userPhone.charAt(0) == '0' && userPhone.charAt(1) == '1')
                 {
-                   
+                 
                     if(userPhone.charAt(2) == '3' || userPhone.charAt(2) == '5' || userPhone.charAt(2) == '6' || userPhone.charAt(2) == '7' || userPhone.charAt(2) == '8' || userPhone.charAt(2) == '9' )
-                    {   
-                        
-                        
-
-                        for(int i = 0; i< userPhone.length(); i++)
-                        {
-                            String digit = "" + userPhone.charAt(i);
-                            
-                            if(digit.equals("0") || digit.equals("1") || digit.equals("2") || digit.equals("3") || digit.equals("4") || digit.equals("5") || digit.equals("6") || digit.equals("7") || digit.equals("8") || digit.equals("9"))
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return false;
-                            }
-
-                        }  
+                    {
+                        return true;
                     }
                 }
             }
