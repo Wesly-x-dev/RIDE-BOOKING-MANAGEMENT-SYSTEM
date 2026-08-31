@@ -956,7 +956,7 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
             {
                 termsAndCondCheckBox.setEnabled(true);
                 confirmBtn.setEnabled(true);
-                anotherRideBtn.setEnabled(false);
+                anotherRideBtn.setEnabled(true);
             }
         
         else 
@@ -980,7 +980,8 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
                 pickupVenue = pickupVenuetextArea.getText();
                 dropOffVenue = dropVenuetextArea.getText();
                 accNo = accountNumbertextArea.getText();
-
+                boolean phoneNumber = isPhoneNumberValid(phone);
+                boolean emergencyNumber = isPhoneNumberValid(emergPhone);
                 //===================== User Gender Logic ========================================
                 if (!userMale.isSelected() && !userFemale.isSelected() && !userOther.isSelected()) 
                     {
@@ -1066,7 +1067,7 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
                 
                 //========================================
                 if (
-                    Username.equals("") || isPhoneNumberValid(phone) == false && isPhoneNumberValid(emergPhone) == false ||
+                    Username.equals("") || phoneNumber == false || emergencyNumber == false ||
                     pickupVenue.equals("") || dropOffVenue.equals("") || accNo.equals("")
                     )
                     {
