@@ -252,11 +252,13 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
         rideEco = new JRadioButton("Economy");
         rideEco.setBounds(120, 240, 100, 30);
         rideEco.setFont(labelFont);
+        rideEco.setBackground(panelColor);
         rideDetailsPanel.add(rideEco);
 
         ridePremium = new JRadioButton("Premium");
         ridePremium.setBounds(240, 240, 100, 30);
         ridePremium.setFont(labelFont);
+        ridePremium.setBackground(panelColor);
         rideDetailsPanel.add(ridePremium);
 
         rideEco.addActionListener(this);
@@ -269,11 +271,13 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
         acVehicleCheck = new JCheckBox("A/C");
         acVehicleCheck.setBounds(190, 165, 100, 30);// (x,y,width, height)
         acVehicleCheck.setFont(labelFont);
+        acVehicleCheck.setBackground(panelColor);
         acVehicleCheck.addActionListener(this);
 
         musicVehicleCheck = new JCheckBox("Music");
         musicVehicleCheck.setBounds(190, 195, 100, 30);// (x,y,width, height)
         musicVehicleCheck.setFont(labelFont);
+        musicVehicleCheck.setBackground(panelColor);
         musicVehicleCheck.addActionListener(this);
 
         acVehicleCheck.setEnabled(false);
@@ -397,11 +401,13 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
         rideAm = new JRadioButton("AM");
         rideAm.setBounds(270, 220, 70, 30);
         rideAm.setFont(labelFont);
+        rideAm.setBackground(panelColor);
         bookRidePanel.add(rideAm);
         // =======================================================
         ridePm = new JRadioButton("PM");
         ridePm.setBounds(350, 220, 70, 30);
         ridePm.setFont(labelFont);
+        ridePm.setBackground(panelColor);
         bookRidePanel.add(ridePm);
         // =======================================================
         radioRideAmPmGroup = new ButtonGroup();
@@ -416,16 +422,19 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
         cBox1 = new JCheckBox("Luggage Carrier");
         cBox1.setBounds(10, 410, 140, 30);
         cBox1.setFont(labelFont);
+        cBox1.setBackground(panelColor);
         cBox1.addActionListener(this);
 
         cBox2 = new JCheckBox("Child Seat");
         cBox2.setBounds(320, 410, 120, 30);
         cBox2.setFont(labelFont);
+        cBox2.setBackground(panelColor);
         cBox2.addActionListener(this);
 
         cBox3 = new JCheckBox("Wheel Chair");
         cBox3.setBounds(170, 410, 130, 30);
         cBox3.setFont(labelFont);
+        cBox3.setBackground(panelColor);
         cBox3.addActionListener(this);
 
 
@@ -470,14 +479,17 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
         payVBox1 = new JRadioButton("Bkash");
         payVBox1.setBounds(100, 495, 80, 30);
         payVBox1.setFont(labelFont);
+        payVBox1.setBackground(panelColor);
 
         payVBox2 = new JRadioButton("Nagad");
         payVBox2.setBounds(180, 495, 80, 30);
         payVBox2.setFont(labelFont);
+        payVBox2.setBackground(panelColor);
 
         payVBox3 = new JRadioButton("Credit/Debit");
         payVBox3.setBounds(260, 495, 120, 30);
         payVBox3.setFont(labelFont);
+        payVBox3.setBackground(panelColor);
         
         payVBox1.addActionListener(this);
         payVBox2.addActionListener(this);
@@ -505,6 +517,7 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
         termsAndCondCheckBox.setBounds(80, 580, 250, 20);// (x,y,width, height)
         termsAndCondCheckBox.setFont(new Font("MV Boli", Font.BOLD, 12));
         termsAndCondCheckBox.setEnabled(false);
+        termsAndCondCheckBox.setBackground(panelColor);
         termsAndCondCheckBox.addActionListener(this);
 
         // ========================== Confirm Button ======================
@@ -891,15 +904,7 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
     }
 
 
-    private Boolean isAccNoValid(){
-        if (accountNumbertextArea.getText().equals("")) {
-                // termsAndCondCheckBox.setSelected(false);
-                JOptionPane.showMessageDialog(this, "Account number Required!!");
-                confirmBtn.setEnabled(false);
-                return false;
-            }
-        else{return true;}
-    }
+   
     // ================= Action Listener ==================
 
     @Override
@@ -914,6 +919,7 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
         String addOnTotalprice = Double.toString(addonRate);
 
         // ======================= Exit button logic ==========================
+        
         if (e.getSource() == exitProgram || e.getSource() == anotherExitButton) {
             int exitResponse = JOptionPane.showConfirmDialog(this, "Are you sure? \nClick Ok to Exit! ",
                     "Termiante Program", JOptionPane.YES_NO_OPTION);
