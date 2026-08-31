@@ -232,3 +232,42 @@
  ===================================================
 
 
+ ==================== BOOKING RECIEPT =================== 
+                  ShohozRide - Booking Successful!               
+ ======================================================== 
+ Passanger Information: 
+ --------------------- 
+ Name: asasf
+ Phone: 018qre34243
+ Emergency Contact: 018dgdwgf31
+ Gender: Male
+
+ Vehicle Details: 
+ ---------------- 
+ Vehicle selected: SUV
+ Ride Type: Economy
+
+ Ride Details: 
+ -------------
+ Pick UP: qewf ,Mirpur
+ Drop At: qfwe ,Badda
+ Pick UP Time: 3:15 AM
+
+ Passangers' Preference: 
+ ----------------------
+ Add-ons: , , Wheel Chair
+ A/C: Yes
+ Music: No
+
+ Payment Details: 
+ -----------------
+ Payment: (Nagad)-------- 4232242
+
+ Vehicle Rent: (Per Km) -------- 100.0 tk 
+ Vehicle Rent: (This Ride) ----- 3000.0 tk 
+ Add On Bill: (Total) ---------- 200.0 tk 
+ ===================================================
+ Total Bill: ------------------- 3200.0 tk 
+ ===================================================
+
+
