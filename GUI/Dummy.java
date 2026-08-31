@@ -10,7 +10,7 @@ import java.io.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 
-public class MainFrame extends JFrame implements ActionListener, MouseListener {
+public class Dummy extends JFrame implements ActionListener, MouseListener {
     // ======================= include panels here ========================
     private JPanel headingPanel, passangerDetailsPanel, rideDetailsPanel, bookRidePanel, confirmationPanel;
     // ======================== include components used in the full project
@@ -62,7 +62,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     private Color buttonColor = new Color(255, 179, 0);
     
     //=================== CONSTRUCTOR ================================= 
-    public MainFrame() {
+    public Dummy() {
         super.setTitle("Shohoz Ride - Booking ride made easy!");
         super.setBounds(330, 10, 800, 800);
         super.setResizable(false);
@@ -871,6 +871,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         return false;
     }
 
+
     private Boolean isAccNoValid(){
         if (accountNumbertextArea.getText().equals("")) {
                 // termsAndCondCheckBox.setSelected(false);
@@ -882,15 +883,16 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
     }
     // ================= Action Listener ==================
 
-    private boolean locationValid=false;
-    private boolean accoungNumberValid = false;
-
     @Override
     public void actionPerformed(ActionEvent e) {
-        //=======================================================
-        getTravelCost();
-        getTotalCost();
-        //=======================================================
+        //========================Attributes =================================
+        String vehicleChoice, payVia="";
+        String pickUplocString = choosePickLoc.getSelectedItem().toString();
+        String dropOffLocString = chooseDropLoc.getSelectedItem().toString();                        
+        vehicleChoice = vehicleType.getSelectedItem().toString();
+        String vehicleFeePerKm = Double.toString(vehicleRate);
+        String vehicleBillForRide = Double.toString(vehicleRate * distanceTravelled);
+        String addOnTotalprice = Double.toString(addonRate);
 
         // ======================= Exit button logic ==========================
         if (e.getSource() == exitProgram || e.getSource() == anotherExitButton) {
@@ -901,225 +903,198 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
             }
         }
 
-        //======================= attributes initialiazation ========================
-        String Username, phone, emergPhone, pickupVenue, dropOffVenue, accNo; 
-        String vehicleChoice, pickLoc, dropLoc; 
-        String gender, payVia, vehicleClass=""; 
-        String ac="",   music="", luggage="", childSeat="", wheelChair=""; 
-
-        
-        String vehicleFeePerKm = Double.toString(vehicleRate);
-        String vehicleBillForRide = Double.toString(vehicleRate * distanceTravelled);
-        String addOnTotalprice = Double.toString(addonRate);
-
-        //===================== attributes used in logic ==================
-
-        //===================== part-1: Enables/disables I accept checkbox:
-        boolean passsagerInfoCheck = passangerEmptyErrorLogic();
-        //===================== part-2: Enables/disables I accept checkbox:
-        boolean vehicleInfoCheck = vehicleErrorInfoLogic();
-        //================================================================
-        String pickUplocString = choosePickLoc.getSelectedItem().toString();
-        String dropOffLocString = chooseDropLoc.getSelectedItem().toString();
-
-        //============== attributes in use =============
-        Username = userNameTextArea.getText();
-        phone = userPhnTextArea.getText();
-        emergPhone = userEmergencyPhnTextArea.getText();
-        pickupVenue = pickupVenuetextArea.getText();
-        dropOffVenue = dropVenuetextArea.getText();
-        accNo = accountNumbertextArea.getText();
-        
-        vehicleChoice = vehicleType.getSelectedItem().toString();
-        pickLoc = choosePickLoc.getSelectedItem().toString();
-        dropLoc = chooseDropLoc.getSelectedItem().toString();
 
         //========================= Travel cost logic ============================
         addonRate = 0;
         vehicleClassificationRate = 0;
+        //========== price logic ======================
 
-        //========== vehicle class price logic ======================
+        vehicleErrorInfoLogic();
+        getTravelCost();
+
+        Boolean rideClass = false;
         if(rideEco.isSelected()){
             vehicleClassificationRate = 0;
+            rideClass = true;
         }
         else if(ridePremium.isSelected()){
             vehicleClassificationRate = 500;
+            rideClass = true;
         }
         if(cBox1.isSelected()){addonRate += 100;}
         if(cBox2.isSelected()){addonRate += 250;}
         if(cBox3.isSelected()){addonRate += 200;}
-
+        
         String cost = Double.toString(getTotalCost());
         totalPrice.setText(cost + "tk");
-
-        //===================== part-3: Enables/disables I accept checkbox:  according to the selection of the location ==========
-        if (e.getSource() == choosePickLoc || e.getSource() == chooseDropLoc) {
-            if (pickUplocString.equals("") || dropOffLocString.equals("")) {
-                locationValid = false;
-            } 
-            else if (pickUplocString.equals(dropOffLocString)) {
-                JOptionPane.showMessageDialog(this, "Pickup location cannot be same as drop off location");
-                locationValid = false;
-            }
-            else if (pickUplocString.equals("") && dropOffLocString.equals("")) {
-                locationValid = false;
-            }
-            else {
-                pickUPLoclabel.setForeground(Color.BLACK);
-                dropOffLoclabel.setForeground(Color.BLACK);
-                locationValid = true; 
-            }
-        }
         
-        //=============== (implementation of 3 parts) logic to enable terms and condition boxes and confirm button to confirm ====
-        if (passsagerInfoCheck == true && vehicleInfoCheck ==true && locationValid == true  ){
-            //we used the upper conditional for only enable/disable feature for I accpet .......
-            termsAndCondCheckBox.setEnabled(true);
-            if (termsAndCondCheckBox.isSelected()) {
+
+
+        //==========================================================
+        if (payVBox1.isSelected()) 
+            {
+                payVia = payVBox1.getText();
+
+            } 
+        else if (payVBox2.isSelected()) 
+            {
+                payVia = payVBox2.getText();
+            } 
+        else if(payVBox3.isSelected()) 
+            {
+                payVia = payVBox3.getText();
+            }
+        else{payVia = "";}
+
+        String hour = "";
+        if(rideAm.isSelected()){hour = "AM";}
+        if(ridePm.isSelected()){hour = "PM";}
+
+        //================ Terms and condtion Checkbox================
+        if(!vehicleChoice.isEmpty() && rideClass == true && !hour.equals("") && !pickUplocString.equals("")
+           && !dropOffLocString.equals("") && !payVia.isEmpty() && !pickUplocString.equals(dropOffLocString))        
+            {
+                termsAndCondCheckBox.setEnabled(true);
                 confirmBtn.setEnabled(true);
                 anotherRideBtn.setEnabled(false);
-            } 
-            else {
+            }
+        
+        else 
+            {
+                termsAndCondCheckBox.setEnabled(false);
                 confirmBtn.setEnabled(false);
                 anotherRideBtn.setEnabled(false);
-            }
-            //============== Confirmation Logic ============================
+            }   
+
+         //============== Confirmation Logic ============================
             if (e.getSource() == confirmBtn) {
-                    //=============================================================
-                    if (userMale.isSelected()) 
-                        {
-                            gender = userMale.getText();
-                        } 
-                    else 
-                        {
-                            gender = userFemale.getText();
-                        }
-                    // =================================
-                    if(rideEco.isSelected())
-                        {
-                            vehicleClass = rideEco.getText();
-                        }
-                    else if(ridePremium.isSelected())
-                        {
-                            vehicleClass = ridePremium.getText();
-                        }
 
-                    //===================================
-                    if (acVehicleCheck.isSelected() && musicVehicleCheck.isSelected()) {
-                        ac = "Yes";
-                        music = "Yes";
-                    } 
-                    else if (acVehicleCheck.isSelected()) {
-                        ac = "Yes";
-                        music = "No";
-                    }
-                    else if (musicVehicleCheck.isSelected()) {
-                        music = "Yes";
-                        ac = "No";
-                    } 
-                    else {
-                        ac = "No";
-                        music = "No";
-                    }
+                        //==================== Attributes Init =========================
+                String Username="", phone, emergPhone, pickupVenue="", dropOffVenue="", accNo=""; 
+                String gender="",  vehicleClass=""; 
+                String ac="",   music="", luggage="", childSeat="", wheelChair=""; 
+                        //============== attributes in use =============
+                Username = userNameTextArea.getText();
+                phone = userPhnTextArea.getText();
+                emergPhone = userEmergencyPhnTextArea.getText();
+                pickupVenue = pickupVenuetextArea.getText();
+                dropOffVenue = dropVenuetextArea.getText();
+                accNo = accountNumbertextArea.getText();
 
-                    //=============================================================
-                    if (pickUplocString.equals("") || dropOffLocString.equals("")) {
-                        JOptionPane.showMessageDialog(this, "Location cannot be empty! Please fill them.");
-                        locationValid = false;
+                //===================== User Gender Logic ========================================
+                if (!userMale.isSelected() && !userFemale.isSelected() && !userOther.isSelected()) 
+                    {
+                        JOptionPane.showMessageDialog(this, "Must select a gender");
+                        confirmBtn.setEnabled(false);
+                        termsAndCondCheckBox.setSelected(false);
                     }
-                    
-                    // =================================
-                    if (cBox1.isSelected() && cBox2.isSelected() && cBox3.isSelected()) {
-                        luggage = cBox1.getText();
-                        childSeat = cBox2.getText();
-                        wheelChair = cBox3.getText();
+                else if (userMale.isSelected()) 
+                    {
+                        gender = userMale.getText();
                     }
-                    else if (cBox1.isSelected() && cBox2.isSelected()) {
-                        luggage = cBox1.getText();
-                        childSeat = cBox2.getText();
-                    } 
-                    else if (cBox2.isSelected() && cBox3.isSelected()) {
-                        childSeat = cBox2.getText();
-                        wheelChair = cBox3.getText();
-                    } 
-                    else if (cBox1.isSelected() && cBox3.isSelected()) {
-                        luggage = cBox1.getText();
-                        wheelChair = cBox3.getText();
-                    } 
-                    else if (cBox1.isSelected()) {
-                        luggage = cBox1.getText();
-                    } 
-                    else if (cBox2.isSelected()) {
-                        childSeat = cBox2.getText();
+                else if (userFemale.isSelected())
+                    {
+                        gender = userFemale.getText();
                     }
-                    else if (cBox3.isSelected()) {
-                        wheelChair = cBox3.getText();
-                    } 
-                    else {
-                        luggage = "";
-                        childSeat = "";
-                        wheelChair = "";
-                        }
-                    
-                    // //===================================
-                    if (payVBox1.isSelected()) 
-                        {
-                            payVia = payVBox1.getText();
-                        } 
-                    else if (payVBox2.isSelected()) 
-                        {
-                            payVia = payVBox2.getText();
-                        } 
-                    else 
-                        {
-                            payVia = payVBox3.getText();
-                        }
-                    
-                    //=============================================================
-                    if (isAccNoValid()==false) 
-                        {
-                            locationValid = false;
-                            payVBox1.setSelected(false);
-                            payVBox2.setSelected(false);
-                            payVBox3.setSelected(false);
-                        }
-
-                    
-                    if (
-                        !Username.isEmpty() && isPhoneNumberValid(phone) == true && isPhoneNumberValid(emergPhone) == true &&
-                        !pickupVenue.isEmpty() && !dropOffVenue.isEmpty() && !accNo.isEmpty()
-                        )
-                        {
-
-                            Customer passanger = new Customer(
-                                Username, phone, emergPhone, pickupVenue, dropOffVenue, 
-                                accNo, vehicleChoice, pickLoc, dropLoc, gender, payVia, vehicleClass, 
-                                getSelectedRideTime(), ac, music, luggage, childSeat, wheelChair, 
-                                cost, vehicleFeePerKm, vehicleBillForRide,addOnTotalprice);
-
-                            passanger.insertInfo();
-                            display();
-                            //=================================================================
-                            rideReciept.setCaretPosition(0);
-                            passangerDetailsPanel.setVisible(false);
-                            rideDetailsPanel.setVisible(false);
-                            bookRidePanel.setVisible(false);
-                            confirmationPanel.setVisible(true);
-                        }
-                    else
-                        {
-                            // JOptionPane.showMessageDialog(this, "Please fillup all information!");
-                            confirmBtn.setBackground(new Color(216, 152, 0));
-                            confirmBtn.setText("Confirm!");
-                            confirmBtn.setForeground(Color.WHITE);
-                            confirmBtn.setEnabled(false);
-                            termsAndCondCheckBox.setSelected(false);
-                        }
-                    }
-
+                else if (userOther.isSelected()) {gender = userOther.getText();}
                 
+                // ==============Ride Class Logic===================
+                if(rideEco.isSelected())
+                    {
+                        vehicleClass = rideEco.getText();
+                    }
+                else if(ridePremium.isSelected())
+                    {
+                        vehicleClass = ridePremium.getText();
+                    }
+
+                //============== Ac / Music =====================
+                if (acVehicleCheck.isSelected() && musicVehicleCheck.isSelected()) {
+                    ac = "Yes";
+                    music = "Yes";
+                } 
+                else if (acVehicleCheck.isSelected()) {
+                    ac = "Yes";
+                    music = "No";
+                }
+                else if (musicVehicleCheck.isSelected()) {
+                    music = "Yes";
+                    ac = "No";
+                } 
+                else {
+                    ac = "No";
+                    music = "No";
+                }
+
+                //=============================================================
+                if (pickUplocString.equals("") || dropOffLocString.equals("")) {
+                    JOptionPane.showMessageDialog(this, "Location cannot be empty! Please fill them.");
+                }
+                
+                // =============================================================
+                if (cBox1.isSelected() && cBox2.isSelected() && cBox3.isSelected()) {
+                    luggage = cBox1.getText();
+                    childSeat = cBox2.getText();
+                    wheelChair = cBox3.getText();
+                }
+                else if (cBox1.isSelected() && cBox2.isSelected()) {
+                    luggage = cBox1.getText();
+                    childSeat = cBox2.getText();
+                } 
+                else if (cBox2.isSelected() && cBox3.isSelected()) {
+                    childSeat = cBox2.getText();
+                    wheelChair = cBox3.getText();
+                } 
+                else if (cBox1.isSelected() && cBox3.isSelected()) {
+                    luggage = cBox1.getText();
+                    wheelChair = cBox3.getText();
+                } 
+                else if (cBox1.isSelected()) {
+                    luggage = cBox1.getText();
+                } 
+                else if (cBox2.isSelected()) {
+                    childSeat = cBox2.getText();
+                }
+                else if (cBox3.isSelected()) {
+                    wheelChair = cBox3.getText();
+                } 
+                else {
+                    luggage = "";
+                    childSeat = "";
+                    wheelChair = "";
+                    }
+                
+                //========================================
+                if (
+                    Username.equals("") || isPhoneNumberValid(phone) == false && isPhoneNumberValid(emergPhone) == false ||
+                    pickupVenue.equals("") || dropOffVenue.equals("") || accNo.equals("")
+                    )
+                    {
+                                                //Write the six error COnfig for all of the conditions above
+                        JOptionPane.showMessageDialog(this, "Please Fill up Information!");
+                        
+                    }
+                else
+                    {
+
+                        Customer passanger = new Customer(
+                            Username, phone, emergPhone, pickupVenue, dropOffVenue, 
+                            accNo, vehicleChoice, pickUplocString, dropOffLocString, gender, payVia, vehicleClass, 
+                            getSelectedRideTime(), ac, music, luggage, childSeat, wheelChair, 
+                            cost, vehicleFeePerKm, vehicleBillForRide,addOnTotalprice);
+
+                        passanger.insertInfo();
+                        display();
+                        //=================================================================
+                        rideReciept.setCaretPosition(0);
+                        passangerDetailsPanel.setVisible(false);
+                        rideDetailsPanel.setVisible(false);
+                        bookRidePanel.setVisible(false);
+                        confirmationPanel.setVisible(true);
+                    }
             }
-        // }
+            
+            //========================Another Ride Button ====================================
             if (e.getSource() == anotherRideBtn) {
                 vehicleType.setSelectedIndex(0);
                 acVehicleCheck.setSelected(false);
@@ -1159,9 +1134,6 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                 rideDetailsPanel.setVisible(true);
                 bookRidePanel.setVisible(true);
             }
-        // =======================================================================================
-        // ============================================ Action perfomed ends here
-        // =================================================================
     }
 
     // =======================================================================================

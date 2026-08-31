@@ -3,21 +3,21 @@
  ======================================================== 
  Passanger Information: 
  --------------------- 
- Name: Wesly
+ Name: costa
  Phone: 01632958026
  Emergency Contact: 01632958026
  Gender: Male
 
  Vehicle Details: 
  ---------------- 
- Vehicle selected: SUV
+ Vehicle selected: MicroBus
  Ride Type: Premium
 
  Ride Details: 
  -------------
  Pick UP: Rajason ,Savar
- Drop At: AUIB ,Kuril
- Pick UP Time: 3:0 PM
+ Drop At: Aiub ,Kuril
+ Pick UP Time: 3:0 AM
 
  Passangers' Preference: 
  ----------------------
@@ -27,13 +27,13 @@
 
  Payment Details: 
  -----------------
- Payment: (Bkash)-------- 852145236957853
+ Payment: (Bkash)-------- 01632958026
 
- Vehicle Rent: (Per Km) -------- 100.0 tk 
- Vehicle Rent: (This Ride) ----- 3500.0 tk 
+ Vehicle Rent: (Per Km) -------- 300.0 tk 
+ Vehicle Rent: (This Ride) ----- 10500.0 tk 
  Add On Bill: (Total) ---------- 100.0 tk 
  ===================================================
- Total Bill: ------------------- 4100.0 tk 
+ Total Bill: ------------------- 11100.0 tk 
  ===================================================
 
 
