@@ -74,9 +74,9 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
 
         super.setIconImage(logo.getImage());
         // =================== Fonts and Colors ==========================
-        headingFont = new Font("MV Boli", Font.BOLD, 30);
-        subHeadingFont = new Font("MV Boli", Font.BOLD, 20);
-        labelFont = new Font("MV Boli", Font.BOLD, 15);
+        headingFont = new Font("Verdana", Font.BOLD, 26);
+        subHeadingFont = new Font("Segoe UI", Font.BOLD, 20);
+        labelFont = new Font("Segoe UI", Font.BOLD, 15);
 
         labelColor = new Color(27, 58, 30);
         Border border = BorderFactory.createDashedBorder(Color.BLACK, 2, 2, 2, true);
@@ -93,7 +93,7 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
 
         headingTextlabel = new JLabel("ShohozRide - Shohoz Ride, Shohoz Life");
         headingTextlabel.setFont(headingFont);
-        headingTextlabel.setBounds(140, 30, 750, 40);
+        headingTextlabel.setBounds(125, 30, 750, 40);
         headingTextlabel.setForeground(labelColor);
 
         tagLineLabel = new JLabel("Ride Booking & Fleet Management System");
@@ -169,16 +169,19 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
         userMale = new JRadioButton("Male");
         userMale.setBounds(110, 290, 60, 30);
         userMale.setFont(labelFont);
+        userMale.setBackground(panelColor);
         passangerDetailsPanel.add(userMale);
 
         userFemale = new JRadioButton("Female");
         userFemale.setBounds(170, 290, 80, 30);
         userFemale.setFont(labelFont);
+        userFemale.setBackground(panelColor);
         passangerDetailsPanel.add(userFemale);
 
         userOther = new JRadioButton("Others");
         userOther.setBounds(250, 290, 80, 30);
         userOther.setFont(labelFont);
+        userOther.setBackground(panelColor);
         passangerDetailsPanel.add(userOther);
 
         radioGenderGroup = new ButtonGroup();
@@ -854,7 +857,6 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
         }
         else if(userPhone.length() == 11)
             {
-
                 int i = 0;
                 while (i < userPhone.length()) {
                     String currentChar = "" + userPhone.charAt(i);
