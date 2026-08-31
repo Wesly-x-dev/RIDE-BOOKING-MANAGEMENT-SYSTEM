@@ -115,3 +115,120 @@
  ===================================================
 
 
+ ==================== BOOKING RECIEPT =================== 
+                  ShohozRide - Booking Successful!               
+ ======================================================== 
+ Passanger Information: 
+ --------------------- 
+ Name: adgfdsa
+ Phone: 01834556789
+ Emergency Contact: 01834556789
+ Gender: Others
+
+ Vehicle Details: 
+ ---------------- 
+ Vehicle selected: Motorbike
+ Ride Type: Economy
+
+ Ride Details: 
+ -------------
+ Pick UP: adgf ,Kuril
+ Drop At: dasfsd ,Mirpur
+ Pick UP Time: 3:30 AM
+
+ Passangers' Preference: 
+ ----------------------
+ Add-ons: , , 
+ A/C: No
+ Music: No
+
+ Payment Details: 
+ -----------------
+ Payment: (Bkash)-------- 35425255
+
+ Vehicle Rent: (Per Km) -------- 5.0 tk 
+ Vehicle Rent: (This Ride) ----- 75.0 tk 
+ Add On Bill: (Total) ---------- 0.0 tk 
+ ===================================================
+ Total Bill: ------------------- 75.0 tk 
+ ===================================================
+
+
+ ==================== BOOKING RECIEPT =================== 
+                  ShohozRide - Booking Successful!               
+ ======================================================== 
+ Passanger Information: 
+ --------------------- 
+ Name: Atif
+ Phone: 01812345689
+ Emergency Contact: 01812345689
+ Gender: Male
+
+ Vehicle Details: 
+ ---------------- 
+ Vehicle selected: CNG
+ Ride Type: Economy
+
+ Ride Details: 
+ -------------
+ Pick UP: awaffw ,Badda
+ Drop At: edsa ,Mirpur
+ Pick UP Time: 4:0 AM
+
+ Passangers' Preference: 
+ ----------------------
+ Add-ons: , , Wheel Chair
+ A/C: No
+ Music: No
+
+ Payment Details: 
+ -----------------
+ Payment: (Bkash)-------- 2354823443
+
+ Vehicle Rent: (Per Km) -------- 8.0 tk 
+ Vehicle Rent: (This Ride) ----- 240.0 tk 
+ Add On Bill: (Total) ---------- 200.0 tk 
+ ===================================================
+ Total Bill: ------------------- 440.0 tk 
+ ===================================================
+
+
+ ==================== BOOKING RECIEPT =================== 
+                  ShohozRide - Booking Successful!               
+ ======================================================== 
+ Passanger Information: 
+ --------------------- 
+ Name: Atif
+ Phone: 018as122344
+ Emergency Contact: 018as1223fs
+ Gender: Male
+
+ Vehicle Details: 
+ ---------------- 
+ Vehicle selected: CNG
+ Ride Type: Economy
+
+ Ride Details: 
+ -------------
+ Pick UP: asda ,Mirpur
+ Drop At: asfaf ,Badda
+ Pick UP Time: 4:0 AM
+
+ Passangers' Preference: 
+ ----------------------
+ Add-ons: , , Wheel Chair
+ A/C: No
+ Music: No
+
+ Payment Details: 
+ -----------------
+ Payment: (Nagad)-------- 23545345
+
+ Vehicle Rent: (Per Km) -------- 8.0 tk 
+ Vehicle Rent: (This Ride) ----- 240.0 tk 
+ Add On Bill: (Total) ---------- 200.0 tk 
+ ===================================================
+ Total Bill: ------------------- 440.0 tk 
+ ===================================================
+
+

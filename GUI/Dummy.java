@@ -845,11 +845,11 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
     
     private boolean isPhoneNumberValid(String userPhone){
         if(userPhone.isEmpty()){
-            JOptionPane.showMessageDialog(this, "Must Provide Contact Details!");
+            //JOptionPane.showMessageDialog(this, "Must Provide Contact Details!");
             return false;
         }
         else if(userPhone.length() < 11 || userPhone.length() > 11){
-            JOptionPane.showMessageDialog(this, "Invalid Phone Number!");
+           // JOptionPane.showMessageDialog(this, "Invalid Phone Number!");
             return false;
         }
         else if(userPhone.length() == 11)
@@ -864,7 +864,7 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
             }
         else
             {
-                JOptionPane.showMessageDialog(this, "Contact Number must have 11 digits");
+                //JOptionPane.showMessageDialog(this, "Contact Number must have 11 digits");
                 termsAndCondCheckBox.setEnabled(false);
                 return false;
             }
@@ -1068,11 +1068,38 @@ public class Dummy extends JFrame implements ActionListener, MouseListener {
                 //========================================
                 if (
                     Username.equals("") || phoneNumber == false || emergencyNumber == false ||
-                    pickupVenue.equals("") || dropOffVenue.equals("") || accNo.equals("")
+                    pickupVenue.equals("") || dropOffVenue.equals("") || accNo.equals("") || phone.equals(emergPhone)
                     )
                     {
                                                 //Write the six error COnfig for all of the conditions above
-                        JOptionPane.showMessageDialog(this, "Please Fill up Information!");
+                        if(Username.equals(""))
+                         {
+                             JOptionPane.showMessageDialog(this, "Please enter username");
+                         }  
+                        else if(phoneNumber == false)
+                        {
+                            JOptionPane.showMessageDialog(this, "Please enter valid phone number");
+                        }
+                        else if(emergencyNumber == false)
+                        {
+                            JOptionPane.showMessageDialog(this, "Please enter valid emergncy phone number");
+                        }
+                        else if(phone.equals(emergPhone))
+                        {
+                            JOptionPane.showMessageDialog(this, "Need a different emergency phone number");
+                        }
+                         else if(pickupVenue.equals(""))
+                        {
+                            JOptionPane.showMessageDialog(this, "Please enter pickup loction");
+                        }
+                        else if(dropOffVenue.equals(""))
+                        {
+                            JOptionPane.showMessageDialog(this, "Please enter dropoff loction");
+                        }
+                        else if(accNo.equals(""))
+                        {
+                            JOptionPane.showMessageDialog(this, "Please enter account no");
+                        }
                         
                     }
                 else
