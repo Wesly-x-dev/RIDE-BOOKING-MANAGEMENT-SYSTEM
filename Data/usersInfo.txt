@@ -1,0 +1,39 @@
+ ==================== BOOKING RECIEPT =================== 
+                  ShohozRide - Booking Successful!               
+ ======================================================== 
+ Passanger Information: 
+ --------------------- 
+ Name: qwerty
+ Phone: 01632958026
+ Emergency Contact: 01632958027
+ Gender: Male
+
+ Vehicle Details: 
+ ---------------- 
+ Vehicle selected: MicroBus
+ Ride Type: Economy
+
+ Ride Details: 
+ -------------
+ Pick UP: qwerqwert ,Kuril
+ Drop At: qwert ,Savar
+ Pick UP Time: 5:0 AM
+
+ Passangers' Preference: 
+ ----------------------
+ Add-ons: Luggage Carrier, , 
+ A/C: No
+ Music: Yes
+
+ Payment Details: 
+ -----------------
+ Payment: (Bkash)-------- 85201632958026
+
+ Vehicle Rent: (Per Km) -------- 300.0 tk 
+ Vehicle Rent: (This Ride) ----- 10500.0 tk 
+ Add On Bill: (Total) ---------- 100.0 tk 
+ ===================================================
+ Total Bill: ------------------- 10600.0 tk 
+ ===================================================
+
+

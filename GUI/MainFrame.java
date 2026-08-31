@@ -1055,22 +1055,22 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                 accNo = accountNumbertextArea.getText();
                 boolean phoneNumber = isPhoneNumberValid(phone);
                 boolean emergencyNumber = isPhoneNumberValid(emergPhone);
+                boolean userGenderVerify = false;
                 //===================== User Gender Logic ========================================
-                if (!userMale.isSelected() && !userFemale.isSelected() && !userOther.isSelected()) 
-                    {
-                        JOptionPane.showMessageDialog(this, "Must select a gender");
-                        confirmBtn.setEnabled(false);
-                        termsAndCondCheckBox.setSelected(false);
-                    }
-                else if (userMale.isSelected()) 
+                if (userMale.isSelected()) 
                     {
                         gender = userMale.getText();
+                        userGenderVerify = true;
                     }
                 else if (userFemale.isSelected())
                     {
                         gender = userFemale.getText();
+                        userGenderVerify = true;
                     }
-                else if (userOther.isSelected()) {gender = userOther.getText();}
+                else if (userOther.isSelected()) {
+                    gender = userOther.getText();
+                    userGenderVerify = true;
+                }
                 
                 // ==============Ride Class Logic===================
                 if(rideEco.isSelected())
@@ -1138,17 +1138,22 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                     wheelChair = "";
                     }
                 
-                //========================================
                 if (
-                    Username.equals("") || phoneNumber == false || emergencyNumber == false ||
+                    Username.equals("") || phoneNumber == false || emergencyNumber == false || userGenderVerify == false ||
                     pickupVenue.equals("") || dropOffVenue.equals("") || accNo.equals("") || phone.equals(emergPhone)
                     )
                     {
-                                                //Write the six error COnfig for all of the conditions above
                         if(Username.equals(""))
                          {
                              JOptionPane.showMessageDialog(this, "Please enter username");
-                         }  
+                         }
+                         
+                        if (!userMale.isSelected() && !userFemale.isSelected() && !userOther.isSelected()) 
+                            {
+                                JOptionPane.showMessageDialog(this, "Must select a gender");
+                                confirmBtn.setEnabled(false);
+                                termsAndCondCheckBox.setSelected(false);
+                            }
                         else if(phoneNumber == false)
                         {
                             JOptionPane.showMessageDialog(this, "Please enter valid phone number");
@@ -1175,7 +1180,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
                         }
                         
                     }
-                else
+                else 
                     {
 
                         Customer passanger = new Customer(
