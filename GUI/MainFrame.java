@@ -13,8 +13,7 @@ import javax.swing.border.Border;
 public class MainFrame extends JFrame implements ActionListener, MouseListener {
     // ======================= include panels here ========================
     private JPanel headingPanel, passangerDetailsPanel, rideDetailsPanel, bookRidePanel, confirmationPanel;
-    // ======================== include components used in the full project
-    // =======================
+    // ======================== include components used in the full projec  =======================
     private ImageIcon logo, carDetails, userInfoLogo, vehicleLogo, bookingLogo;
     private JLabel logoLabel, headingTextlabel, tagLineLabel;
 
@@ -174,19 +173,19 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         userMale.setBounds(110, 290, 60, 30);
         userMale.setFont(labelFont);
         userMale.setBackground(panelColor);
-        passangerDetailsPanel.add(userMale);
+        
 
         userFemale = new JRadioButton("Female");
         userFemale.setBounds(170, 290, 80, 30);
         userFemale.setFont(labelFont);
         userFemale.setBackground(panelColor);
-        passangerDetailsPanel.add(userFemale);
+        
 
         userOther = new JRadioButton("Others");
         userOther.setBounds(250, 290, 80, 30);
         userOther.setFont(labelFont);
         userOther.setBackground(panelColor);
-        passangerDetailsPanel.add(userOther);
+        
 
         radioGenderGroup = new ButtonGroup();
         radioGenderGroup.add(userOther);
@@ -207,6 +206,10 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         passangerDetailsPanel.add(userEmergencyPhnTextArea);
 
         passangerDetailsPanel.add(userGender);
+        passangerDetailsPanel.add(userMale);
+        passangerDetailsPanel.add(userFemale);
+        passangerDetailsPanel.add(userOther);
+
         super.add(passangerDetailsPanel);
 
 
@@ -235,7 +238,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         rideSubHeading.setBounds(60, 15, 250, 30);
 
 
-        // ========================== Image Added ==================================
+        // ========================== Default Image Added ==================================
         carDetails = new ImageIcon("images//rideDetails.png");
         carLabel = new JLabel(carDetails);
         carLabel.setBounds(70, 5, 200, 200);
@@ -256,14 +259,14 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         vehicleType.addActionListener(this);
 
 
-        // ========================= LABEL: Ride Type Label ==================================
+        // ========================= LABEL: Ride Type Label =================================
         rideTypeLabel = new JLabel("Ride Type: ");
         rideTypeLabel.setBounds(20, 240, 100, 30);
         rideTypeLabel.setFont(labelFont);
         rideTypeLabel.setForeground(labelColor);
 
 
-        // ========================== Choose Quality Class ==================================
+        // ========================== Choose Vehicle Quality ==================================
         rideEco = new JRadioButton("Economy");
         rideEco.setBounds(120, 240, 100, 30);
         rideEco.setFont(labelFont);
@@ -282,15 +285,15 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         radioRideTypeGroup.add(rideEco);
         radioRideTypeGroup.add(ridePremium);
 
-        // ===========================A/c and Music system ===================
+        // ===========================A/c and Music system passanger preference ===================
         acVehicleCheck = new JCheckBox("A/C");
-        acVehicleCheck.setBounds(190, 165, 100, 30);// (x,y,width, height)
+        acVehicleCheck.setBounds(190, 165, 100, 30);
         acVehicleCheck.setFont(labelFont);
         acVehicleCheck.setBackground(panelColor);
         acVehicleCheck.addActionListener(this);
 
         musicVehicleCheck = new JCheckBox("Music");
-        musicVehicleCheck.setBounds(190, 195, 100, 30);// (x,y,width, height)
+        musicVehicleCheck.setBounds(190, 195, 100, 30);
         musicVehicleCheck.setFont(labelFont);
         musicVehicleCheck.setBackground(panelColor);
         musicVehicleCheck.addActionListener(this);
@@ -299,7 +302,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         musicVehicleCheck.setEnabled(false);
 
 
-        // ============================================================
+        // ====================== added components in the panel ======================================
         rideDetailsPanel.add(carLabel);
         rideDetailsPanel.add(rideSubHeading);
         rideDetailsPanel.add(vehicleType);
@@ -320,7 +323,7 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         bookRidePanel.setLayout(null);
 
 
-        //======================= Book Ride logo =====================
+        //======================= Book Ride logo (Logo Beside the Booking Sub heading) =====================
         bookingLogo = new ImageIcon("images\\headinLogo\\booking.png");
         bookingLogoLabel = new JLabel(bookingLogo);
         bookingLogoLabel.setBounds(20, 30, 30, 30);
@@ -332,12 +335,9 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         bookRideHeadingLabel.setFont(subHeadingFont);
         bookRideHeadingLabel.setHorizontalAlignment(JLabel.CENTER);
         bookRideHeadingLabel.setForeground(labelColor);
-        // bookRideHeadingLabel.setBorder(border);
         bookRideHeadingLabel.setBounds(30, 30, 180, 30);
 
 
-
-        
         // ==================== LABEL: PICKUP LOCATION====================
         pickupVenuelabel = new JLabel("Pickup Venue: ");
         pickupVenuelabel.setBounds(20, 65, 150, 30);
@@ -412,21 +412,21 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         bookRidePanel.add(bookHourLabel);
 
 
-        // =======================================================
+        // ======================COMBOBOX: CHOOSE HOUR =================================
         chooseHour = new JComboBox(hour);
         chooseHour.setBounds(130, 220, 60, 30);
         chooseHour.setFont(labelFont);
         chooseHour.addActionListener(this);
 
 
-        // =======================================================
+        // =======================COMBOBOX: CHOOSE MINUTE ================================
         chooseMins = new JComboBox(mins);
         chooseMins.setBounds(200, 220, 60, 30);
         chooseMins.setFont(labelFont);
         chooseMins.addActionListener(this);
 
 
-        // =======================================================
+        // =======================RADIOBUTTON: CHOOSE AM/PM ================================
         rideAm = new JRadioButton("AM");
         rideAm.setBounds(270, 220, 70, 30);
         rideAm.setFont(labelFont);
@@ -434,28 +434,26 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         bookRidePanel.add(rideAm);
 
 
-        // =======================================================
         ridePm = new JRadioButton("PM");
         ridePm.setBounds(350, 220, 70, 30);
         ridePm.setFont(labelFont);
         ridePm.setBackground(panelColor);
         bookRidePanel.add(ridePm);
 
-
-        // =======================================================
+        // ========================AM/PM BUTONGROUP===============================
         radioRideAmPmGroup = new ButtonGroup();
         radioRideAmPmGroup.add(rideAm);
         radioRideAmPmGroup.add(ridePm);
 
 
-        // ================================================================
+        // ==========================LABEL: ADD ON======================================
         reqLabel = new JLabel("Add-on: ");
         reqLabel.setFont(subHeadingFont);
         reqLabel.setHorizontalAlignment(JLabel.CENTER);
         reqLabel.setBounds(70, 260, 240, 30);
 
 
-        // =========================== CheckBox ===================
+        // =========================== CheckBox: ADD ON===================
         cBox1 = new JCheckBox("Luggage Carrier");
         cBox1.setBounds(10, 410, 140, 30);
         cBox1.setFont(labelFont);
@@ -688,24 +686,6 @@ public class MainFrame extends JFrame implements ActionListener, MouseListener {
         confirmationPanel.setVisible(false);
         super.add(confirmationPanel);
     }
-
-
-    //=================== Methods loading with conditional statements for error handling
-    // private Boolean passangerEmptyErrorLogic(){
-    //     if (userNameTextArea.getText().equals("")) {
-    //             termsAndCondCheckBox.setSelected(false);
-    //             // JOptionPane.showMessageDialog(this, "User name required!!");
-    //             confirmBtn.setEnabled(false);
-    //             return false;
-    //         }
-    //     else if (!userMale.isSelected() && !userFemale.isSelected() && !userOther.isSelected()) {
-    //             JOptionPane.showMessageDialog(this, "Must select a gender");
-    //             confirmBtn.setEnabled(false);
-    //             termsAndCondCheckBox.setSelected(false);
-    //             return false;
-    //         }
-    //     else {return true;}        
-    // }
 
     private Boolean vehicleErrorInfoLogic()
     {
