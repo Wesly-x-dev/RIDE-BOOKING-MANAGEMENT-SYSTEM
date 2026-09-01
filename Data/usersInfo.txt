@@ -1,0 +1,78 @@
+ ==================== BOOKING RECIEPT =================== 
+ 	               ShohozRide - Booking Successful!               
+ ===================================================== 
+ PASSENGER INFORMATION: 
+ ---------------------------------------------------------------- 
+ Name:			Atif
+ Phone:			01812579074
+ Emergency Contact:		01812579071
+ Gender:			Male
+
+ TRIP DETAILS: 
+ ---------------------------------------------------------------- 
+ Pick UP:     			Aiub ,Kuril
+ Drop At:     			27 ,Dhanmondi
+ Pick UP Time:			3:30 PM
+
+
+ VEHICLE & PREFERENCES: 
+ ---------------------------------------------------------------- 
+ Vehicle Type:    		MicroBus(Premium)
+ Air Conditioning:		No
+ In-Ride Music:   		No
+ Add-ons:         		Luggage Carrier, Child Seat, Wheel Chair
+
+ BILLING & PAYMENT SUMMARY: 
+ ---------------------------------------------------------------- 
+ Payment Method:     (0687576565)Bkash
+
+ Base Rate: ----------------------- 300.0  BDT / km 
+ Ride Fare: ----------------------- 7500.0 BDT  
+ Add-on Total:--------------------- 550.0 BDT  
+ ---------------------------------------------------------------- 
+ TOTAL AMOUNT PAID: ---------------8550.0 BDT 
+
+ ==================== BOOKING RECIEPT =================== 
+ 	             Thank you for riding with ShohozRide!                
+ ===================================================== 
+
+
+ ==================== BOOKING RECIEPT =================== 
+ 	               ShohozRide - Booking Successful!               
+ ===================================================== 
+ PASSENGER INFORMATION: 
+ ---------------------------------------------------------------- 
+ Name:			Atif
+ Phone:			01812579074
+ Emergency Contact:		01812579071
+ Gender:			Male
+
+ TRIP DETAILS: 
+ ---------------------------------------------------------------- 
+ Pick UP:     			ae ,Mirpur
+ Drop At:     			tt ,Gulshan
+ Pick UP Time:			3:30 PM
+
+
+ VEHICLE & PREFERENCES: 
+ ---------------------------------------------------------------- 
+ Vehicle Type:    		Motorbike(Premium)
+ Air Conditioning:		No
+ In-Ride Music:   		No
+ Add-ons:         		, , 
+
+ BILLING & PAYMENT SUMMARY: 
+ ---------------------------------------------------------------- 
+ Payment Method:     (5465465)Bkash
+
+ Base Rate: ----------------------- 5.0  BDT / km 
+ Ride Fare: ----------------------- 100.0 BDT  
+ Add-on Total:--------------------- 0.0 BDT  
+ ---------------------------------------------------------------- 
+ TOTAL AMOUNT PAID: ---------------600.0 BDT 
+
+ ==================== BOOKING RECIEPT =================== 
+ 	             Thank you for riding with ShohozRide!                
+ ===================================================== 
+
+
