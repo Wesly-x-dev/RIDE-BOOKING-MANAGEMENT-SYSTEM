@@ -61,47 +61,44 @@ public class Customer {
             }
             fwriter = new FileWriter(file, true);
             fwriter.write(" ==================== BOOKING RECIEPT =================== " + "\n");
-            fwriter.write("                  ShohozRide - Booking Successful!               " + "\n");
-            fwriter.write(" ======================================================== " + "\n");
+            fwriter.write(" \t               ShohozRide - Booking Successful!               " + "\n");
+            fwriter.write(" ===================================================== " + "\n");
 
-            fwriter.write(" Passanger Information: "+ "\n");
-            fwriter.write(" --------------------- "+ "\n");
-            fwriter.write(" Name: " + Username + "\n");
-            fwriter.write(" Phone: " + phone + "\n");
-            fwriter.write(" Emergency Contact: " + emergPhone + "\n");
-            fwriter.write(" Gender: " + gender + "\n");
-
+            fwriter.write(" PASSENGER INFORMATION: "+ "\n");
+            fwriter.write(" ---------------------------------------------------------------- "+ "\n");
+            fwriter.write(" Name:\t\t\t" + Username + "\n");
+            fwriter.write(" Phone:\t\t\t" + phone +  "\n");
+            fwriter.write(" Emergency Contact:\t\t" + emergPhone + "\n");
+            fwriter.write(" Gender:\t\t\t" + gender + "\n");
             fwriter.write("\n");
-            fwriter.write(" Vehicle Details: "+ "\n");
-            fwriter.write(" ---------------- "+ "\n");
-            fwriter.write(" Vehicle selected: " + vehicleChoice + "\n");
-            fwriter.write(" Ride Type: " + rideType + "\n");
-            
+            fwriter.write(" TRIP DETAILS: "+ "\n");
+            fwriter.write(" ---------------------------------------------------------------- "+ "\n");
+            fwriter.write(" Pick UP:     \t\t\t" + pickupVenue + " ," +pickLoc + "\n");
+            fwriter.write(" Drop At:     \t\t\t" + dropOffVenue + " ," +dropLoc + "\n");
+            fwriter.write(" Pick UP Time:\t\t\t" + rideTime + "\n");
             fwriter.write("\n");
-            fwriter.write(" Ride Details: "+ "\n");
-            fwriter.write(" -------------"+ "\n");
-            fwriter.write(" Pick UP: " + pickupVenue + " ," +pickLoc + "\n");
-            fwriter.write(" Drop At: " + dropOffVenue + " ," +dropLoc + "\n");
-            fwriter.write(" Pick UP Time: " + rideTime + "\n");
             fwriter.write("\n");
-
-            fwriter.write(" Passangers' Preference: "+ "\n");
-            fwriter.write(" ----------------------"+ "\n");
-            fwriter.write(" Add-ons: " + luggage + ", " + childSeat + ", " + wheelChair + "\n");
-            fwriter.write(" A/C: " + ac + "\n");
-            fwriter.write(" Music: " + music + "\n");
+            fwriter.write(" VEHICLE & PREFERENCES: "+ "\n");
+            fwriter.write(" ---------------------------------------------------------------- "+ "\n");
+            fwriter.write(" Vehicle Type:    \t\t" + vehicleChoice + "("+ rideType +")"+"\n");
+            fwriter.write(" Air Conditioning:\t\t" + ac + "\n");
+            fwriter.write(" In-Ride Music:   \t\t" + music + "\n");
+            fwriter.write(" Add-ons:         \t\t" + luggage + ", " + childSeat + ", " + wheelChair + "\n");  
             fwriter.write("\n");
 
-            fwriter.write(" Payment Details: "+ "\n");
-            fwriter.write(" -----------------"+ "\n");
-            fwriter.write(" Payment: ("+ payVie +")-------- " + accNo + "\n");
+            fwriter.write(" BILLING & PAYMENT SUMMARY: "+ "\n");
+            fwriter.write(" ---------------------------------------------------------------- "+ "\n");
+            fwriter.write(" Payment Method:     ("+  accNo+")" + payVie + "\n");
             fwriter.write("\n");
-            fwriter.write(" Vehicle Rent: (Per Km) -------- " + vehivleRentPerKm + " tk \n");
-            fwriter.write(" Vehicle Rent: (This Ride) ----- " + vehicleBillRide + " tk \n");
-            fwriter.write(" Add On Bill: (Total) ---------- " + addOnTotalprice + " tk \n");
-            fwriter.write(" ===================================================" +   "\n");
-            fwriter.write(" Total Bill: ------------------- " + totalBill + " tk \n");
-            fwriter.write(" ===================================================" +   "\n");
+            fwriter.write(" Base Rate: ----------------------- " + vehivleRentPerKm + "  BDT / km \n");
+            fwriter.write(" Ride Fare: ----------------------- " + vehicleBillRide + " BDT  \n");
+            fwriter.write(" Add-on Total:--------------------- " + addOnTotalprice + " BDT  \n");
+            fwriter.write(" ---------------------------------------------------------------- " +   "\n");
+            fwriter.write(" TOTAL AMOUNT PAID: ---------------"  + totalBill + " BDT \n");
+            fwriter.write("\n");
+            fwriter.write(" ==================== BOOKING RECIEPT =================== " +   "\n");
+            fwriter.write(" \t             Thank you for riding with ShohozRide!                " +   "\n");
+            fwriter.write(" ===================================================== " +   "\n");
             fwriter.write("\n");
             fwriter.write("\n");
 
